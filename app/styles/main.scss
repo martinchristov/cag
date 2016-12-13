@@ -1,0 +1,26 @@
+// bower:scss
+// endbower
+
+@import "fonts.scss";
+@import "reset.scss";
+
+$primary: #3bb0b5;
+body {
+	-webkit-font-smoothing: antialiased;
+  background: #fafafa;
+  font-family: 'museosans', Helvetica, Arial, sans-serif;
+  color: #333;
+  font-weight: 300;
+}
+.clearfix{
+	width: 100%;
+	clear: both;
+	height: 1px;
+}
+
+.main-container{
+	width: 1130px;
+	margin: 0 auto;
+	position: relative;
+}
+@import "landing.scss";

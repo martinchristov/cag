@@ -1,0 +1,29 @@
+<div class="login">
+	<div class="bg" ng-click="close()"></div>
+	<div class="sidebar">
+		<div class="close" ng-click="close()">
+			<ng-include src="'images/arrow.svg'"></ng-include>
+		</div>
+		<div class="contents">
+			<h1>- WELCOME -</h1>
+			<p>
+				To book your airport consierge,
+				Log-in or create a new account
+			</p>
+
+			<form>
+				<input type="email" placeholder="E-mail">
+				<input type="password" placeholder="Password">
+				<a href="" class="forgot">Forgot?</a>
+				
+				<p>
+					<input type="checkbox" id="keep-login">
+					<label for="keep-login">Keep me logged-in</label>
+				</p>
+
+				<input type="submit" value="LOG IN" disabled="!allowSubmit()">
+				<div class="btn">create new account</div>
+			</form>
+		</div>
+	</div>
+</div>
