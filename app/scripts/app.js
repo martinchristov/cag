@@ -23,6 +23,7 @@
 			$timeout(function(){
 				$scope.init=true;
 				$scope.showSideStuff=true;
+				
 			},300);
 
 			$scope.login = function(){

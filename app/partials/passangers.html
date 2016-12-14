@@ -1,0 +1,38 @@
+<div class="dropdown passangers">
+	<div class="input" ng-click="showPassangers=true">
+		<span ng-show="total">{{total}} </span>passangers
+		<ng-include src="'images/pointer.svg'"></ng-include>
+	</div>
+	<div class="overlay" ng-show="showPassangers">
+		<div class="cap"><span ng-show="total">{{total}} </span>passangers</div>
+		<div class="num-input">
+			<div class="plus" ng-click="adults(1)">+</div>
+			<div class="minus" ng-click="adults(-1)">-</div>
+			<div class="content">
+				<div class="num">{{data.adults}}</div>
+				<b>Adult</b><br>
+				<small>16+</small>
+			</div>
+		</div>
+		<div class="num-input">
+			<div class="plus" ng-click="children(1)">+</div>
+			<div class="minus" ng-click="children(-1)">-</div>
+			<div class="content">
+				<div class="num">{{data.children}}</div>
+				<b>Children</b><br>
+				<small>2-16</small>
+			</div>
+		</div>
+		<div class="num-input">
+			<div class="plus" ng-click="infants(1)">+</div>
+			<div class="minus" ng-click="infants(-1)">-</div>
+			<div class="content">
+				<div class="num">{{data.infants}}</div>
+				<b>Infant</b><br>
+				<small>0-2</small>
+			</div>
+		</div>
+
+		<div class="ok" ng-click="calcTotal();showPassangers=false">ok</div>
+	</div>
+</div>
