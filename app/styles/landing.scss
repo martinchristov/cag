@@ -481,7 +481,6 @@
 		padding: 150px 0;
 
 		background-image: url(../images/world.jpg);
-		// background-size: cover;
 		background-position: center;
 
 		.quote-box{
@@ -777,4 +776,341 @@
 			}
 		}
 	}
+
+
+	#support{
+		text-align: center;
+		padding: 80px 0;
+		background:#fff;
+		h1{
+			color: $darker;
+			font-weight: 500;
+			text-transform: uppercase;
+			font-size: 40px;
+		}
+		h4{
+			color: $darker;
+			text-transform: uppercase;
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 22px;
+			margin-top: 5px;
+			margin-bottom: 30px;
+		}
+		p{
+			font-size: 20px;
+			font-weight: 300;
+			// padding: 0 100px;
+			max-width:800px;
+			margin: 0 auto;
+		}
+		.heart{
+			margin-top: 60px;
+			margin-bottom: 30px;
+			svg{
+				path{
+					fill:$primary;
+				}
+			}
+		}
+		.row{
+			display: flex;
+			.col{
+				h5{
+					color: $darker;
+					text-transform: uppercase;
+					font-weight: 500;
+					font-size: 18px;
+					line-height: 22px;
+					margin-bottom: 50px;
+				}
+				flex:1;
+				&:first-of-type{
+					margin-right: 65px;
+					h5{
+						margin-top: 12px;
+					}
+				}
+				&:last-of-type{
+					margin-left: 65px;
+				}
+			}
+		}
+		.call-us{
+			ul{
+				a{
+					margin-top: 20px;
+					display: block;
+					height: 50px;
+					border: 1px solid $darker;
+					padding: 0 16px;
+					text-align: left;
+					line-height: 50px;
+					text-decoration: none;
+					color: $primary;
+					font-size: 18px;
+					font-weight: 500;
+					i{
+						float: right;
+					}
+					transition: all .25s ease-out;
+					cursor: pointer;
+					&:hover{
+						color: #fff;
+						background:$darker;
+					}
+				}
+			}
+			.faq{
+				margin-top: 90px;
+				background:$darker;
+				height: 150px;
+				color: #fff;
+				display: block;
+				line-height: 150px;
+				font-weight: 300;
+				cursor: pointer;
+				font-size: 40px;
+			}
+		}
+		.contact-us{
+			.row{
+				margin-bottom: 20px;
+			}
+			.col{
+				&:first-of-type{
+					margin-right: 5px;
+				}
+				&:last-of-type{
+					margin-left: 5px;
+				}
+
+			}
+			input,textarea{
+				display: block;
+				width: 100%;
+				box-sizing:border-box;
+				border:1px solid $primary;
+				height: 52px;
+				line-height: 52px;
+				background:transparent;
+				text-align: center;
+				font-size: 16px;
+				font-family: museosans;
+				color: $primary;
+				font-weight: 500;
+				outline: none;
+				&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+					font-style: italic;
+					font-weight: 300;
+					font-size: 15px;
+					color: #a9a9a9;
+				}
+				&::-moz-placeholder { /* Firefox 19+ */
+					font-style: italic;
+					font-weight: 300;
+					font-size: 15px;
+					color: #a9a9a9;
+				}
+				&:-ms-input-placeholder { /* IE 10+ */
+					font-style: italic;
+					font-weight: 300;
+					font-size: 15px;
+					color: #a9a9a9;
+				}
+			}
+			textarea{
+				height: 260px;
+				margin-bottom: 20px;
+			}
+			[type=submit]{
+				width: 240px;
+				margin: 0 auto;
+				font-weight: 500;
+				font-size: 20px;
+				height: 50px;
+				line-height: 46px;
+				transition:all .25s ease-out;
+				&:hover{
+					cursor: pointer;
+					background:$primary;
+					color: #fafafa;
+				}
+			}
+			.also{
+				margin-top: 90px;
+				border: 1px solid #afafaf;
+				height: 150px;
+				box-sizing:border-box;
+				padding: 25px 30px;
+				h5{
+					margin-bottom: 15px;
+				}
+				line-height: 20px;
+				span{
+					color: $darker;
+					font-weight: 500;
+					font-size: 15px;
+				}
+				a{
+					color: #777777;
+					font-size: 15px;
+					transition: all .24s ease-out;
+					font-weight: 500;
+					text-decoration: none;
+					&:hover{
+						color: $darker;
+					}
+				}
+			}
+		}
+		.follow-us{
+			margin-top: 150px;
+			svg{
+				transform: translateX(5px);
+				path{
+					fill:$darker;
+				}
+				margin-bottom: 5px;
+			}
+			a{
+				color: $darker;
+				text-transform: uppercase;
+				font-weight: 500;
+				text-decoration: none;
+				line-height: 20px;
+			}
+		}
+	}
+
+	#about{
+		box-shadow: 0 -5px 24px rgba(0,0,0,0.2);
+		height: 830px;
+		text-align: center;
+		background:#fff url('../images/cart.jpg') center bottom no-repeat;
+		// background-size: cover;
+		h1{
+			font-size: 40px;
+			font-weight: 500;
+			color: #a9a9a9;
+			padding-top: 62px;
+		}
+		h3{
+			font-size: 20px;
+			color: #000;
+			text-transform: uppercase;
+			font-weight: 500;
+			line-height: 24px;
+			margin-top: 10px;
+			margin-bottom: 100px;
+		}
+		.content{
+			width: 500px;
+			text-align: left;
+			font-weight: 300;
+			color: #000;
+			font-size: 20px;
+			line-height: 25px;
+			b{
+				text-transform: uppercase;
+				margin-top: 110px;
+				display: block;
+				font-weight: 500;
+				margin-bottom: 10px;
+			}
+			.mastercard{
+				margin-left: 35px;
+				display: inline-block;
+				transform:translateY(13px);
+			}
+		}
+	}
+
+	footer{
+		color: #fff;
+		background:$primary;
+		.main-container{
+			padding: 90px 0 80px;
+		}
+		h3{
+			font-size: 40px;
+			text-transform: uppercase;
+			font-weight: 100;
+			line-height: 46px;
+			float: left;
+		}
+		.copy{
+			background:#000;
+			height: 60px;
+			line-height: 60px;
+			color: #777777;
+			.main-container{
+				padding: 0;
+			}
+		}
+		.tw{
+			position: absolute;
+			left: 50%;
+			margin-top: 10px;
+			margin-left: -30px;
+			svg{
+				path{
+					fill:#fff;
+				}
+			}
+		}
+		.rightside{
+			float: right;
+			position: relative;
+			width: 390px;
+			.book-now{
+				height: 60px;
+				width: 280px;
+				border: 1px solid #fff;
+				text-align: center;
+				text-transform: uppercase;
+				line-height: 60px;
+				font-size: 20px;
+				float: left;
+				transition: all .25s ease-out;
+				cursor: pointer;
+				&:hover{
+					background:#fff;
+					color: $primary;
+				}
+			}
+			.back-top{
+				float: left;
+				margin-left: 40px;
+				text-align: center;
+				margin-top: -12px;
+				svg{
+					transform:translateY(-10px);
+					path{fill:#fff;}
+				}
+				small{
+					text-transform: uppercase;
+					font-size: 12px;
+					font-weight: 500;
+					display: inline-block;
+				}
+			}
+			.links{
+				position: absolute;
+				width: 100%;
+				text-transform: uppercase;
+				font-size: 13px;
+				font-weight: 500;
+				display: flex;
+				justify-content: space-between;
+				top:150px;
+				a{
+					display: inline-block;
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
 }

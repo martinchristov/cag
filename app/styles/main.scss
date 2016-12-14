@@ -3,11 +3,13 @@
 
 @import "fonts.scss";
 @import "reset.scss";
+// @import "foundation.scss";
 
 $primary: #43b2b6;
+$darker: #34a7ac;
 body {
+	background:#000;
 	-webkit-font-smoothing: antialiased;
-  background: #fafafa;
   font-family: 'museosans', Helvetica, Arial, sans-serif;
   color: #333;
   font-weight: 300;

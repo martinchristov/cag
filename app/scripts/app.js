@@ -23,14 +23,13 @@
 			$timeout(function(){
 				$scope.init=true;
 				$scope.showSideStuff=true;
-				
 			},300);
 
 			$scope.login = function(){
 				$scope.showLogin=true;
 				$scope.showSideStuff=false;
 				setTimeout(function(){
-					$('input[type=email]').focus();
+					$('input[type=email]:first').focus();
 				},1400);
 			};
 			$scope.$on('hideLogin',function(){
