@@ -131,5 +131,28 @@
 					}
 				}
 			}
+		})
+		.directive('bar',function(){
+			return {
+				link: function($scope,el){
+					var cover = $('#cover');
+					var scrolled=false;
+					$(document).scroll(function(){
+						var top = $(document).scrollTop();
+						if(!scrolled){
+							if(top>cover.height()-20){
+								scrolled=true;
+								el.addClass('scrolled');
+							}
+						}
+						else {
+							if(top<cover.height()){
+								scrolled=false;
+								el.removeClass('scrolled');
+							}
+						}
+					});
+				}
+			}
 		});
 })();
