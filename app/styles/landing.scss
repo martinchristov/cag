@@ -162,12 +162,12 @@
 			}
 			.quote{
 				transition: all .5s ease-out;
-				transition-delay:.6s;
+				transition-delay:1.1s;
 				transform:translateY(35px);
 			}
 			.book-now{
 				transition: all .5s ease-out;
-				transition-delay: 1.1s;
+				transition-delay: .6s;
 				transform:translateY(-60px);
 			}
 		}
@@ -537,6 +537,8 @@
 			font-size: 20px;
 			box-shadow: 2px 6px 8px rgba(0,0,0,0.3);
 			cursor: pointer;
+			position: relative;
+			z-index: 5;
 
 		}
 		.tab-label{
@@ -548,6 +550,26 @@
 			color: #3d96a2;
 			font-size: 120px;
 			text-transform: uppercase;
+			&.smaller{
+				font-size: 100px;
+				margin-top: -20px;
+			}
+			&.ng-hide-remove{
+				transition: all .25s ease-out;
+				transform: translateY(-30px);
+				opacity: 0;
+			}
+			&.ng-hide-remove-active{
+				opacity: 1;
+				transform:translateY(0);
+			}
+			&.ng-hide-add{
+				transition: all .25s ease-out;
+			}
+			&.ng-hide-add-active{
+				transform: translateY(-30px);
+				opacity: 0;
+			}
 		}
 	}
 
@@ -663,13 +685,15 @@
 				}
 				.dest-input{
 					float: left;
+					position: relative;
+					z-index: 2;
+					margin-right: 10px;
 					input{
 						width: 218px;
 					}
 				}
 				.date{
-					
-					input{
+					.fph-input{
 						margin-right: 5px;
 
 						&:first-of-type{
@@ -697,30 +721,21 @@
 							margin-top: 0px;
 						}
 					}
+					position: relative;
+					.datepicker-holder{
+						position: absolute;
+						top: 28px;
+						background:#fff;
+						z-index: 10;
+						border:1px solid $primary;
+						right: 2px;
+					}
 				}
 				.dropdown{
 					margin-top: 20px;
 					.input{
-						border:1px solid $primary;
-						height: 52px;
-						text-align: center;
-						color: $primary;
-						font-weight: 500;
-						text-transform: uppercase;
-						line-height: 52px;
 						font-size: 18px;
-						position: relative;
-						cursor: pointer;
-						box-sizing:border-box;
-						svg{
-							position: absolute;
-							right: 20px;
-							top: 50%;
-							transform:scale(2.4) translateY(-1px);
-							path{
-								fill:$primary;
-							}
-						}
+						font-weight: 500;
 					}
 				}
 				.dropdown.passangers{
@@ -835,6 +850,17 @@
 						}
 					}
 				}
+				.promo{
+					float: right;margin-top: 13px;
+					color: #9e9f9e;
+					font-size: 15px;
+					cursor: pointer;
+				}
+				.promo-input{
+					width: 100%;
+					margin-top: 20px;
+				}
+
 
 				input[type=submit]{
 					width: 100%;height: 52px;
@@ -961,6 +987,12 @@
 				}
 
 			}
+			.fph-input{
+				width: 100%;
+			}
+			.fph-input .ph{
+				font-size: 16px;
+			}
 			input,textarea{
 				display: block;
 				width: 100%;
@@ -1062,7 +1094,7 @@
 		box-shadow: 0 -5px 24px rgba(0,0,0,0.2);
 		height: 830px;
 		text-align: center;
-		background:#fff url('../images/cart.jpg') center bottom no-repeat;
+		background:#fff url('../images/cart.jpg') left bottom no-repeat;
 		// background-size: cover;
 		h1{
 			font-size: 40px;
@@ -1159,8 +1191,10 @@
 				margin-left: 40px;
 				text-align: center;
 				margin-top: -12px;
+				cursor: pointer;
 				svg{
 					transform:translateY(-10px);
+					display: inline-block;
 					path{fill:#fff;}
 				}
 				small{
@@ -1168,6 +1202,26 @@
 					font-size: 12px;
 					font-weight: 500;
 					display: inline-block;
+				}
+				&.ng-hide-remove{
+					transition-delay:.5s;
+					transition: all .7s ease-out;
+					svg{
+						transition-delay:.5s;
+						transition: all .7s ease-out;
+						transform:translateY(-10px) scale(0) rotate(120deg);
+					}
+				}
+				&.ng-hide-remove-active{
+					svg{
+						transform: translateY(-10px) scale(1) rotate(0deg);
+					}
+				}
+				&.ng-hide-add{
+					
+				}
+				&.ng-hide-add-active{
+					
 				}
 			}
 			.links{

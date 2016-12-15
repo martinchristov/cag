@@ -1,15 +1,15 @@
 (function(){
 	'use strict';
-	angular.module('cag',['ui.router','ngAnimate'])
+	angular.module('cag',['ui.router','ngAnimate','datePicker'])
 		.config(function($stateProvider,$urlRouterProvider){
 			$stateProvider
 				.state('landing',{
-					url:'/',
+					url:'/landing',
 					templateUrl:'views/landing.html',
 					controller: 'LandingCtrl'
 				});
 
-			$urlRouterProvider.otherwise('/');
+			$urlRouterProvider.otherwise('/landing');
 		});
 
 
@@ -23,7 +23,14 @@
 			$timeout(function(){
 				$scope.init=true;
 				$scope.showSideStuff=true;
+				//remove
+				$(document).scrollTo(1600);
 			},300);
+
+			$('a.scrollto').click(function(e){
+				e.preventDefault();
+				$.scrollTo($($(this).attr('href')),600);
+			})
 
 			$scope.login = function(){
 				$scope.showLogin=true;
@@ -38,7 +45,17 @@
 			});
 
 			$scope.quote = {
-				type:'arrival'
+				type:'arrival',
+				date: null
 			};
+
+			$scope.$watch('quote.date',function(newval,oldval){
+				if(newval!==oldval){
+					$scope.showQuoteDatePicker=false;
+					$scope.quote.dateD = $scope.quote.date.format('D');
+					$scope.quote.dateM = $scope.quote.date.format('M');
+					$scope.quote.dateY = $scope.quote.date.format('YY');
+				}
+			})
 		});
 })();

@@ -1,0 +1,16 @@
+<div class="dropdown services">
+	<div class="input" ng-click="showOverlay=true">
+		{{val()}}
+		<ng-include src="'images/pointer.svg'"></ng-include>
+	</div>
+	<div class="overlay" ng-show="showOverlay">
+		<div class="ph">{{placeholder}}</div>
+		<ul>
+			<li 
+				ng-repeat="opt in options"
+				ng-click="select(opt)">
+				{{opt[display]}}
+			</li>
+		</ul>
+	</div>
+</div>

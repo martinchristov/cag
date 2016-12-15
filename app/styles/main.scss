@@ -19,10 +19,92 @@ body {
 	clear: both;
 	height: 1px;
 }
+a{
+	text-decoration: none;
+	outline:none;
+	cursor: pointer;
+}
 
 .main-container{
 	width: 1130px;
 	margin: 0 auto;
 	position: relative;
+}
+
+.dropdown{
+	// margin-top: 20px;
+	.input{
+		border:1px solid $primary;
+		height: 52px;
+		text-align: center;
+		color: $primary;
+		font-weight: 300;
+		text-transform: uppercase;
+		line-height: 52px;
+		font-size: 15px;
+		position: relative;
+		cursor: pointer;
+		box-sizing:border-box;
+		svg{
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			transform:scale(2.4) translateY(-1px);
+			path{
+				fill:$primary;
+			}
+		}
+	}
+	position: relative;
+	.overlay{
+		position: absolute;
+		width: 100%;
+		border: 1px solid $primary;
+		box-sizing:border-box;
+		background:#fff;
+		z-index: 10;
+		top: 0;
+		.ph{
+			text-transform: uppercase;
+			color: #9e9f9e;
+			font-weight: 500;
+			font-size: 12px;
+			margin-top: 15px;
+		}
+		ul{
+			padding: 10px 0;
+			li{
+				color: $primary;
+				padding: 10px 0;
+				transition: all .3s ease-out;
+				font-weight: 500;
+				&:hover{
+					cursor: pointer;
+					background:$primary;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+.fph-input{
+	position: relative;
+	float: left;
+	.ph{
+		cursor: text;
+		position: absolute;
+		width: 100%;text-align: center;
+		font-style: italic;
+		font-size: 18px;
+		line-height: 50px;
+	  	color: #9e9e9e;
+	  	transition: all .3s ease-out;
+	}
+	&.focused{
+		.ph{
+			transform:translateY(-35px) scale(0.8);
+		}
+	}
 }
 @import "landing.scss";

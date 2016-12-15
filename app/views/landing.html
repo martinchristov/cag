@@ -3,9 +3,9 @@
 		<div class="main-container">
 		<div class="menu">
 			<ul>
-				<li><a href="#services">services</a></li>
-				<li><a href="#support">support</a></li>
-				<li><a href="#about">about</a></li>
+				<li><a class="link" href="#services">services</a></li>
+				<li><a class="link" href="#support">support</a></li>
+				<li><a class="link" href="#about">about</a></li>
 				<li><a>log-in</a></li>
 			</ul>
 			<div class="lang">
@@ -16,11 +16,11 @@
 		</div>
 	</div>
 
-	<div id="cover" window-height scroll-background="1.5">
+	<div id="cover" window-height scroll-background>
 
 		<div class="sidestuff" ng-show="showSideStuff">
 			<div class="animation-container">
-				<a href="#quote" class="quote">quick quote</a>
+				<a href="#quote" class="quote scrollto">quick quote</a>
 				<div class="journey">
 					<h1>Your journey,<br>460 airports easier!</h1>
 					<p>Superb airport concierge services for<br>a seamless travel, end-to-end.</p>
@@ -52,7 +52,29 @@
 			</div>
 			
 			<div class="tab-content">
-				<div class="content">
+				<div class="content" ng-show="currentTab=='vip'">
+					<div class="img">
+						<ng-include src="'images/diamond.svg'"></ng-include>
+					</div>
+					<div class="text">
+						Whether you are arriving, departing or connecting flights, your personal airport agent will be waiting to meet &amp; assist you at every step of your journey. From the moment you show at the gate, through "fast track" immigration &amp; exclusive lounge access to your luggage being stored in a luxury car, waiting to take you anywhere you want.
+						<br><br>
+						Start booking to customize your experience,<br>
+						exactly the way you want.
+					</div>
+				</div>
+				<div class="content" ng-show="currentTab=='invitation'">
+					<div class="img">
+						<ng-include src="'images/diamond.svg'"></ng-include>
+					</div>
+					<div class="text">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit tempora minima vel natus voluptas ducimus adipisci animi atque beatae laborum ex delectus dolores, deserunt, aspernatur esse eos dolorum distinctio.
+						<br><br>
+						Start booking to customize your experience,<br>
+						exactly the way you want.
+					</div>
+				</div>
+				<div class="content" ng-show="currentTab=='demand'">
 					<div class="img">
 						<ng-include src="'images/diamond.svg'"></ng-include>
 					</div>
@@ -64,8 +86,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="tab-label">vip meet</div>
-			<div class="book-now">book now</div>
+			<div class="vertial-scroll-bind" scroll-bind>
+				<div class="tab-label" ng-show="currentTab=='vip'">vip meet</div>
+				<div class="tab-label smaller" ng-show="currentTab=='invitation'">by invitation</div>
+				<div class="tab-label smaller" ng-show="currentTab=='demand'">on demand</div>
+				<div class="book-now" ng-click="login()">book now</div>
+			</div>
 		</div>
 	</div>
 
@@ -78,17 +104,25 @@
 
 			<form>
 				<div class="dest-input">
-					<input type="text" placeholder="Airport">
+					<fph-input type="text" placeholder="Airport" model="quote.airport"></fph-input>
 				</div>
 				<div class="date">
-					<input type="text" placeholder="DD">
-					<input type="text" placeholder="MM">
-					<input type="text" placeholder="YY">
-					<div class="btn">
+					<fph-input type="text" placeholder="DD" model="quote.dateD"></fph-input>
+					<fph-input type="text" placeholder="MM" model="quote.dateM"></fph-input>
+					<fph-input type="text" placeholder="YY" model="quote.dateY"></fph-input>
+					<div class="btn" ng-click="showQuoteDatePicker=true">
 						<ng-include src="'images/calendar.svg'"></ng-include>
 						<small>select<br>a date</small>
 					</div>
+					<div class="datepicker-holder" ng-show="showQuoteDatePicker">
+						<div 
+						date-picker="quote.date"
+						max-view="date"
+						min-view="date"></div>
+					</div>
 				</div>
+
+				<div class="clearfix"></div>
 
 				<passangers></passangers>
 
@@ -99,6 +133,12 @@
 					</div>
 					<!-- <div class="overlay"></div> -->
 				</div>
+
+				<div class="promo" ng-click="addPromo=true" ng-hide="addPromo">
+					+ Add a promo code
+				</div>
+
+				<input type="text" class="promo-input" placeholder="Promo code" ng-show="addPromo">
 
 				<input type="submit" ng-disabled="true" value="get quote">
 			</form>
@@ -143,18 +183,24 @@
 				<form>
 					<div class="row">
 						<div class="col">
-							<input type="text" placeholder="Name">
+							<fph-input type="text" placeholder="Name" model="contact.name"></fph-input>
 						</div>
 						<div class="col">
-							<input type="text" placeholder="Enquiry type">
+							<dropdown 
+								placeholder="enquiry type"
+								display="title"
+								key="title"
+								model="contact.type"
+								options="[{title:'something 1'},{title:'another thing'}]"
+							></dropdown>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col">
-							<input type="email" placeholder="Email">
+							<fph-input type="text" placeholder="Email" model="contact.email"></fph-input>
 						</div>
 						<div class="col">
-							<input type="text" placeholder="Subject">
+							<fph-input type="text" placeholder="Subject" model="contact.subject"></fph-input>
 						</div>
 					</div>
 					<textarea placeholder="Your message"></textarea>
@@ -180,7 +226,7 @@
 	</div>
 
 
-	<div id="about">
+	<div id="about" scroll-background-x>
 		<div class="main-container">
 			<h1>- ABOUT -</h1>
 			<h3>the most advanced airport<br>concierge service in the world</h3>
@@ -207,8 +253,8 @@
 				<ng-include src="'images/tw.svg'"></ng-include>
 			</div>
 			<div class="rightside">
-				<div class="book-now">book now</div>
-				<div class="back-top">
+				<div class="book-now" ng-click="login()">book now</div>
+				<div class="back-top" ng-show="scrolled" back-top>
 					<ng-include src="'images/backtotop.svg'"></ng-include><br>
 					<small>go to top</small>
 				</div>
