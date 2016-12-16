@@ -9,7 +9,22 @@
 		background:transparent;
 		border-bottom:2px solid white;
 		transition: all .3s ease-out;
-
+		.gac{
+			float: left;
+			width: 204px;
+			height: 28px;
+			border: 1px solid white;
+			text-align: center;
+			margin-top: 14px;
+			transition: border .3s ease-out;
+			svg{
+				margin-top: 3px;
+				path{
+					transition: fill .3s ease-out;
+					fill:#fff;
+				}
+			}
+		}
 		.menu{
 			float: right;
 			line-height: 60px;
@@ -61,6 +76,14 @@
 		&.scrolled{
 			background:#fff;
 			box-shadow: 0 2px 7px rgba(0,0,0,0.5);
+			.gac{
+				border-color:#000;
+				svg{
+					path{
+						fill:#000;
+					}
+				}
+			}
 			.menu{
 				li{
 					border-right:1px solid #dcdcdc;
@@ -75,11 +98,39 @@
 		}
 	}
 
+
+	@keyframes bottomBounce {
+		0%{
+			transform: translateY(0);
+		}
+		50%{
+			transform:translateY(10px);
+		}
+		100%{
+			transform:translateY(0);
+		}
+	}
 	#cover{
 		background:transparent url('../images/bg.jpg') center top no-repeat;
 		background-size: cover;
 		width: 100%;
 		height: 700px;
+		position: relative;
+		.bottom-pointer{
+			position: absolute;
+			bottom: 72px;
+			left: 50%;
+				animation: bottomBounce 1.7s linear infinite;
+			a{
+				// display: inline-block;
+			}
+			svg{
+				transform: translateX(-5px) scale(6);
+				path{
+					fill:#fff;
+				}
+			}
+		}
 	}
 
 	.sidestuff{
@@ -502,6 +553,14 @@
 					margin-right: 0;
 				}
 			}
+			@media screen and (max-width: $tablet){
+				.tab{
+					font-size: 18px;
+					&.current{
+						font-size: 25px;
+					}
+				}
+			}
 		}
 		.tab-content{
 			background:#297a7d;
@@ -524,6 +583,11 @@
 				padding-left: 30px;
 				text-align: left;
 				flex:1;
+			}
+			@media screen and (max-width: $tablet){
+				.img{
+					width: 220px;
+				}
 			}
 		}
 		.book-now{
@@ -569,6 +633,10 @@
 			&.ng-hide-add-active{
 				transform: translateY(-30px);
 				opacity: 0;
+			}
+
+			@media screen and (max-width: $tablet){
+				display: none;
 			}
 		}
 	}
@@ -724,11 +792,16 @@
 					position: relative;
 					.datepicker-holder{
 						position: absolute;
-						top: 28px;
 						background:#fff;
 						z-index: 10;
 						border:1px solid $primary;
-						right: 2px;
+						right: 0px;
+						box-sizing:border-box;
+						top: 58px;
+						width: 100%;
+						table{
+							width: 100%;
+						}
 					}
 				}
 				.dropdown{
@@ -935,6 +1008,17 @@
 				&:last-of-type{
 					margin-left: 65px;
 				}
+				@media screen and (max-width: $tablet){
+					&:first-of-type{
+						margin-right: 25px;
+						h5{
+							margin-bottom: 60px;
+						}
+					}
+					&:last-of-type{
+						margin-left: 25px;
+					}
+				}
 			}
 		}
 		.call-us{
@@ -972,6 +1056,10 @@
 				font-weight: 300;
 				cursor: pointer;
 				font-size: 40px;
+				@media screen and (max-width: $tablet){
+					height: 220px;
+					line-height: 220px;
+				}
 			}
 		}
 		.contact-us{
@@ -1068,6 +1156,18 @@
 					&:hover{
 						color: $darker;
 					}
+				}
+			}
+			@media screen and (max-width: $tablet){
+				textarea{
+					height: 268px;
+				}
+				[type=submit]{
+					width: 100%;
+					height: 52px;
+				}
+				.also{
+					height: 220px;
 				}
 			}
 		}
@@ -1238,6 +1338,18 @@
 					color: #fff;
 					text-decoration: none;
 				}
+			}
+		}
+
+		@media screen and (max-width: $tablet){
+			.tw{
+				display: none;
+			}
+			h3{
+				font-size: 32px;
+			}
+			.copy{
+				font-size: 14px;
 			}
 		}
 	}

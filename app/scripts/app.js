@@ -21,11 +21,25 @@
 			$scope.init=false;
 
 			$timeout(function(){
-				$scope.init=true;
-				$scope.showSideStuff=true;
 				//remove
-				$(document).scrollTo(1600);
+				$(document).scrollTo(0);
 			},300);
+
+
+			//show side stuff & init sidebar after cover image has loaded
+			var img = new Image();
+			var a = $('#cover').css('background-image').substr(5);
+			a = a.substr(0,a.length-2);
+			img.src = a;
+			img.onload = function(){
+				$timeout(function(){
+					$scope.init=true;
+					$scope.showSideStuff=true;
+				});
+			}
+			//endof
+
+				
 
 			$('a.scrollto').click(function(e){
 				e.preventDefault();
@@ -49,13 +63,23 @@
 				date: null
 			};
 
-			$scope.$watch('quote.date',function(newval,oldval){
-				if(newval!==oldval){
-					$scope.showQuoteDatePicker=false;
+			// $scope.$watch('quote.date',function(newval,oldval){
+			// 	if(newval!==oldval){
+			// 		$scope.showQuoteDatePicker=false;
+			// 		$scope.quote.dateD = $scope.quote.date.format('D');
+			// 		$scope.quote.dateM = $scope.quote.date.format('M');
+			// 		$scope.quote.dateY = $scope.quote.date.format('YY');
+			// 	}
+			// })
+			$scope.$on('hidePicker',function(){
+				$scope.showQuoteDatePicker=false;
+				
+				$timeout(function(){
+					$('[date-picker]').removeClass('hidden');
 					$scope.quote.dateD = $scope.quote.date.format('D');
 					$scope.quote.dateM = $scope.quote.date.format('M');
 					$scope.quote.dateY = $scope.quote.date.format('YY');
-				}
-			})
+				});
+			});
 		});
 })();

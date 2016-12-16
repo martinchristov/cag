@@ -7,12 +7,16 @@
 
 $primary: #43b2b6;
 $darker: #34a7ac;
+
+//widths
+$tablet: 1023px;
+
 body {
 	background:#000;
 	-webkit-font-smoothing: antialiased;
-  font-family: 'museosans', Helvetica, Arial, sans-serif;
-  color: #333;
-  font-weight: 300;
+	font-family: 'museosans', Helvetica, Arial, sans-serif;
+	color: #333;
+	font-weight: 300;
 }
 .clearfix{
 	width: 100%;
@@ -29,6 +33,9 @@ a{
 	width: 1130px;
 	margin: 0 auto;
 	position: relative;
+	@media screen and (max-width: 1023px){
+		width: 720px;
+	}
 }
 
 .dropdown{
@@ -106,5 +113,25 @@ a{
 			transform:translateY(-35px) scale(0.8);
 		}
 	}
+}
+[date-picker] span{
+	transition:all .15s ease-out;
+	display: inline-block;
+	box-sizing:border-box;
+	border:1px solid transparent;
+}
+[date-picker] span:hover {
+  background: #fff!important;
+  border-radius:0!important;
+  border:1px solid $primary;
+  // color: #fff!important;
+}
+[date-picker] .now, [date-picker] .now:hover, [date-picker] .now:active, [date-picker] .now.active, [date-picker] .now.disabled, [date-picker] .now[disabled]{
+	background:#ee905b;
+	border-radius:0;
+}
+[date-picker] .active:hover, [date-picker] .now:hover, [date-picker] .active:active, [date-picker] .now:active, [date-picker] .active.active, [date-picker] .now.active, [date-picker] .active.disabled, [date-picker] .now.disabled, [date-picker] .active[disabled], [date-picker] .now[disabled]{
+	background:$primary;
+	border-radius: 0;
 }
 @import "landing.scss";
