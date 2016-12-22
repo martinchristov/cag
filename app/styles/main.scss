@@ -10,6 +10,7 @@ $darker: #34a7ac;
 
 //widths
 $tablet: 1023px;
+$mid: 767px;
 
 body {
 	background:#000;
@@ -35,6 +36,13 @@ a{
 	position: relative;
 	@media screen and (max-width: 1023px){
 		width: 720px;
+	}
+	@media screen and (max-width: 767px){
+		width: 450px;
+	}
+	@media only screen and (max-device-width: 459px){
+		width: auto;
+		margin: 0 20px;
 	}
 }
 

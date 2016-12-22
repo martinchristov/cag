@@ -34,8 +34,10 @@
 			img.onload = function(){
 				$timeout(function(){
 					$scope.init=true;
+				},200);
+				$timeout(function(){
 					$scope.showSideStuff=true;
-				});
+				},1000);
 			}
 			//endof
 
@@ -63,14 +65,6 @@
 				date: null
 			};
 
-			// $scope.$watch('quote.date',function(newval,oldval){
-			// 	if(newval!==oldval){
-			// 		$scope.showQuoteDatePicker=false;
-			// 		$scope.quote.dateD = $scope.quote.date.format('D');
-			// 		$scope.quote.dateM = $scope.quote.date.format('M');
-			// 		$scope.quote.dateY = $scope.quote.date.format('YY');
-			// 	}
-			// })
 			$scope.$on('hidePicker',function(){
 				$scope.showQuoteDatePicker=false;
 				

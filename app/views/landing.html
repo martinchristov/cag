@@ -11,15 +11,12 @@
 				<li><a class="link" href="#about">about</a></li>
 				<li><a>log-in</a></li>
 			</ul>
-			<div class="lang">
-				<span>eng</span>
-				<ng-include src="'images/pointer.svg'"></ng-include>
-			</div>
+			<lang></lang>
 		</div>
 		</div>
 	</div>
 
-	<div id="cover" window-height scroll-background>
+	<div id="cover" ng-class="{'inited':init}" window-height scroll-background>
 
 		<div class="sidestuff" ng-show="showSideStuff">
 			<div class="animation-container">
@@ -58,6 +55,7 @@
 			
 			<div class="tab-content">
 				<div class="content" ng-show="currentTab=='vip'">
+					<h2>vip meet</h2>
 					<div class="img">
 						<ng-include src="'images/diamond.svg'"></ng-include>
 					</div>
@@ -105,9 +103,19 @@
 			<h1>- Quick Quote -</h1>
 			<p>Explore the services &amp; locations we cover around the world</p>
 
-			<type-selector type="quote.type"></type-selector>
+			
 
 			<form>
+				<type-selector type="quote.type"></type-selector>
+				<div class="type-dropdown-holder">
+					<dropdown 
+						placeholder=""
+						display="value"
+						key="value"
+						model="quote.type"
+						options="[{value:'arrival'},{value:'departure'},{value:'connect'}]"
+					></dropdown>
+				</div>
 				<div class="dest-input">
 					<fph-input type="text" placeholder="Airport" model="quote.airport"></fph-input>
 				</div>
@@ -219,6 +227,9 @@
 					<span>sales enquiries:</span> <a href="mailto:sales@globalairportconscierge.com">sales@globalairportconscierge.com</a><br>
 					<span>to become a partner:</span> <a href="mailto:partners@globalairportconscierge.com">partners@globalairportconscierge.com</a>
 				</div>
+				<a class="faq">
+					- FAQ -
+				</a>
 			</div>
 		</div>
 
@@ -241,7 +252,7 @@
 				<p>From the airplane doors to the executive chauffier, our network covers over 460 airports, 365 days of the year, to make sure you reach to your next destination effortlessly &amp; seamlessly.</p>
 
 				<b>our partners</b>
-				<a href="http://goo">
+				<a href="http://goo" class="united">
 					<img src="images/united.jpg" alt="">
 				</a>
 				<a href="http://goo" class="mastercard">

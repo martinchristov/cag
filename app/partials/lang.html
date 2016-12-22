@@ -1,0 +1,11 @@
+<div class="lang-holder" ng-class={'dropped':drop}>
+	<div class="lang" ng-click="drop=!drop">
+		<span>{{current}}</span>
+		<ng-include src="'images/pointer.svg'"></ng-include>
+	</div>
+	<div class="lang-dropdown">
+		<div class="holder">
+			<div class="lng" ng-repeat="opt in opts" ng-hide="current==opt" ng-click="change(opt)">{{opt}}</div>
+		</div>
+	</div>
+</div>

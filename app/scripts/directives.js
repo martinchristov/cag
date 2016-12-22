@@ -222,6 +222,22 @@
 				}
 			}
 		})
+
+		.directive('lang',function(){
+			return {
+				templateUrl:'partials/lang.html',
+				replace:true,
+				restrict:'E',
+				link: function($scope,el){
+					$scope.opts = ['en','de','jpn','zh'];
+					$scope.current = 'en';
+					$scope.change = function(to){
+						$scope.current = to;
+						$scope.drop=false;
+					};
+				}
+			}
+		})
 		.service('UISvc',function(){
 			var self = this;
 			var scrollFCs = [];
