@@ -1211,6 +1211,7 @@
 			.quote-box{
 				width: auto;
 				margin: 0 20px;
+				position: relative;
 				form{
 					.type-selector{
 						display: none;
@@ -1232,7 +1233,8 @@
 						// transform:translateY(65px);
 					}
 					.date{
-						// width: 180px;
+						width: 200px;
+						position: static;
 						margin: 10px auto;
 						margin-top: 30px;
 						.btn{
@@ -1240,6 +1242,11 @@
 							margin-left: 10px;
 						}
 						// transform: translateY(-70px);
+						.datepicker-holder{
+							left: 0;
+							top: auto;
+							margin-top: 60px;
+						}
 					}
 				}
 			}
