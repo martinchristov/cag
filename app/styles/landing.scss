@@ -880,6 +880,15 @@
 			}
 		}
 	}
+	
+	@keyframes globing {
+		0%{
+			background-position: 0px 0px;
+		}
+		100%{
+			background-position: -27000px 0px;
+		}
+	}
 
 	#quote{
 		background:$primary;
@@ -887,6 +896,8 @@
 
 		background-image: url(../images/world.jpg);
 		background-position: center;
+
+		animation: globing 770s;
 
 		.quote-box{
 			width: 500px;
