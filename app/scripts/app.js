@@ -1,12 +1,13 @@
 (function(){
 	'use strict';
-	angular.module('cag',['ui.router','ngAnimate','datePicker'])
+	angular.module('cag',['ui.router','ngAnimate','datePicker','ngSanitize'])
 		.config(function($stateProvider,$urlRouterProvider){
 			$stateProvider
 				.state('landing',{
 					url:'/landing',
 					templateUrl:'views/landing.html',
-					controller: 'LandingCtrl'
+					controller: 'LandingCtrl',
+					controllerAs: 'ctrl'
 				});
 
 			$urlRouterProvider.otherwise('/landing');
@@ -15,10 +16,11 @@
 
 
 	angular.module('cag')
-		.controller('LandingCtrl',function($scope,$timeout){
+		.controller('LandingCtrl',function($scope,$timeout,$sce){
 			$scope.showSideStuff = false;
 			$scope.showLogin=false;
 			$scope.init=false;
+			this.currentTab = 'vip meet';
 
 			$timeout(function(){
 				//remove
@@ -75,5 +77,59 @@
 					$scope.quote.dateY = $scope.quote.date.format('YY');
 				});
 			});
+
+			$scope.services = [
+				{
+					title:'vip meet',
+					image:'images/diamond.svg',
+					content:'Whether you are arriving, departing or connecting flights, your personal airport agent will be waiting to meet &amp; assist you at every step of your journey. From the moment you show at the gate, through "fast track" immigration &amp; exclusive lounge access to your luggage being stored in a luxury car, waiting to take you anywhere you want.\
+						<br><br>\
+						Start booking to customize your experience,<br>\
+						exactly the way you want.'
+				},
+				{
+					title:'by invitation',
+					image:'images/diamond.svg',
+					content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit tempora minima vel natus voluptas ducimus adipisci animi atque beatae laborum ex delectus dolores, deserunt, aspernatur esse eos dolorum distinctio.\
+						<br><br>\
+						Start booking to customize your experience,<br>\
+						exactly the way you want.'
+				},
+				{
+					title:'on demand',
+					image:'images/diamond.svg',
+					content:'Whether you are arriving, departing or connecting flights, your personal airport agent will be waiting to meet &amp; assist you at every step of your journey. From the moment you show at the gate, through "fast track" immigration &amp; exclusive lounge access to your luggage being stored in a luxury car, waiting to take you anywhere you want.\
+						<br><br>\
+						Start booking to customize your experience,<br>\
+						exactly the way you want.'
+				}
+			];
+			for(var i=0;i<$scope.services.length;i++){
+				$sce.trustAs('resourceUrl',$scope.services[i].image);
+				$sce.trustAsHtml($scope.services[i].image);
+			}
+
+			$scope.getImage = function(img){
+				return img;
+				// return $sce.trustAsResourceUrl(img);
+			};
+
+			$timeout(function(){
+				var mySwiper = new Swiper ('.swiper-container', {
+					// Optional parameters
+					direction: 'horizontal',
+					// loop: true,
+
+					// If we need pagination
+					pagination: '.swiper-pagination',
+
+					// Navigation arrows
+					// nextButton: '.swiper-button-next',
+					// prevButton: '.swiper-button-prev',
+
+					// And if we need scrollbar
+					// scrollbar: '.swiper-scrollbar',
+				})    
+			},200);
 		});
 })();

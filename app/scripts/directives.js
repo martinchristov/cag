@@ -88,7 +88,8 @@
 					placeholder:'@',
 					display:'@',
 					model:'=',
-					options:'='
+					options:'=',
+					key:'@'
 				},
 				replace:true,
 				link:function($scope,el){
@@ -101,11 +102,19 @@
 							return $scope.selected[$scope.display];
 						}
 					};
-					// $scope.showOverlay=true;
 					$scope.select = function(val){
 						$scope.selected = val;
 						$scope.showOverlay=false;
 					};
+					if($scope.model){
+						for(var i=0;i<$scope.options.length;i++){
+							console.log($scope.options[i][$scope.key]);
+							if($scope.options[i][$scope.key]==$scope.model){
+								$scope.selected = $scope.options[i];
+								return;
+							}
+						}
+					}
 					$timeout(function(){
 						// el.find('.overlay').css({height:$scope.options.length*20+20})
 					})
@@ -235,6 +244,14 @@
 						$scope.current = to;
 						$scope.drop=false;
 					};
+				}
+			}
+		})
+
+		.directive('hackSrc',function(){
+			return {
+				link: function($scope,el,attr){
+					el.attr({src:attr.hackSrc});
 				}
 			}
 		})

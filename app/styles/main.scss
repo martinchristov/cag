@@ -4,6 +4,8 @@
 @import "fonts.scss";
 @import "reset.scss";
 // @import "foundation.scss";
+@import "./touchcarousel/touchcarousel.scss";
+@import "./touchcarousel/minimal-light-skin.scss";
 
 $primary: #43b2b6;
 $darker: #34a7ac;
@@ -40,7 +42,7 @@ a{
 	@media screen and (max-width: 767px){
 		width: 450px;
 	}
-	@media only screen and (max-device-width: 459px){
+	@media only screen and (max-width: 459px){
 		width: auto;
 		margin: 0 20px;
 	}
