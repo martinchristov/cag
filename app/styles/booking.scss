@@ -315,6 +315,84 @@
 			// height: 100%;
 			top: 0;
 		}
+
+		[type=submit]{
+			margin-top: 150px;
+		}
+	}
+
+	.booking-services{
+		h2{
+			margin: 40px 0;
+		}
+		.type-selector{
+			.types{
+				.type{
+					font-size: 16px;
+					margin-top: 0;
+				}
+				border-color:$lighter;
+			}
+		}
+		.service-box{
+			border: 1px solid $lighter;
+			box-sizing:border-box;
+			padding: 17px 25px;
+			text-align: left;
+			position: relative;
+			margin-bottom: 20px;
+			h3{
+				text-align: center;
+				color: $lighter;
+				font-size: 35px;
+				font-weight: 100;
+				margin-bottom: 15px;
+			}
+			p{
+				color: #fff;
+				font-size: 15px;
+				margin-bottom: 50px;
+				line-height: 18px;
+			}
+			.counter{
+				position: absolute;
+				bottom: 15px;
+				left: 25px;
+				.num{
+					font-size: 40px;
+					font-weight: 100;
+					display: inline-block;
+					margin: 0 10px;
+					color: $lighter;
+				}
+				.ctrl{
+					transform:translateY(-8px);
+					box-sizing:border-box;
+					width: 24px;height: 24px;
+					border:2px solid #888;
+					border-radius: 100%;
+					display: inline-block;
+					text-align: center;
+					line-height: 20px;
+					font-weight: 500;
+					font-size: 16px;
+					transition: all .2s ease-out;
+					cursor: pointer;
+					&:hover{
+						border-color:$primary;
+						color:$primary;
+					}
+				}
+			}
+			.pricetag{
+				position: absolute;
+				bottom: 22px;
+				right: 27px;
+				font-size: 20px;
+				color: $lighter;
+				font-weight: 300;
+			}
+		}
 	}
 
 }
