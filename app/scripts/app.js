@@ -23,6 +23,10 @@
 					url:'/passangers',
 					templateUrl: 'views/booking-passangers.html'
 				})
+				.state('booking.passangers.add',{
+					url:'/add',
+					templateUrl: 'views/add-passanger.html'
+				})
 				.state('booking.payment',{
 					url:'/payment',
 					templateUrl: 'views/booking-payment.html'

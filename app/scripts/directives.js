@@ -146,18 +146,23 @@
 			return {
 				templateUrl:'partials/type-selector.html',
 				scope:{
-					type:'='
+					type:'=',
+					types:'='
 				},
 				replace:true,
 				link:function($scope,el){
 					var dash = el.find('.type-dash');
 					dash.css({width:el.find('.type:first').width()+7});
+					if(!$scope.types){
+						$scope.types=['ARRIVAL','DEPARTURE','CONNECT'];
+					}
 
 					$scope.switch = function(to){
 						$scope.type=to;
 						$timeout(function(){
 							var cur = el.find('.type.current');
 							var curIndex = cur.data('index');
+							console.log(curIndex);
 							var css = {
 								width: cur.width(),
 								marginLeft: 0,
@@ -175,7 +180,7 @@
 					};
 
 					$timeout(function(){
-						$scope.switch('arrival');
+						$scope.switch($scope.types[0]);
 					});
 				}
 			}

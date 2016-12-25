@@ -1,0 +1,41 @@
+<div class="add-passanger">
+	<h2>- Add new passanger details -</h2>
+	<div class="inner-container">
+		<type-selector type="quote.type" types="['Mr','Miss','Mrs']"></type-selector>
+
+		<fph-input type="text" placeholder="Full name" model="passanger.name"></fph-input>
+		<fph-input type="text" placeholder="Nationality" model="passanger.nationality"></fph-input>
+		
+		<div class="clearfix"></div>
+		<div class="row">
+			<div class="col">
+				<fph-input type="text" placeholder="PASSPORT No." model="passanger.passport"></fph-input>
+			</div>
+			<div class="col">
+				<div class="row">
+					<div class="col">
+						<fph-input type="text" placeholder="DD" model="passanger.dd"></fph-input>
+					</div>
+					<div class="col">
+						<fph-input type="text" placeholder="MM" model="passanger.mm"></fph-input>
+					</div>
+					<div class="col">
+						<fph-input type="text" placeholder="YY" model="passanger.yy"></fph-input>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<fph-input type="text" placeholder="mobile" model="passanger.mobile"></fph-input>
+
+
+		<fph-input type="text" placeholder="email" model="passanger.email"></fph-input>
+
+		<textarea placeholder="notes / requests"></textarea>
+
+		<input type="submit" value="save" ui-sref="booking.passangers">
+
+		<div class="clearfix"></div>
+	</div>
+</div>
