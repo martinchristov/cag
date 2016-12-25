@@ -47,6 +47,9 @@
 				font-size: 11px;
 				font-weight: 500;
 				transition: all .3s ease-out;
+				&:hover{
+					color: $primary;
+				}
 			}
 			.lang-holder{
 				float: left;
@@ -170,6 +173,12 @@
 			.menu{
 				li{
 					border-right:1px solid #dcdcdc;
+					&:hover{
+						background:$primary;
+						a{
+							color: #fff;
+						}
+					}
 				}
 				a{
 					color: #000;

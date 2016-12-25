@@ -1,0 +1,40 @@
+<div class="booking-details inner-view">
+	<div class="inner-container">
+		<h2>- Add your flight details -</h2>
+
+		<form>
+			<type-selector type="quote.type"></type-selector>
+			
+			<fph-input type="text" placeholder="At Airport" model="quote.airport"></fph-input>
+			<div class="clearfix"></div>
+			<div class="row">
+				<div class="col">
+					<fph-input type="text" placeholder="Flight number" model="quote.flightCode"></fph-input>
+				</div>
+				<div class="col">
+					<div class="row">
+						<div class="col">
+							<fph-input type="text" placeholder="DD" model="quote.dd"></fph-input>
+						</div>
+						<div class="col">
+							<fph-input type="text" placeholder="MM" model="quote.mm"></fph-input>
+						</div>
+						<div class="col">
+							<fph-input type="text" placeholder="YY" model="quote.yy"></fph-input>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<fph-input type="text" placeholder="Terminal" model="quote.terminal"></fph-input>
+				</div>
+				<div class="col">
+					<fph-input type="text" placeholder="Time" model="quote.time"></fph-input>
+				</div>
+			</div>
+
+			<input type="submit" value="add passangers" ng-disabled=true>
+		</form>
+	</div>
+</div>
