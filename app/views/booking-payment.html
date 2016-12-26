@@ -1,0 +1,63 @@
+<div class="booking-payment inner-view">
+
+	<div class="payment-form-holder" ng-hide="true">
+		
+		<h2>- Provide your card details -</h2>
+		<div class="sub">Payment will be collected 24h before the service is provided</div>
+
+		<div class="inner-container">
+			<div class="clearfix"></div>
+
+			<form>
+				<fph-input type="text" placeholder="Card number" model="payment.card"></fph-input>
+				<!-- <fph-input type="text" placeholder="Card number" model="payment.name"></fph-input> -->
+				<div class="clearfix"></div>
+				<div class="row">
+					<div class="col">
+						<div class="row">
+							<div class="col">
+								<fph-input type="text" placeholder="MM" model="payment.mm"></fph-input>
+							</div>
+							<div class="col">
+								<fph-input type="text" placeholder="YY" model="payment.yy"></fph-input>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<fph-input type="text" placeholder="CVC" model="payment.cvc"></fph-input>
+					</div>
+				</div>
+
+				<input type="submit" value="confirm payment">
+
+			</form>
+		</div>
+	</div>
+
+	<div class="payment-done-holder">
+		<ng-include src="'images/circle-v.svg'"></ng-include>
+		<div class="thankyou">
+			Thank you. We'll email all the details to<br>
+			<i>hannahmorby@netflix.com</i> <a>change</a> <br>
+			48h before the flight.
+		</div>
+
+		<div class="btn highlight">my bookings</div>
+		<div class="btn">book again</div>
+	</div>
+
+	<div class="inner-container">
+		<div class="policy">
+			<i>cancellation policy</i>
+			<p>
+				If you need to cancel your booking for any reason
+please contact us immediately. Provided the cancellation
+request is received no later than 48hrs before the proposed
+date of service then you will not be charged a cancellation
+fee and a full refund will be provided. Read full policy here
+			</p>
+		</div>
+	</div>
+
+
+</div>

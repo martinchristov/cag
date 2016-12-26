@@ -395,4 +395,64 @@
 		}
 	}
 
+	.booking-payment{
+		.sub{
+			color: #fff;
+			margin-top: -40px;
+			margin-bottom: 40px;
+		}
+		.policy{
+			text-align: left;
+			font-size: 12px;
+			i{
+				font-style: italic;
+				text-transform: uppercase;
+				color: #999999;
+				margin-bottom: 5px;
+				display: block;
+			}
+			color: #fff;
+			line-height: 14px;
+		}
+	}
+
+	.payment-done-holder{
+		svg{
+			margin: 50px auto;
+			path{
+				fill:#fff;
+			}
+		}
+		.thankyou{
+			font-weight: 100;
+			font-size: 30px;
+			color: #d9d9d9;
+			line-height: 37px;
+			i{
+				color: $lighter;
+			}
+			a{
+				font-size: 12px;font-weight: 500;
+				text-decoration: underline;text-transform: uppercase;
+			}
+		}
+
+		.btn{
+			width: 200px;
+			text-align: center;
+			height: 60px;
+			display: inline-block;
+			line-height: 60px;
+			background:#656565;
+			text-transform: uppercase;
+			font-size: 20px;
+			margin: 35px 5px;
+			color: #fff;
+			cursor: pointer;
+			&.highlight{
+				background:$lighter;
+			}
+		}
+	}
+
 }
