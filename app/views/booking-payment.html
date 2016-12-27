@@ -1,6 +1,6 @@
 <div class="booking-payment inner-view">
 
-	<div class="payment-form-holder" ng-hide="true">
+	<div class="payment-form-holder payment-holder" ng-hide="paymentDone">
 		
 		<h2>- Provide your card details -</h2>
 		<div class="sub">Payment will be collected 24h before the service is provided</div>
@@ -28,13 +28,13 @@
 					</div>
 				</div>
 
-				<input type="submit" value="confirm payment">
+				<input type="submit" value="confirm payment" ng-click="paymentDone=true">
 
 			</form>
 		</div>
 	</div>
 
-	<div class="payment-done-holder">
+	<div class="payment-done-holder payment-holder" ng-show="paymentDone">
 		<ng-include src="'images/circle-v.svg'"></ng-include>
 		<div class="thankyou">
 			Thank you. We'll email all the details to<br>

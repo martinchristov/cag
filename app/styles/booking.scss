@@ -57,13 +57,33 @@
 					display: inline-block;
 					margin-left: 3px;
 				}
+
+				&.ng-hide-remove{
+					transition: all .3s ease-out;
+					opacity: 0;
+				}
+				&.ng-hide-remove-active{
+					opacity: 1;
+				}
+				&.ng-hide-add{
+					transition: all .2s ease-out;
+					opacity: 1;
+				}
+				&.ng-hide-add-active{
+					transform: translateY(50px);
+					opacity: 0;
+				}
 			}
 			display: block;
 			border-right: 1px solid white;
 			width: 235px;
 			padding-left: 15px;
 			box-sizing:border-box;
+			position: relative;
 			float: left;
+			min-height: 1px;
+			height: 70px;
+			transition: all .35s ease-out;
 			&:first-of-type{
 				padding-left: 0;
 			}
@@ -79,22 +99,20 @@
 				.collapsed{
 					width: 100%;
 					position: relative;
+					.price{
+						color: #383838;
+						right: 10px;
+						position: absolute;
+						margin-right: 10px;
+					}
 				}
 				.svc{
 					font-size: 15px;
 					line-height: 18px;
 					float: left;
-					// display: inline-block;
 					color: #383838;
 					text-transform: none;
 					padding-top: 15px;
-				}
-				.price{
-					color: #383838;
-					// float: right;
-					right: 10px;
-					position: absolute;
-					margin-right: 10px;
 				}
 			}
 		}
@@ -103,9 +121,54 @@
 			margin-top: 25px;
 			cursor: pointer;
 			margin-right: -15px;
+			transition: all .35s ease-out;
 			svg{
 				path{
 					fill:$primary;
+				}
+			}
+		}
+		.pointer-exp{
+			
+			position: absolute;
+			right: 0;
+			top: 250px;
+			overflow: hidden;
+			.btn{
+				width: 48px;
+				height: 30px;
+				background:$primary;cursor: pointer;
+			}
+			svg{
+				transform: scale(0.6) rotate(180deg) translateY(-3px);
+				path{
+					fill:#fff;
+				}
+			}
+			&.ng-hide-remove{
+				transition: all .6s ease-out;
+				.btn{
+					transition: all .3s ease-out;
+					transition-delay:.25s;
+					transform: translateY(-30px);
+				}
+			}
+			&.ng-hide-remove-active{
+				.btn{
+					transform: translateY(0);
+				}
+			}
+			&.ng-hide-add{
+				transition: all .35s ease-out;
+
+				.btn{
+					transition: all .35s ease-out;
+				}
+			}
+			&.ng-hide-add-active{
+				transform: translateY(-180px);
+				.btn{
+					transform: translateY(-30px);
 				}
 			}
 		}
@@ -120,6 +183,138 @@
 		}
 		position: relative;
 		box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+		z-index: 7;
+		transition: all .35s ease-out;
+		// overflow: hidden;
+		height: 70px;
+		&.expanded{
+			height: 250px;
+			margin-bottom: -40px;
+			.section{
+				height: 250px;
+			}
+			.section:nth-of-type(2){
+				width: 255px;
+			}
+			.section:nth-of-type(3){
+				width: 262px;
+			}
+			.section:nth-of-type(4){
+				border-right:none;
+			}
+			.pointer{
+				transform: translateY(50px);
+				opacity: 0;
+				// background:$primary;
+				// transform: translateY(230px) scale(0.6) rotate(180deg);
+				// padding: 10px 6px 6px;
+				// svg{
+				// 	path{
+				// 		fill:#fff;
+				// 	}
+				// }
+			}
+		}
+		.expanded{
+			padding-top: 70px;
+			height: 250px;
+			box-sizing:border-box;
+			position: absolute;
+			width: 100%;
+			top: 0;left: 0;
+			.edit{
+				position: absolute;
+				top: 8px;
+				right: 7px;
+				font-weight: 700;
+				font-size: 10px;
+				color: #2e2e2e;
+				text-transform: uppercase;
+				cursor: pointer;
+			}
+			.field{
+				small{
+					font-size: 10px;
+					font-weight: 700;
+					color: #656565;
+					text-transform: uppercase;
+				}
+				color: $primary;
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+			&.ng-hide-remove{
+				transition: all .3s ease-out;
+				opacity: 0;
+				transform: translateY(-50px);
+			}
+			&.ng-hide-remove-active{
+				opacity: 1;
+				transform: translateY(0px);
+			}
+			&.ng-hide-add{
+				transition: all .3s ease-out;
+				opacity: 1;
+			}
+			&.ng-hide-add-active{
+				opacity: 0;
+				transform: translateY(-50px);
+			}
+		}
+		.section{
+			&:nth-of-type(2){
+				.expanded{
+					// margin-left: 10px;
+					padding-left: 20px;
+				}
+			}
+			&:nth-of-type(3){
+				.expanded{
+					padding-left: 20px;
+					ul{
+						li{
+							span{
+								font-size: 12px;
+								font-weight: 500;
+								text-transform: uppercase;
+								color: #656565;
+								display: inline-block;
+								margin-left: 5px;
+							}
+						}
+					}
+				}
+			}
+			&:nth-of-type(4){
+				.expanded{
+					left: 20px;
+					.field{
+						color: #383838;
+						li{
+							font-size: 20px;
+							line-height: 30px;
+						}
+						.price{
+							float: right;
+							// margin-right: 10px;
+						}
+						a{
+							color: $primary;
+							font-size: 12px;
+							font-weight: 500;
+							text-transform: uppercase;
+						}
+						.total{
+							position: absolute;
+							bottom: 20px;
+							width: 100%;
+							text-transform: uppercase;
+							font-weight: 500;
+						}
+					}
+				}
+			}
+		}
 	}
 	.progress-bar{
 		background:$primary;
@@ -535,6 +730,27 @@
 			}
 			color: #fff;
 			line-height: 14px;
+		}
+		.payment-holder{
+			&.ng-hide-remove{
+				transition: all .4s ease-out;
+				// transition-delay:.2s;
+				position: absolute;
+				width: 100%;
+				top: 0;
+				opacity: 0;
+			}
+			&.ng-hide-remove-active{
+				opacity: 1;
+			}
+			&.ng-hide-add{
+				opacity: 1;
+				// position: absolute;
+				transition: all .4s ease-out;
+			}
+			&.ng-hide-add-active{
+				opacity: 0;
+			}
 		}
 	}
 

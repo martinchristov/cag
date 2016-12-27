@@ -1,0 +1,87 @@
+<header ng-class="{'expanded':expanded}">
+	<div class="main-container">
+		<div class="section">
+			<div class="collapsed" ng-hide="expanded">
+			lax <div class="paperplane"><ng-include src="'images/paperplane.svg'"></ng-include></div> lhr
+			</div>
+			<div class="expanded" ng-show="expanded">
+				<div class="edit" ng-click="navBackTo('details')">edit</div>
+				<div class="field">
+					<small>departure</small><br>
+					Los Angelis LAX
+				</div>
+				<div class="field">
+					<small>arrival</small><br>
+					London Heathrow LHR
+				</div>
+				<div class="field">
+					<small>flight number</small><br>
+					A82031
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="collapsed" ng-hide="expanded">
+				24 dec / 04:20<sup>pm</sup>
+			</div>
+			<div class="expanded" ng-show="expanded">
+				<div class="edit" ng-click="navBackTo('details')">edit</div>
+				<div class="field">
+					<small>date</small><br>
+					24 Dec 2017
+				</div>
+				<div class="field">
+					<small>arrival time</small><br>
+					04:20 <sup>pm</sup>
+				</div>
+				<div class="field">
+					<small>location</small><br>
+					Terminal 4
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="collapsed" ng-hide="expanded">
+				2<sup> &nbsp;adults</sup>
+			</div>
+			<div class="expanded" ng-show="expanded">
+				<div class="edit" ng-click="navBackTo('passangers')">edit</div>
+				<div class="field">
+					<small>passangers</small><br>
+					<ul>
+						<li>Hannah Morby <span>adult</span></li>
+						<li>Ilian Oprev <span>president</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="collapsed" ng-hide="expanded">
+				<div class="svc">
+					Vip meet<br>
+					Baggage porters
+				</div>
+				<div class="price">£325</div>
+			</div>
+			<div class="expanded" ng-show="expanded">
+				<div class="field">
+					<small>services</small>
+					<ul>
+						<li>Vip meet <div class="price">£160</div></li>
+						<li>Baggage Porter <div class="price">£45</div></li>
+					</ul>
+					<a>+ apply promo code</a>
+					<div class="total">total <div class="price">£320</div></div>
+				</div>
+			</div>
+		</div>
+		<div class="pointer" ng-click="expanded=!expanded">
+			<ng-include src="'images/pointer2.svg'"></ng-include>
+		</div>
+		<div class="pointer-exp" ng-click="expanded=false" ng-show="expanded">
+			<div class="btn">
+				<ng-include src="'images/pointer2.svg'"></ng-include>
+			</div>
+		</div>
+	</div>
+</header>

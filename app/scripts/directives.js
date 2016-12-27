@@ -266,6 +266,20 @@
 			}
 		})
 
+		.directive('progressHeader',function(){
+			return {
+				templateUrl:'partials/progress-header.html',
+				replace:true,
+				restrict:'E',
+				link: function($scope,el){
+					$scope.expanded=false;
+					$scope.$on('collapseProgressHeader',function(){
+						$scope.expanded=false;
+					});
+				}
+			}
+		})
+
 		.directive('counter',function(){
 			return {
 				template:[

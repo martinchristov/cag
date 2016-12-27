@@ -125,5 +125,11 @@
 			}
 			$scope.services[0][0].quantity=1;
 
+			$scope.navBackTo = function(to){
+				$scope.$broadcast('collapseProgressHeader');
+				console.log('asdas');
+				$state.go('booking.'+to);
+			};
+
 		});
 })();
