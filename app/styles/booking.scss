@@ -607,8 +607,9 @@
 			top: 0;
 		}
 		.passanger-holder{
-			height: 180px;
-			overflow-y: scroll;
+			// height: 180px;
+			// overflow-y: scroll;
+			min-height:80px;
 		}
 		[type=submit]{
 			// margin-top: 150px;
@@ -676,6 +677,11 @@
 					font-size: 16px;
 					transition: all .2s ease-out;
 					cursor: pointer;
+					user-select: none;
+			        -moz-user-select: none;
+			        -khtml-user-select: none;
+			        -webkit-user-select: none;
+			        -o-user-select: none;
 					&:hover{
 						border-color:$primary;
 						color:$primary;
