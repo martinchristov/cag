@@ -156,13 +156,16 @@
 					if(!$scope.types){
 						$scope.types=['ARRIVAL','DEPARTURE','CONNECT'];
 					}
-
+					var privateChange = true;
+					$scope.clickSwitch = function(to){
+						privateChange=true;
+						$scope.switch(to);
+					}
 					$scope.switch = function(to){
 						$scope.type=to;
 						$timeout(function(){
 							var cur = el.find('.type.current');
 							var curIndex = cur.data('index');
-							console.log(curIndex);
 							var css = {
 								width: cur.width(),
 								marginLeft: 0,
@@ -178,6 +181,16 @@
 							dash.css(css).removeClass('float-1').removeClass('float-2').removeClass('float-3').addClass('float-'+curIndex);
 						},50);
 					};
+
+					$scope.$watch('type',function(val,oval){
+						if(!privateChange){
+							console.log(val,oval,'asdas');
+							$scope.switch($scope.type);
+						}
+						else {
+							privateChange=false;
+						}
+					});
 
 					$timeout(function(){
 						$scope.switch($scope.types[0]);
@@ -253,6 +266,86 @@
 			}
 		})
 
+		.directive('counter',function(){
+			return {
+				template:[
+					'<div class="counter">',
+						'<div class="ctrl" ng-click="num(1)">+</div>',
+						'<div class="num">{{model}}</div>',
+						'<div class="ctrl" ng-click="num(-1)">-</div>',
+					'</div>'
+				].join(''),
+				replace:true,
+				restrict:'E',
+				scope:{
+					model:'=',
+					event:'@'
+				},
+				link: function($scope,el){
+					$scope.min = 1;
+					$scope.num = function(val){
+						$scope.model+=val;
+						if($scope.model<$scope.min){
+							$scope.model=$scope.min;
+						}
+						if($scope.event){
+							$scope.$emit('changeSlots');
+						}
+					}
+				}
+			}
+		})
+
+		.directive('passangerDropdown',function($state){
+			return {
+				template:[
+				'<div class="passanger-dropdown">',
+					'<div ng-click="showDropdown=true">',
+						'<span ng-hide="selected">add passanger {{index}} info</span>',
+						'<span ng-show="selected">{{selected.name}}</span>',
+						'<ng-include src="\'images/pointer.svg\'"></ng-include>',
+					'</div>',
+					'<div class="dropdown" ng-show="showDropdown">',
+						'<ul>',
+							'<li ng-click="add()">+ new passanger</li>',
+							'<li ng-click="select(contact)" ng-repeat="contact in existing">{{contact.name}}</li>',
+						'</ul>',
+					'</div>',
+				'</div>'
+				].join(''),
+				replace:true,
+				restrict:'E',
+				scope:{
+					index:'@'
+				},
+				link: function($scope,el){
+					$scope.existing = [
+						{
+							name:'Hannah Morby',
+							id:1
+						},
+						{
+							name:'Martin Christov',
+							id:2
+						},
+						{
+							name:'Iliyan Oprev',
+							id:3
+						}
+					];
+					$scope.add = function(){
+						$scope.showDropdown=false;
+						$state.go('.add');
+					};
+					$scope.select = function(contact){
+						$scope.showDropdown=false;
+						$scope.selected=contact;
+						$scope.$emit('selectedPassanger');
+					};
+				}
+			}
+		})
+
 		.directive('hackSrc',function(){
 			return {
 				link: function($scope,el,attr){
@@ -260,6 +353,24 @@
 				}
 			}
 		})
+		.directive('winHeightMinus',function(){
+		return {
+			
+			link:function($scope,el,attr){
+				var setAttr = 'height';
+				if(attr.mode){
+					setAttr=attr.mode;
+				}
+				function set () {
+					var props = {};
+					props[setAttr]=window.innerHeight-Number(attr.winHeightMinus);
+					el.css(props);
+				}
+				set();
+				$(window).resize(set);
+			}
+		}
+	})
 		.service('UISvc',function(){
 			var self = this;
 			var scrollFCs = [];
@@ -272,6 +383,12 @@
 					scrollFCs[i](top);
 				}
 			});
+		})
+		.service('ProgressBar',function(){
+			var self = this;
+			self.set = function(val){
+
+			}
 		})
 		.directive('backTop',function(UISvc, $timeout){
 			return {

@@ -35,10 +35,6 @@
 					url:'/payment',
 					templateUrl: 'views/booking-payment.html'
 				})
-				.state('booking.done',{
-					url:'/done',
-					templateUrl: 'views/booking-done.html'
-				})
 
 
 				/*

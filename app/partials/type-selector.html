@@ -1,6 +1,6 @@
 <div class="type-selector">
 	<div class="types">
-		<div class="type" data-index={{$index+1}} ng-repeat="itype in types" ng-click="switch(itype)" ng-class="{'current':type==itype}">{{itype}}</div>
+		<div class="type" data-index={{$index+1}} ng-repeat="itype in types" ng-click="clickSwitch(itype)" ng-class="{'current':type==itype}">{{itype}}</div>
 	</div>
 	<div class="type-dash"></div>
 </div>

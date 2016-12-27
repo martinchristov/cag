@@ -3,38 +3,38 @@
 		<h2>- Add your flight details -</h2>
 
 		<form>
-			<type-selector type="quote.type"></type-selector>
+			<type-selector type="details.type" types="['departure','arrival','connect']"></type-selector>
 			
-			<fph-input type="text" placeholder="At Airport" model="quote.airport"></fph-input>
+			<fph-input type="text" placeholder="At Airport" model="details.airport"></fph-input>
 			<div class="clearfix"></div>
 			<div class="row">
 				<div class="col">
-					<fph-input type="text" placeholder="Flight number" model="quote.flightCode"></fph-input>
+					<fph-input type="text" placeholder="Flight number" model="details.flightCode"></fph-input>
 				</div>
 				<div class="col">
 					<div class="row">
 						<div class="col">
-							<fph-input type="text" placeholder="DD" model="quote.dd"></fph-input>
+							<fph-input type="text" placeholder="DD" model="details.dd"></fph-input>
 						</div>
 						<div class="col">
-							<fph-input type="text" placeholder="MM" model="quote.mm"></fph-input>
+							<fph-input type="text" placeholder="MM" model="details.mm"></fph-input>
 						</div>
 						<div class="col">
-							<fph-input type="text" placeholder="YY" model="quote.yy"></fph-input>
+							<fph-input type="text" placeholder="YY" model="details.yy"></fph-input>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col">
-					<fph-input type="text" placeholder="Terminal" model="quote.terminal"></fph-input>
+					<fph-input type="text" placeholder="Terminal" model="details.terminal"></fph-input>
 				</div>
 				<div class="col">
-					<fph-input type="text" placeholder="Time" model="quote.time"></fph-input>
+					<fph-input type="text" placeholder="Time" model="details.time"></fph-input>
 				</div>
 			</div>
 
-			<input type="submit" value="add passangers" ng-disabled=true>
+			<input type="submit" value="add passangers" ng-disabled="!enableDetailsSubmit" ui-sref="booking.passangers">
 		</form>
 	</div>
 </div>

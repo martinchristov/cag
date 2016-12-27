@@ -3,23 +3,10 @@
 		<div class="clearfix"></div>
 		<h2>- Add passangers -</h2>
 		
-		<div class="counter">
-			<div class="ctrl">+</div>
-			<div class="num">2</div>
-			<div class="ctrl">-</div>
-		</div>
-
-		<div class="passanger-dropdown">
-			<span>add passanger 1 info</span>
-			<ng-include src="'images/pointer.svg'"></ng-include>
-
-			<div class="dropdown">
-				<ul>
-					<li ui-sref=".add">+ new passanger</li>
-					<li>Hannah Morby</li>
-					<li>John Snow</li>
-				</ul>
-			</div>
+		<counter model="ctrl.passangerSlots" event="changeSlots"></counter>
+		
+		<div class="passanger-holder">
+			<passanger-dropdown index="{{$index+1}}" ng-repeat="pass in passangers track by $index"></passanger-dropdown>
 		</div>
 
 		<input type="submit" value="select services" ui-sref="booking.services">

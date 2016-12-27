@@ -1,25 +1,25 @@
-<div class="booking-services inner-view">
+<div class="booking-services inner-view" win-height-minus="160">
 	<div class="inner-container">
 		<div class="clearfix"></div>
 		<h2>- Select services -</h2>
 
-		<type-selector type="serviceType" types="['meet up','on demand','transport']"></type-selector>
+		<type-selector type="ctrl.serviceType" types="serviceTypes"></type-selector>
+		
+		<div >
 
-		<div class="service-box">
-			<h3>VIP meet</h3>
-			<p>
-				Your arrival experience will include: Being met at the aircraft gate and expedited through immigration
-			</p>
+			<div class="service-box" ng-repeat="service in services[servicesView]">
+				<h3>{{service.title}}</h3>
+				<p>
+					{{service.description}}
+				</p>
 
-			<div class="counter">
-				<div class="ctrl">+</div>
-				<div class="num">2</div>
-				<div class="ctrl">-</div>
+				<counter model="service.quantity"></counter>
+
+				<div class="pricetag">£{{service.price}}</div>
 			</div>
 
-			<div class="pricetag">£160</div>
 		</div>
 
-		<input type="submit" value="next">
+		<input type="submit" value="next" ng-click="nextServices()">
 	</div>
 </div>
