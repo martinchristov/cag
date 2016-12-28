@@ -37,6 +37,20 @@
 				})
 
 
+				.state('my',{
+					url:'/my',
+					templateUrl:'views/my.html',
+					controller: 'MyCtrl',
+					controllerAs:'ctrl'
+				})
+				.state('my.bookings',{
+					url:'/bookings',
+					templateUrl: 'views/my-bookings.html'
+				})
+				.state('my.passangers',{
+					url:'/passangers',
+					templateUrl: 'views/my-passangers.html'
+				})
 				/*
 				/booking/detials
 				/booking/services

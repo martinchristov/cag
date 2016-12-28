@@ -134,19 +134,22 @@
 			$scope.payment = {
 				card:'', mm:'', yy:'', cvc:''
 			};
-			var unwatchPayment = $scope.$watch('payment',function(){
-				var total = 0, length=0;
-				for(var a in $scope.payment){
-					length++;
-					if($scope.payment[a]!=''){
-						total++;
+			var unwatchPayment = $scope.$watch('payment',function(newval,oldval){
+				if(newval!==oldval){
+					var total = 0, length=0;
+					for(var a in $scope.payment){
+						length++;
+						if($scope.payment[a]!=''){
+							total++;
+						}
 					}
-				}
-				var percent = total/length;
-				ProgressBar.set(2/3 + percent/4);
-				if(percent==1){
-					unwatchPayment();
-					$scope.enableDetailsSubmit = true;
+					var percent = total/length;
+						
+					ProgressBar.set(2/3 + percent/4);
+					if(percent==1){
+						unwatchPayment();
+						$scope.enableDetailsSubmit = true;
+					}
 				}
 			},true);
 

@@ -1,4 +1,4 @@
-<div id="booking">
+<div id="my">
 	<div id="bar">
 		<div class="main-container">
 			<div class="gac"><ng-include src="'images/gac.svg'"></ng-include></div>
@@ -21,9 +21,20 @@
 		</div>
 	</div>
 
-	<progress-header></progress-header>
+	<div class="stripe">
+		<div class="main-container">
+			<a ui-sref="booking">+ book now</a>
+		</div>
+	</div>
 
-	<progress-bar></progress-bar>
+	<div class="tabs">
+		<div class="inner-container">
+			<div class="tab" ui-sref="my.bookings" ng-class="{'current':currentState.name=='my.bookings'}">bookings</div>
+			<div class="tab" ui-sref="my.passangers" ng-class="{'current':currentState.name=='my.passangers'}">passangers</div>
+			<div class="tab" ui-sref="my.invoices" ng-class="{'current':currentState.name=='my.invoices'}">invoices</div>
+			<div class="tab" ui-sref="my.profile" ng-class="{'current':currentState.name=='my.profile'}">profile</div>
+		</div>
+	</div>
 
 	<div class="subview-holder" ui-view></div>
 </div>

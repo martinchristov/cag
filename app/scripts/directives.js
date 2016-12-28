@@ -291,6 +291,19 @@
 				}
 			}
 		})
+		.directive('menuPadding',function(){
+			return {
+				link: function($scope,el){
+					$(window).resize(calc);
+					var container = $('.main-container:first');
+					function calc() {
+						var p = ($(window).width()-container.width())/2;
+						el.find('li').css({paddingRight:p});
+					}
+					calc();
+				}
+			}
+		})
 
 		.directive('counter',function(){
 			return {
@@ -412,7 +425,7 @@
 		})
 		.service('ProgressBar',function(){
 			var self = this;
-			self.fill = 0;
+			self.fill = 0.01;
 			self.set = function(val){
 				self.fill = val;
 			}
