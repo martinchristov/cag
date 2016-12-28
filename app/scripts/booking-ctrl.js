@@ -67,6 +67,7 @@
 				}
 			});
 			$scope.nextServices = function(){
+				ProgressBar.set((1/3)+(($scope.servicesView+1)/3)/3);
 				if($scope.servicesView<2){
 					$scope.servicesView++;
 					self.serviceType=$scope.serviceTypes[$scope.servicesView];
@@ -127,9 +128,27 @@
 
 			$scope.navBackTo = function(to){
 				$scope.$broadcast('collapseProgressHeader');
-				console.log('asdas');
 				$state.go('booking.'+to);
 			};
+
+			$scope.payment = {
+				card:'', mm:'', yy:'', cvc:''
+			};
+			var unwatchPayment = $scope.$watch('payment',function(){
+				var total = 0, length=0;
+				for(var a in $scope.payment){
+					length++;
+					if($scope.payment[a]!=''){
+						total++;
+					}
+				}
+				var percent = total/length;
+				ProgressBar.set(2/3 + percent/4);
+				if(percent==1){
+					unwatchPayment();
+					$scope.enableDetailsSubmit = true;
+				}
+			},true);
 
 		});
 })();

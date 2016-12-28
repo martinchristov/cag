@@ -280,6 +280,18 @@
 			}
 		})
 
+		.directive('progressBar',function(ProgressBar){
+			return {
+				templateUrl:'partials/progress-bar.html',
+				replace:true,
+				restrict:'E',
+				link: function($scope,el){
+					var $bar = el.find('.bar');
+					$scope.svc = ProgressBar;
+				}
+			}
+		})
+
 		.directive('counter',function(){
 			return {
 				template:[
@@ -400,8 +412,9 @@
 		})
 		.service('ProgressBar',function(){
 			var self = this;
+			self.fill = 0;
 			self.set = function(val){
-
+				self.fill = val;
 			}
 		})
 		.directive('backTop',function(UISvc, $timeout){

@@ -12,7 +12,7 @@
 		padding-top: 13px;
 		box-sizing:border-box;
 		position: relative;
-		z-index: 10;
+		z-index: 14;
 		.gac{
 			border: 1px solid #000;
 			float: left;
@@ -183,7 +183,7 @@
 		}
 		position: relative;
 		box-shadow: 0 1px 10px rgba(0,0,0,0.5);
-		z-index: 7;
+		z-index: 13;
 		transition: all .35s ease-out;
 		// overflow: hidden;
 		height: 70px;
@@ -319,8 +319,41 @@
 	.progress-bar{
 		background:$primary;
 		height: 30px;
-		.main-container{
-			// background:$primary;
+		.text{
+			position: absolute;
+			width: 100%;
+			z-index: 11;
+		}
+		.default{
+			position: absolute;
+			width: 100%;
+			z-index: 9;
+			background: #277173;
+			.main-container{
+				height: 30px;
+				background:$primary;
+			}
+			.hider{
+				position: absolute;
+				height: 30px;
+				width: 50%;
+				right: 0;
+				top: 0;
+				background:$primary;
+			}
+
+		}
+		.bar-container{
+			position: absolute;
+			width: 100%;
+			z-index: 12;
+			.bar{
+				height: 30px;
+				background:#277173;
+				color: #fff;
+				overflow: hidden;
+				transition: all .25s ease-out;
+			}
 		}
 		ul{
 			display: flex;
