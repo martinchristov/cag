@@ -153,5 +153,10 @@
 				}
 			},true);
 
+			$scope.paymentComplete = function(){
+				$scope.paymentDone = true;
+				$scope.$broadcast('expandProgressHeader');
+			}
+
 		});
 })();

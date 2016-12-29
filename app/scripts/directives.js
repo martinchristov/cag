@@ -276,6 +276,9 @@
 					$scope.$on('collapseProgressHeader',function(){
 						$scope.expanded=false;
 					});
+					$scope.$on('expandProgressHeader',function(){
+						$scope.expanded=true;
+					});
 				}
 			}
 		})
