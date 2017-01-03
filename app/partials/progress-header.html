@@ -1,6 +1,6 @@
 <header ng-class="{'expanded':expanded}">
 	<div class="main-container">
-		<div class="section">
+		<div class="section hide-mob">
 			<div class="collapsed" ng-hide="expanded">
 			lax <div class="paperplane"><ng-include src="'images/paperplane.svg'"></ng-include></div> lhr
 			</div>
@@ -20,7 +20,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="section">
+		<div class="section hide-mob">
 			<div class="collapsed" ng-hide="expanded">
 				24 dec / 04:20<sup>pm</sup>
 			</div>
@@ -38,6 +38,39 @@
 					<small>location</small><br>
 					Terminal 4
 				</div>
+			</div>
+		</div>
+		<div class="section primary-mob">
+			<div class="expanded" ng-show="expanded">
+				<div class="edit" ng-click="navBackTo('details')">edit</div>
+
+				<div class="field">
+					<small>departure</small><br>
+					Los Angelis LAX
+				</div>
+				<div class="field">
+					<small>arrival</small><br>
+					London Heathrow LHR
+				</div>
+				<div class="field">
+					<small>Date</small><br>
+					24 Dec 2017
+				</div>
+				<div class="field">
+					<small>flight number</small><br>
+					A82031
+				</div>
+				<div class="side">
+					<div class="field">
+						<small>arrial time</small><br>
+						12:20 <sup>pm</sup>
+					</div>
+					<div class="field">
+						<small>location</small><br>
+						Terminal 4
+					</div>
+				</div>
+				<div class="clearfix"></div>
 			</div>
 		</div>
 		<div class="section">
@@ -81,6 +114,12 @@
 		<div class="pointer-exp" ng-click="expanded=false" ng-show="expanded">
 			<div class="btn">
 				<ng-include src="'images/pointer2.svg'"></ng-include>
+			</div>
+		</div>
+		<div class="promo-code mob" ng-show="expanded">
+			<div class="main-container">
+			<input type="text" placeholder="enter promo code">
+			<div class="btn">apply</div>
 			</div>
 		</div>
 	</div>
