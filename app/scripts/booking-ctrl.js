@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 	angular.module('cag')
-		.controller('BookingCtrl',function($scope,$state,ProgressBar){
+		.controller('BookingCtrl',function($scope,$state,ProgressBar,API){
 			var self = this;
 			if($state.current.name=='booking'){
 				$state.go('booking.details');
@@ -16,6 +16,9 @@
 				terminal:'',
 				time:''
 			};
+
+
+
 			$scope.enableDetailsSubmit = false;
 			var unwatchDetails = $scope.$watch('details',function(){
 				var total = 0, length=0;

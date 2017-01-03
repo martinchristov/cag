@@ -396,23 +396,30 @@
 			}
 		})
 		.directive('winHeightMinus',function(){
-		return {
-			
-			link:function($scope,el,attr){
-				var setAttr = 'height';
-				if(attr.mode){
-					setAttr=attr.mode;
+			return {
+				
+				link:function($scope,el,attr){
+					var setAttr = 'height';
+					if(attr.mode){
+						setAttr=attr.mode;
+					}
+					var minVar = Number(attr.winHeightMinus);
+					if($(window).width()<460){
+						if(attr.mob){
+							minVar = Number(attr.mob);
+							console.log('blah');
+						}
+					}
+					function set () {
+						var props = {};
+						props[setAttr]=window.innerHeight-minVar;
+						el.css(props);
+					}
+					set();
+					$(window).resize(set);
 				}
-				function set () {
-					var props = {};
-					props[setAttr]=window.innerHeight-Number(attr.winHeightMinus);
-					el.css(props);
-				}
-				set();
-				$(window).resize(set);
 			}
-		}
-	})
+		})
 		.service('UISvc',function(){
 			var self = this;
 			var scrollFCs = [];
@@ -432,6 +439,16 @@
 			self.set = function(val){
 				self.fill = val;
 			}
+		})
+		.service('API',function($soap){
+			var url = 'http://dev-system.globalairportconcierge.com:8990/GlobalAirportConcierge.svc';
+			var params = {
+				InterfaceKey:'D6B441402AD64E2906'
+			}
+			console.log('calling');
+			$soap.post(url,'Airport_Select_ALL',params).then(function(d){
+				console.log(d);
+			});
 		})
 		.directive('backTop',function(UISvc, $timeout){
 			return {

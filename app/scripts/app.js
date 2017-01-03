@@ -1,6 +1,6 @@
 (function(){
 	'use strict';
-	angular.module('cag',['ui.router','ngAnimate','datePicker','ngSanitize'])
+	angular.module('cag',['ui.router','ngAnimate','datePicker','ngSanitize','angularSoap'])
 		.config(function($stateProvider,$urlRouterProvider){
 			$stateProvider
 				.state('landing',{
