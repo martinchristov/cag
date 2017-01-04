@@ -55,6 +55,14 @@
 					url:'/add',
 					templateUrl: 'views/add-passanger.html'
 				})
+				.state('my.invoices',{
+					url:'/invoices',
+					templateUrl: 'views/my-invoices.html'
+				})
+				.state('my.profile',{
+					url:'/profile',
+					templateUrl: 'views/my-profile.html'
+				})
 				/*
 				/booking/detials
 				/booking/services
