@@ -11,6 +11,35 @@
 				}
 			}
 		})
+		.directive('goBack',function($state){
+			return {
+				link: function($scope,el){
+					var prevState;
+					$scope.$on('$stateChangeSuccess', function(ev, to, toParams, from, fromParams) {
+						console.log(from);
+						prevState = from.name;
+					});
+					el.click(function(){
+						$state.go(prevState);
+					});
+				}
+			}
+		})
+		.filter('firstLetterFilter',function(){
+			return function(items, letter){
+				if(letter==''){
+					return items;
+				}
+				var filtered = [];
+
+				angular.forEach(items, function(item){
+					if(item.name[0].toLowerCase()==letter.toLowerCase()){
+						filtered.push(item);
+					}
+				});
+				return filtered;
+			}
+		})
 		.directive('scrollBackground',function(UISvc){
 			return {
 				link: function($scope,el,attr){

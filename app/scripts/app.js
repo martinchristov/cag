@@ -51,6 +51,10 @@
 					url:'/passangers',
 					templateUrl: 'views/my-passangers.html'
 				})
+				.state('my.passangers.add',{
+					url:'/add',
+					templateUrl: 'views/add-passanger.html'
+				})
 				/*
 				/booking/detials
 				/booking/services

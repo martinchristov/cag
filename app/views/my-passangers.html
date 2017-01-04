@@ -1,0 +1,73 @@
+<div class="my-passangers inner-view">
+	<div class="scrollview" win-height-minus="166">
+	
+		<div class="inner-container">
+			<div class="top-strip">
+				<div class="inner-container">
+					<div class="abc">
+						<span ng-click="filterLtr(ltr)" ng-class="{'current':filterBy==ltr}" ng-repeat="ltr in abc track by $index">{{ltr}}</span>
+					</div>
+					<div class="add-btn" ui-sref=".add">+ add new</div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+			
+			<ul>
+				<li ng-repeat="row in passangers | firstLetterFilter:filterBy  track by $index">
+					<div class="collapsed-row" ng-hide="row.expanded">
+						<div class="section">
+							{{row.name}}
+						</div>
+						<div class="section">
+							{{row.nationality}}
+						</div>
+						<div class="section">
+							{{row.email}}
+						</div>
+						<div class="btn" ng-click="row.expanded=!row.expanded">edit</div>
+					</div>
+					<div class="expanded-row" ng-if="row.expanded">
+						<div class="section">
+							<div class="cap">full name</div>
+							<input type="text" ng-model="row.name">
+						</div>
+						<div class="section">
+							<div class="cap">nationality</div>
+							<input type="text" ng-model="row.nationality">
+						</div>
+						<div class="section">
+							<div class="cap">e-mail</div>
+							<input type="text" ng-model="row.email">
+						</div>
+						<div class="section">
+							<div class="cap">date of birth</div>
+							<input type="text" ng-model="row.name">
+						</div>
+						<div class="section">
+							<div class="cap">passport number</div>
+							<input type="text" ng-model="row.passport">
+						</div>
+						<div class="section">
+							<div class="cap">mobile</div>
+							<input type="text" ng-model="row.mobile">
+						</div>
+						<div class="notes">
+							<div class="cap">additional notes</div>
+							<textarea ng-model="row.notes"></textarea>
+						</div>
+						<div class="btn" ng-click="row.expanded=false">
+							save
+						</div>
+						<div class="btn del">
+							delete
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+	<div class="subview-holder" ui-view></div>
+</div>

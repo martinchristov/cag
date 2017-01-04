@@ -1,4 +1,6 @@
 <div id="my">
+	
+	<div class="bar-wrapper">
 	<div id="bar">
 		<div class="main-container">
 			<div class="gac"><ng-include src="'images/gac.svg'"></ng-include></div>
@@ -35,6 +37,8 @@
 			<div class="tab" ui-sref="my.profile" ng-class="{'current':currentState.name=='my.profile'}">profile</div>
 		</div>
 	</div>
-
+	
+	</div>
+	
 	<div class="subview-holder" ui-view></div>
 </div>
