@@ -283,7 +283,7 @@
 			}
 		})
 
-		.directive('progressBar',function(ProgressBar){
+		.directive('progressBar',function(ProgressBar, $state){
 			return {
 				templateUrl:'partials/progress-bar.html',
 				replace:true,
@@ -291,6 +291,20 @@
 				link: function($scope,el){
 					var $bar = el.find('.bar');
 					$scope.svc = ProgressBar;
+					$scope.state = $state.current;
+					$scope.$on('$stateChangeSuccess',function(){
+						$scope.state = $state.current;
+					});
+					var states = ['details','passangers','services','payment'];
+					$scope.back = function(){
+						var state = $state.current.name.substr(8);
+						for(var i=0;i<states.length;i++){
+							if(states[i]==state){
+								$state.go('booking.'+states[i-1]);
+								break;
+							}
+						}
+					};
 				}
 			}
 		})
@@ -445,7 +459,6 @@
 			var params = {
 				InterfaceKey:'D6B441402AD64E2906'
 			}
-			console.log('calling');
 			$soap.post(url,'Airport_Select_ALL',params).then(function(d){
 				console.log(d);
 			});

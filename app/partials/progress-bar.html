@@ -7,6 +7,9 @@
 	</div>
 	<div class="bar-container">
 		<div class="main-container">
+			<div class="back" ng-click="back()" ng-show="state.name!='booking.details'">
+				<ng-include src="'images/arrow.svg'"></ng-include>
+			</div>
 			<div class="bar" style="width:{{svc.fill*100}}%">
 				<div class="main-container">
 					<ul>
