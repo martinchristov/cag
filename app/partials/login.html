@@ -1,29 +1,68 @@
 <div class="login">
 	<div class="bg" ng-click="close()"></div>
 	<div class="sidebar">
-		<div class="close" ng-click="close()">
+		<div class="close" ng-click="close()" ng-hide="showSignup">
 			<ng-include src="'images/arrow.svg'"></ng-include>
 		</div>
-		<div class="contents">
-			<h1>- WELCOME -</h1>
-			<p>
-				To book your airport consierge,
-				Log-in or create a new account
-			</p>
-
-			<form>
-				<input type="email" placeholder="E-mail">
-				<input type="password" placeholder="Password">
-				<a href="" class="forgot">Forgot?</a>
-				
+		<div class="back" ng-click="showSignup=false" ng-show="showSignup">
+			<ng-include src="'images/x.svg'"></ng-include>
+		</div>
+		<div class="content-holder" ng-hide="showSignup">
+			<div class="contents">
+				<h1>- WELCOME -</h1>
 				<p>
-					<input type="checkbox" id="keep-login">
-					<label for="keep-login">Keep me logged-in</label>
+					To book your airport consierge,<br>
+					Log-in or create a new account
 				</p>
 
-				<input type="submit" value="LOG IN" disabled="!allowSubmit()">
-				<div class="btn">create new account</div>
-			</form>
+				<form>
+					<input type="email" placeholder="E-mail">
+					<input type="password" placeholder="Password">
+					<a href="" class="forgot">Forgot?</a>
+					
+					<p>
+						<input type="checkbox" id="keep-login">
+						<label for="keep-login">Keep me logged-in</label>
+					</p>
+
+					<input type="submit" value="LOG IN" disabled="!allowSubmit()">
+					<div class="btn" ng-click="showSignup=true">create new account</div>
+				</form>
+			</div>
+		</div>
+		<div class="content-holder signup" ng-show="showSignup">
+			<h1>- NEW ACCOUNT -</h1>
+			<p>
+				Fill the information below &amp;<br>
+				you are good to go!
+			</p>
+			<div class="contents">
+
+				<form>
+					<input type="text" placeholder="Full Name">
+					<input type="email" placeholder="E-mail" class="invalid">
+					<div class="password-holder">
+						<input type="password" placeholder="Password">
+						<div class="guide">
+							<div class="cap">password guide</div>
+							<ul>
+								<li class="met">1 Capital</li>
+								<li>1 Number</li>
+								<li>8 Characters</li>
+							</ul>
+						</div>
+					</div>
+					<input type="password" placeholder="Repeat Password">
+					<input type="text" name="phone" placeholder="Phone Number">
+					
+					<p>
+						<input type="checkbox" id="keep-login2">
+						<label for="keep-login2">Keep me logged-in</label>
+					</p>
+
+					<input type="submit" value="CREATE ACCOUNT" disabled="!allowSubmit()">
+				</form>
+			</div>
 		</div>
 	</div>
 </div>
