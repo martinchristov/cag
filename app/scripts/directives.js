@@ -25,6 +25,20 @@
 				}
 			}
 		})
+		.directive('cusrc',function(){
+			return {
+				replace:true,
+				scope:{
+					src:'='
+				},
+				template:[
+					'<ng-include ng-src="\{{src}}\"></ng-include>'
+				].join(''),
+				link: function($scope,el,attr){
+					console.log($scope.src);
+				}
+			}
+		})
 		.filter('firstLetterFilter',function(){
 			return function(items, letter){
 				if(letter==''){

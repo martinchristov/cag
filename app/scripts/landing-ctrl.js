@@ -63,6 +63,8 @@
 				});
 			});
 
+
+
 			$scope.services = [
 				{
 					title:'vip meet',
@@ -74,7 +76,7 @@
 				},
 				{
 					title:'by invitation',
-					image:'images/diamond.svg',
+					image:'images/invitation.svg',
 					content:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit tempora minima vel natus voluptas ducimus adipisci animi atque beatae laborum ex delectus dolores, deserunt, aspernatur esse eos dolorum distinctio.\
 						<br><br>\
 						Start booking to customize your experience,<br>\
@@ -82,7 +84,7 @@
 				},
 				{
 					title:'on demand',
-					image:'images/diamond.svg',
+					image:'images/demand.svg',
 					content:'Whether you are arriving, departing or connecting flights, your personal airport agent will be waiting to meet &amp; assist you at every step of your journey. From the moment you show at the gate, through "fast track" immigration &amp; exclusive lounge access to your luggage being stored in a luxury car, waiting to take you anywhere you want.\
 						<br><br>\
 						Start booking to customize your experience,<br>\
@@ -96,7 +98,6 @@
 
 			$scope.getImage = function(img){
 				return img;
-				// return $sce.trustAsResourceUrl(img);
 			};
 
 			$timeout(function(){

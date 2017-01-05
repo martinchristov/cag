@@ -74,7 +74,7 @@
 					<div class="content" ng-show="ctrl.currentTab==service.title" ng-repeat="service in services">
 						<h2>{{service.title}}</h2>
 						<div class="img">
-							<ng-include ng-src="{{service.image}}"></ng-include>
+							<ng-include src="getImage(service.image)"></ng-include>
 						</div>
 						<div class="text" ng-bind-html="service.content"></div>
 					</div>

@@ -750,6 +750,8 @@
 				padding-left: 30px;
 				text-align: left;
 				flex:1;
+				font-size: 20px;
+				font-weight: 500;
 			}
 			@media screen and (max-width: $tablet){
 				.img{
@@ -815,6 +817,7 @@
 			&.smaller{
 				font-size: 100px;
 				margin-top: -20px;
+				margin-left: 35px;
 			}
 			&.ng-hide-remove{
 				transition: all .25s ease-out;
