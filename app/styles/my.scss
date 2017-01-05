@@ -309,6 +309,65 @@
 		}
 	}
 
+	.my-profile{
+
+		input{
+			width: 100%;
+			background:transparent;
+			border:1px solid #a7a7a7;
+			line-height: 46px;
+			height: 46px;
+			color: $primary;
+			text-align: center;
+			font-size: 16px;
+		}
+		input[type=submit]{
+			background:$primary;
+			border:none;
+			color: #fff;
+			font-weight: 500;
+			text-transform: uppercase;
+			font-size: 20px;
+			line-height: 43px;
+		}
+		form{
+			width: 300px;
+			margin: 0 auto;
+			margin-top: 70px;
+			.fph-input{
+				width: 100%;
+				margin-bottom: 30px;
+				.ph{
+					text-transform: uppercase;
+					font-size: 14px;
+				}
+			}
+		}
+		.passwords{
+			width: 640px;
+			margin: 40px auto;
+			.fields{
+				display: flex;
+				justify-content: space-between;
+				// margin-bottom: 20px;
+				.fph-input{
+					width: 200px;
+				}
+			}
+			.btn{
+				width: 300px;
+				margin: 30px auto;
+				float: none;
+				text-align: center;
+				background:#585858;
+				height: 45px;
+				line-height: 44px;
+				text-transform: uppercase;
+				font-weight: 500;
+			}
+		}
+	}
+
 	.my-bookings{
 		h5{
 			font-size: 12px;
@@ -412,7 +471,7 @@
 		z-index: 10;
 		background:#2e2e2e;
 		width: 100%;
-		top: 200px;
+		top: 30px;
 		.inner-container{
     	    width: 360px;
 		    margin: 0 auto;
