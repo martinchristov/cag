@@ -166,6 +166,7 @@
 		ul{
 			border: 1px solid #a7a7a7;
 			margin-top: 20px;
+			margin-bottom: 50px;
 			li{
 				padding-left: 27px;
 				border-bottom: 1px solid #a7a7a7;
@@ -380,9 +381,11 @@
 		ul{
 			border: 1px solid $primary;
 			li{
-				justify-content: space-between;
-				display: flex;
-				padding-left: 44px;
+				.collapsed-row{
+					justify-content: space-between;
+					display: flex;
+					padding-left: 44px;
+				}
 				&:not(:last-of-type){
 					border-bottom: 1px solid $primary;
 				}
@@ -427,6 +430,7 @@
 				.status{
 					width: 180px;
 					border-left:1px solid $primary;
+					box-sizing:border-box;
 					color: $primary;
 					font-size: 12px;
 					text-align: center;
@@ -449,14 +453,107 @@
 						}
 					}
 				}
+
+				.expanded-row{
+					color: $primary;
+					padding-left: 50px;
+					padding-top: 60px;
+					padding-bottom: 15px;
+					.section{
+						float: left;
+						&:nth-of-type(1){
+							width: 280px;
+						}
+						&:nth-of-type(2){
+							width: 237px;
+						}
+						&:nth-of-type(3){
+							width: 184px;
+						}
+						&:nth-of-type(4){
+							width: 130px;
+						}
+					}
+					.cap{
+						font-size: 10px;
+						color: #868585;
+						font-weight: 500;
+						font-style: italic;
+						text-transform: uppercase;
+					}
+					.val{
+						font-size: 20px;
+						line-height: 30px;
+						margin-bottom: 10px;
+						sup{
+							font-size: 11px;
+							transform:translateY(-8px);
+						}
+					}
+					small{
+						color: #656565;
+						font-size: 12px;
+						text-transform: uppercase;
+						font-weight: 500;
+						display: inline-block;
+						display: block;
+						margin-top: -10px;
+						margin-bottom: -17px;
+					}
+					position: relative;
+					.status{
+						position: absolute;
+						right: 0;top: 0;
+						height: 57px;
+						border-bottom: 1px solid $primary;
+						border-left:0;
+						.expander{
+							top:24px
+						}
+					}
+					ul{
+						border:none;
+						li{
+							border:none;
+							font-size: 20px;
+							margin-top: 5px;
+							margin-bottom: 22px;
+							.price{
+								float: right;
+								position: absolute;
+								right: 0px;
+								width: 180px;
+								text-align: center;
+							}
+							&:last-of-type{
+								font-weight: 500;
+							}
+						}
+					}
+					&:after{
+						content:" ";
+						position: absolute;
+						width: 1px;
+						height: 100%;
+						background:$primary;
+						top: 0;right: 180px;
+					}
+				}
 			}
 			&.past{
 				border-color:#b9b9b9;
+				margin-bottom: 50px;
 				li{
 					border-color:#b9b9b9;
 					.field{
 						color: #b9b9b9;
 					}
+				}
+				li .expanded-row .status{
+					border-color:#b9b9b9;
+				}
+				li .expanded-row:after{
+					background:#b9b9b9;
 				}
 				.status{
 					border-color:#b9b9b9;

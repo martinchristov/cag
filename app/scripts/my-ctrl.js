@@ -8,6 +8,36 @@
 			}, function(newVal, oldVal){
 				$scope.currentState = $state.current;
 			});
+			$scope.bookings = {
+				past:[
+					{
+						from:'LHR',
+						to:'LAX',
+						date:'',
+						passangers:[],
+						services:[],
+						total:412
+					},
+					{
+						from:'LAX',
+						to:'LHR',
+						date:'',
+						passangers:[],
+						services:[],
+						total:217
+					}
+				],
+				upcoming:[
+					{
+						from:'LAX',
+						to:'LHR',
+						date:'',
+						passangers:[],
+						services:[],
+						total:325
+					}
+				]
+			};
 			$scope.abc='abcdefghijklmnopqrstuvwxyz'.split('');
 			$scope.passangers = [
 				{

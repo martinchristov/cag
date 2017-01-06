@@ -1,57 +1,111 @@
 <div class="my-bookings inner-view">
+	<div class="scrollview" win-height-minus="166">
 	<div class="inner-container">
 		<h5>upcoming</h5>
 
 		<ul>
-			<li>
-				<div class="fieldset">
-					<div class="field">
-						<i>from</i><br>
-						lax <ng-include src="'images/paperplane.svg'"></ng-include>
-					</div>
-					<div class="field">
-						<i>to</i><br>
-						lhr
-					</div>
-				</div>
-
-				<div class="fieldset">
-					<div class="field">
-						<i>date</i><br>
-						25 dec /&nbsp; 
-					</div>
-					<div class="field">
-						<i>local time</i><br>
-						04:15 <sup>am</sup>
-					</div>
-				</div>
-
-				<div class="fieldset">
-					<div class="field">
-						<i>passangers</i><br>
-						<small>
-							Hannah Morby<br>
-							Iliyan Oprev
-						</small>
-					</div>
-				</div>
-
-				<div class="fieldset">
-					<div class="field">
-						<i>services</i><br>
-						<small>
-							VIP meet
-						</small>
-					</div>
-				</div>
-
-				<div class="status">
-					<div class="inner">
-						confirmed
-						<div class="expander">
-							<ng-include src="'images/pointer.svg'"></ng-include>
+			<li ng-repeat="row in bookings.upcoming">
+				<div class="collapsed-row" ng-hide="row.expanded">
+					<div class="fieldset">
+						<div class="field">
+							<i>from</i><br>
+							lax <ng-include src="'images/paperplane.svg'"></ng-include>
+						</div>
+						<div class="field">
+							<i>to</i><br>
+							lhr
 						</div>
 					</div>
+
+					<div class="fieldset">
+						<div class="field">
+							<i>date</i><br>
+							25 dec /&nbsp; 
+						</div>
+						<div class="field">
+							<i>local time</i><br>
+							04:15 <sup>am</sup>
+						</div>
+					</div>
+
+					<div class="fieldset">
+						<div class="field">
+							<i>passangers</i><br>
+							<small>
+								Hannah Morby<br>
+								Iliyan Oprev
+							</small>
+						</div>
+					</div>
+
+					<div class="fieldset">
+						<div class="field">
+							<i>services</i><br>
+							<small>
+								VIP meet
+							</small>
+						</div>
+					</div>
+
+					<div class="status">
+						<div class="inner">
+							confirmed
+							<div class="expander" ng-click="row.expanded=true">
+								<ng-include src="'images/pointer.svg'"></ng-include>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="expanded-row" ng-show="row.expanded">
+					<div class="section">
+						<div class="cap">departure</div>
+						<div class="val">Los Angelis LAX</div>
+						<div class="cap">arrival</div>
+						<div class="val">London Heathrow LHR</div>
+						<div class="cap">flight number</div>
+						<div class="val">A81231</div>
+					</div>
+					<div class="section">
+						<div class="cap">date</div>
+						<div class="val">24 dec 2017</div>
+						<div class="cap">arrival time</div>
+						<div class="val">04:20<sup>pm</sup></div>
+						<div class="cap">location</div>
+						<div class="val">terminal 4</div>
+					</div>
+					<div class="section">
+						<div class="cap">passangers</div>
+						<div class="val">Hannah Morby<br><small>adult</small></div>
+						
+						<div class="val">John Snow<br><small>adult</small></div>
+						
+					</div>
+					<div class="section services">
+						<div class="cap">services</div>
+						<ul>
+							<li>
+								<div class="price">£160</div>
+								vip meet
+							</li>
+							<li>
+								<div class="price">£45</div>
+								Baggage porter
+							</li>
+							<li>
+								<div class="price">£205</div>
+								TOTAL
+							</li>
+						</ul>
+					</div>
+					<div class="status">
+						<div class="inner">
+							confirmed
+							<div class="expander" ng-click="row.expanded=false">
+								<ng-include src="'images/pointer.svg'"></ng-include>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
 				</div>
 			</li>
 		</ul>
@@ -59,108 +113,111 @@
 		<h5>past bookings</h5>
 
 		<ul class="past">
-			<li>
-				<div class="fieldset">
-					<div class="field">
-						<i>from</i><br>
-						lax <ng-include src="'images/paperplane.svg'"></ng-include>
+			<li ng-repeat="row in bookings.past">
+				<div class="collapsed-row" ng-hide="row.expanded">
+					<div class="fieldset">
+						<div class="field">
+							<i>from</i><br>
+							lax <ng-include src="'images/paperplane.svg'"></ng-include>
+						</div>
+						<div class="field">
+							<i>to</i><br>
+							lhr
+						</div>
 					</div>
-					<div class="field">
-						<i>to</i><br>
-						lhr
-					</div>
-				</div>
 
-				<div class="fieldset">
-					<div class="field">
-						<i>date</i><br>
-						25 dec /&nbsp; 
+					<div class="fieldset">
+						<div class="field">
+							<i>date</i><br>
+							25 dec /&nbsp; 
+						</div>
+						<div class="field">
+							<i>local time</i><br>
+							04:15 <sup>am</sup>
+						</div>
 					</div>
-					<div class="field">
-						<i>local time</i><br>
-						04:15 <sup>am</sup>
-					</div>
-				</div>
 
-				<div class="fieldset">
-					<div class="field">
-						<i>passangers</i><br>
-						<small>
-							Hannah Morby<br>
-							Iliyan Oprev
-						</small>
+					<div class="fieldset">
+						<div class="field">
+							<i>passangers</i><br>
+							<small>
+								Hannah Morby<br>
+								Iliyan Oprev
+							</small>
+						</div>
 					</div>
-				</div>
 
-				<div class="fieldset">
-					<div class="field">
-						<i>services</i><br>
-						<small>
-							VIP meet
-						</small>
+					<div class="fieldset">
+						<div class="field">
+							<i>services</i><br>
+							<small>
+								VIP meet
+							</small>
+						</div>
 					</div>
-				</div>
 
-				<div class="status">
-					<div class="inner">
-						confirmed
-						<div class="expander">
-							<ng-include src="'images/pointer.svg'"></ng-include>
+					<div class="status">
+						<div class="inner">
+							confirmed
+							<div class="expander" ng-click="row.expanded=true">
+								<ng-include src="'images/pointer.svg'"></ng-include>
+							</div>
 						</div>
 					</div>
 				</div>
-			</li>
-			<li>
-				<div class="fieldset">
-					<div class="field">
-						<i>from</i><br>
-						lax <ng-include src="'images/paperplane.svg'"></ng-include>
+				<div class="expanded-row" ng-show="row.expanded">
+					<div class="section">
+						<div class="cap">departure</div>
+						<div class="val">Los Angelis LAX</div>
+						<div class="cap">arrival</div>
+						<div class="val">London Heathrow LHR</div>
+						<div class="cap">flight number</div>
+						<div class="val">A81231</div>
 					</div>
-					<div class="field">
-						<i>to</i><br>
-						lhr
+					<div class="section">
+						<div class="cap">date</div>
+						<div class="val">24 dec 2017</div>
+						<div class="cap">arrival time</div>
+						<div class="val">04:20<sup>pm</sup></div>
+						<div class="cap">location</div>
+						<div class="val">terminal 4</div>
 					</div>
-				</div>
-
-				<div class="fieldset">
-					<div class="field">
-						<i>date</i><br>
-						25 dec /&nbsp; 
+					<div class="section">
+						<div class="cap">passangers</div>
+						<div class="val">Hannah Morby<br><small>adult</small></div>
+						
+						<div class="val">John Snow<br><small>adult</small></div>
+						
 					</div>
-					<div class="field">
-						<i>local time</i><br>
-						04:15 <sup>am</sup>
+					<div class="section services">
+						<div class="cap">services</div>
+						<ul>
+							<li>
+								<div class="price">£160</div>
+								vip meet
+							</li>
+							<li>
+								<div class="price">£45</div>
+								Baggage porter
+							</li>
+							<li>
+								<div class="price">£205</div>
+								TOTAL
+							</li>
+						</ul>
 					</div>
-				</div>
-
-				<div class="fieldset">
-					<div class="field">
-						<i>passangers</i><br>
-						<small>
-							Hannah Morby<br>
-							Iliyan Oprev
-						</small>
-					</div>
-				</div>
-
-				<div class="fieldset">
-					<div class="field">
-						<i>services</i><br>
-						<small>
-							VIP meet
-						</small>
-					</div>
-				</div>
-
-				<div class="status">
-					<div class="inner">
-						confirmed
-						<div class="expander">
-							<ng-include src="'images/pointer.svg'"></ng-include>
+					<div class="status">
+						<div class="inner">
+							confirmed
+							<div class="expander" ng-click="row.expanded=false">
+								<ng-include src="'images/pointer.svg'"></ng-include>
+							</div>
 						</div>
 					</div>
+					<div class="clearfix"></div>
 				</div>
 			</li>
 		</ul>
+	</div>
 	</div>
 </div>
