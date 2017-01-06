@@ -1,0 +1,20 @@
+<div class="dropdown services">
+	<div class="input" ng-click="showServices=true">
+		services
+		<ng-include src="'images/pointer.svg'"></ng-include>
+	</div>
+	<div class="overlay" ng-show="showServices">
+		<div class="cap">services</div>
+		<div class="num-input" ng-repeat="item in items">
+			<div class="plus" ng-click="plus($index,1)">+</div>
+			<div class="minus" ng-click="plus($index,-1)">-</div>
+			<div class="content">
+				<div class="num">{{item.count}}</div>
+				<b>{{item.title}}</b>
+				<!-- <small>16+</small> -->
+			</div>
+		</div>
+
+		<div class="ok" ng-click="showServices=false">ok</div>
+	</div>
+</div>

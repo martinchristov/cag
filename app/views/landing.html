@@ -123,8 +123,6 @@
 			<h1>- Quick Quote -</h1>
 			<p>Explore the services &amp; locations we cover around the world</p>
 
-			
-
 			<form>
 				<type-selector type="quote.type" types="['ARRIVAL','DEPARTURE','CONNECT']"></type-selector>
 				<div class="type-dropdown-holder">
@@ -161,13 +159,7 @@
 
 				<passangers></passangers>
 
-				<div class="dropdown services">
-					<div class="input">
-						services
-						<ng-include src="'images/pointer.svg'"></ng-include>
-					</div>
-					<!-- <div class="overlay"></div> -->
-				</div>
+				<services></services>
 
 				<div class="promo" ng-click="addPromo=true" ng-hide="addPromo">
 					+ Add a promo code
@@ -175,7 +167,39 @@
 
 				<input type="text" class="promo-input" placeholder="Promo code" ng-show="addPromo">
 
-				<input type="submit" ng-disabled="true" value="get quote">
+				<input type="submit" value="get quote" ng-click="showResult=true">
+
+				<div class="result" ng-show="showResult">
+					<div class="inner">
+						<div class="field">
+							<div class="cap">arrival</div>
+							Los Angelis LAX
+						</div>
+						<div class="field">
+							<div class="cap">date</div>
+							23 feb 2017
+						</div>
+						<div class="field">
+							<div class="cap">passangers</div>
+							1 adult<br>
+							2 children
+						</div>
+						<div class="field">
+							<div class="cap">service</div>
+							VIP meet<br>
+							Baggage porter<br>
+							Transfer
+						</div>
+						<div class="clearfix"></div>
+						<div class="total">
+							<b>total</b>
+							<div class="price">£325</div>
+						</div>
+
+						<div class="btn" ng-click="showResult=false;">new quote</div>
+						<div class="btn book" ng-click="showResult=false;login();">book now</div>
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>

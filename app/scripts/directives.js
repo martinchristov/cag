@@ -16,7 +16,6 @@
 				link: function($scope,el){
 					var prevState;
 					$scope.$on('$stateChangeSuccess', function(ev, to, toParams, from, fromParams) {
-						console.log(from);
 						prevState = from.name;
 					});
 					el.click(function(){
@@ -277,6 +276,46 @@
 					};
 					$scope.calcTotal = function(){
 						$scope.total = $scope.data.adults+$scope.data.children+$scope.data.infants;
+					};
+				}
+			}
+		})
+		.directive('services',function($timeout){
+			return {
+				templateUrl:'partials/services.html',
+				
+				replace:true,
+				link:function($scope,el){
+					$scope.data = {
+						adults: 1,
+						children: 0,
+						infants: 0
+					};
+					$scope.items = [
+						{
+							title:'VIP meet',
+							count:1
+						},
+						{
+							title:'Baggage porter',
+							count:0
+						},
+						{
+							title:'Executive transfer',
+							count:0
+						},
+						{
+							title:'United package',
+							count:0
+						}
+					];
+					// $scope.total=null;
+					$scope.plus = function(i,n){
+						$scope.items[i].count+=n;
+						if($scope.items[i].count<0){
+							$scope.items[i].count=1;
+						}
+						// $scope.calcTotal();
 					};
 				}
 			}
