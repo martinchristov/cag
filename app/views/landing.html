@@ -194,6 +194,17 @@
 						<div class="total">
 							<b>total</b>
 							<div class="price">£325</div>
+							<div class="select-currency">
+								<span>
+									change<br>
+									currency
+								</span>
+								<select name="currency" ng-class="{'hidden':hideSelector}" ng-click="hideSelector=!hideSelector">
+									<option value="GBP">GBP</option>
+									<option value="USD">USD</option>
+									<option value="TRL">TRL</option>
+								</select>
+							</div>
 						</div>
 
 						<div class="btn" ng-click="showResult=false;">new quote</div>
