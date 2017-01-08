@@ -246,12 +246,11 @@
 				templateUrl:'partials/passangers.html',
 				
 				replace:true,
+				scope:{
+					data:'='
+				},
 				link:function($scope,el){
-					$scope.data = {
-						adults: 1,
-						children: 0,
-						infants: 0
-					};
+					// $scope.data = ;
 					$scope.total=null;
 					$scope.adults = function(n){
 						$scope.data.adults+=n;
@@ -285,31 +284,12 @@
 				templateUrl:'partials/services.html',
 				
 				replace:true,
-				scope:true,
+				scope:{
+					items:'='
+				},
 				link:function($scope,el){
 					$scope.total=null;
-					$scope.items = [
-						{
-							title:'VIP meet',
-							count:0,
-							desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
-						},
-						{
-							title:'Baggage porter',
-							count:0,
-							desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
-						},
-						{
-							title:'Executive transfer',
-							count:0,
-							desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
-						},
-						{
-							title:'United package',
-							count:0,
-							desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
-						}
-					];
+					// $scope.items = ;
 					$scope.plus = function(i,n){
 						$scope.items[i].count+=n;
 						if($scope.items[i].count<0){

@@ -157,9 +157,9 @@
 
 				<div class="clearfix"></div>
 
-				<passangers></passangers>
+				<passangers data="quote.passangers"></passangers>
 
-				<services></services>
+				<services items="quote.services"></services>
 
 				<div class="promo" ng-click="addPromo=true" ng-hide="addPromo">
 					+ Add a promo code
@@ -167,7 +167,7 @@
 
 				<input type="text" class="promo-input" placeholder="Promo code" ng-show="addPromo">
 
-				<input type="submit" value="get quote" ng-click="showResult=true">
+				<input type="submit" value="get quote" ng-disabled="!allowQuoteRequest" ng-click="showResult=true">
 
 				<div class="result" ng-show="showResult">
 					<div class="inner">

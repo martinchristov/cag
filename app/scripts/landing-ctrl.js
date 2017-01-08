@@ -9,7 +9,7 @@
 
 			$timeout(function(){
 				//remove
-				$(document).scrollTo(0);
+				// $(document).scrollTo(0);
 			},300);
 
 
@@ -49,8 +49,51 @@
 
 			$scope.quote = {
 				type:'arrival',
-				date: null
+				date: null,
+				passangers:{
+					adults: 1,
+					children: 0,
+					infants: 0
+				},
+				services:[
+					{
+						title:'VIP meet',
+						count:0,
+						desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
+					},
+					{
+						title:'Baggage porter',
+						count:0,
+						desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
+					},
+					{
+						title:'Executive transfer',
+						count:0,
+						desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
+					},
+					{
+						title:'United package',
+						count:0,
+						desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
+					}
+				]
 			};
+
+			$scope.allowQuoteRequest = false;
+
+			$scope.$watch('quote',function(){
+				$scope.allowQuoteRequest = false;
+				if($scope.quote.airport!='' && $scope.quote.dateD && $scope.quote.dateM && $scope.quote.dateY ){
+					var totalSvc = 0;
+					for(var i=0;i<$scope.quote.services.length;i++){
+						totalSvc+=$scope.quote.services[i].count;
+					}
+					if(totalSvc>0){
+						$scope.allowQuoteRequest = true;
+					}
+				}
+			},true);
+
 
 			$scope.$on('hidePicker',function(){
 				$scope.showQuoteDatePicker=false;
@@ -102,20 +145,9 @@
 
 			$timeout(function(){
 				var mySwiper = new Swiper ('.swiper-container', {
-					// Optional parameters
 					direction: 'horizontal',
-					// loop: true,
-
-					// If we need pagination
-					pagination: '.swiper-pagination',
-
-					// Navigation arrows
-					// nextButton: '.swiper-button-next',
-					// prevButton: '.swiper-button-prev',
-
-					// And if we need scrollbar
-					// scrollbar: '.swiper-scrollbar',
-				})    
+					pagination: '.swiper-pagination'
+				});
 			},200);
 		});
 })();
