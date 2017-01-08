@@ -230,6 +230,39 @@
 			<ng-include src="'images/heart.svg'"></ng-include>
 		</div>
 
+		<div class="faq-overlay" ng-show="showFaqOverlay">
+			<h2>- FAQ -</h2>
+			<h4>if you don’t find the answers of your questions, please be in touch</h4>
+			<div class="x" ng-click="showFaqOverlay=false">
+				<ng-include src="'images/x.svg'"></ng-include>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="item" 
+						ng-click="toggleFaqOpen(item)" 
+						ng-class="{'opened':item.opened}"
+						ng-repeat="item in faq" 
+						ng-if="$index<9">
+						<div class="title">{{item.title}}</div>
+						<ng-include src="'images/pointer.svg'"></ng-include>
+						<div class="item-content" ng-show="item.opened">{{item.content}}</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="item" 
+						ng-click="toggleFaqOpen(item)" 
+						ng-class="{'opened':item.opened}"
+						ng-repeat="item in faq" 
+						ng-if="$index>=9">
+						<div class="title">{{item.title}}</div>
+						<ng-include src="'images/pointer.svg'"></ng-include>
+						<div class="item-content" ng-show="item.opened">{{item.content}}</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col call-us">
 				<h5>click to call us toll free</h5>
@@ -244,7 +277,7 @@
 					<li><a href="">Bahrain<i>+97 316 198 764</i></a></li>
 				</ul>
 
-				<a class="faq">
+				<a class="faq" ng-click="showFaqOverlay=true">
 					- FAQ -
 				</a>
 			</div>
@@ -282,7 +315,7 @@
 					<span>sales enquiries:</span> <a href="mailto:sales@globalairportconscierge.com">sales@globalairportconscierge.com</a><br>
 					<span>to become a partner:</span> <a href="mailto:partners@globalairportconscierge.com">partners@globalairportconscierge.com</a>
 				</div>
-				<a class="faq">
+				<a class="faq" ng-click="showFaqOverlay=true">
 					- FAQ -
 				</a>
 			</div>

@@ -149,5 +149,89 @@
 					pagination: '.swiper-pagination'
 				});
 			},200);
+
+			$scope.faq = [
+				{
+					title:'What can Global Airport Concierge do to make my journey better?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'What if I require special assistance e.g. a wheelchair?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'Can I book an electric buggy service?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'How do I book a concierge service and how much does it cost?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'What if I am having problems making a booking?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'Will I receive an e-mail confirmation of my booking?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'What happens if I forget or loose my confirmation number?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'How do I make amendments to my booking?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'What happens if I need to cancel my booking?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+
+
+				{
+					title:'What if I need to make a group booking?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'Can children be included in my booking?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'What if my destination is not listed ?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'Where will my Assist Airport agent meet me?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'Do I need to tip the Global Airport Concierge team member?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'What types of vehicles are used in the Seamless Service?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'How do I contact Global Airport Concierge?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'I can’t find the answer to my question?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				},
+				{
+					title:'What are Global Airport Concierge’s Terms & Conditions?',
+					content:'If you need to cancel your booking for any reason please contact us immediately. Provided the cancellation request is received no later than 48hrs before the proposed date of service then you will not be charged a cancellation fee and a full refund will be provided. Please note that for any cancellations with less than 48hrs notice a cancellation fee will apply. More details can be found in the terms and conditions here.'
+				}
+			];
+			$scope.toggleFaqOpen = function(item){
+				var initial = item.opened;
+				for(var i=0;i<$scope.faq.length;i++){
+					$scope.faq[i].opened=false;
+				}
+				item.opened=!initial;
+			};
 		});
 })();
