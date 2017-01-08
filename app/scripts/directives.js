@@ -294,19 +294,23 @@
 					$scope.items = [
 						{
 							title:'VIP meet',
-							count:1
+							count:1,
+							desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
 						},
 						{
 							title:'Baggage porter',
-							count:0
+							count:0,
+							desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
 						},
 						{
 							title:'Executive transfer',
-							count:0
+							count:0,
+							desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
 						},
 						{
 							title:'United package',
-							count:0
+							count:0,
+							desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
 						}
 					];
 					// $scope.total=null;
@@ -316,6 +320,17 @@
 							$scope.items[i].count=1;
 						}
 						// $scope.calcTotal();
+					};
+					$scope.readMore = function(item){
+						for(var i=0;i<$scope.items.length;i++){
+							$scope.items[i].readMore=false;
+						}
+						item.readMore=true;
+						$scope.expanded=true;
+					};
+					$scope.readLess = function(item){
+						item.readMore=false;
+						$scope.expanded=false;
 					};
 				}
 			}
