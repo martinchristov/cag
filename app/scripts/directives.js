@@ -285,16 +285,13 @@
 				templateUrl:'partials/services.html',
 				
 				replace:true,
+				scope:true,
 				link:function($scope,el){
-					$scope.data = {
-						adults: 1,
-						children: 0,
-						infants: 0
-					};
+					$scope.total=null;
 					$scope.items = [
 						{
 							title:'VIP meet',
-							count:1,
+							count:0,
 							desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
 						},
 						{
@@ -313,13 +310,12 @@
 							desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
 						}
 					];
-					// $scope.total=null;
 					$scope.plus = function(i,n){
 						$scope.items[i].count+=n;
 						if($scope.items[i].count<0){
 							$scope.items[i].count=1;
 						}
-						// $scope.calcTotal();
+						$scope.calcTotal();
 					};
 					$scope.readMore = function(item){
 						for(var i=0;i<$scope.items.length;i++){
@@ -331,6 +327,15 @@
 					$scope.readLess = function(item){
 						item.readMore=false;
 						$scope.expanded=false;
+					};
+					$scope.calcTotal = function(){
+						var total = 0;
+						for(var i=0;i<$scope.items.length;i++){
+							total+= $scope.items[i].count;
+						}
+						if(total>0){
+							$scope.total = total;
+						}
 					};
 				}
 			}
