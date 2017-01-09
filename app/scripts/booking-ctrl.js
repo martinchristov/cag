@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 	angular.module('cag')
-		.controller('BookingCtrl',function($scope,$state,ProgressBar,API){
+		.controller('BookingCtrl',function($scope,$state,ProgressBar,API,$timeout){
 			var self = this;
 			if($state.current.name=='booking'){
 				$state.go('booking.details');
@@ -14,10 +14,22 @@
 				mm:'',
 				yy:'',
 				terminal:'',
-				time:''
+				timeH:'00',
+				timeM:'00',
+				timeT:'AM',
+				date: new Date()
 			};
 
-
+			$scope.$on('hidePicker',function(){
+				self.showDatePicker=false;
+				
+				$timeout(function(){
+					$('[date-picker]').removeClass('hidden');
+					$scope.details.dd = $scope.details.date.format('D');
+					$scope.details.mm = $scope.details.date.format('M');
+					$scope.details.yy = $scope.details.date.format('YY');
+				});
+			});
 
 			$scope.enableDetailsSubmit = false;
 			var unwatchDetails = $scope.$watch('details',function(){

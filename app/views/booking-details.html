@@ -22,6 +22,20 @@
 						<div class="col">
 							<fph-input type="text" placeholder="YY" model="details.yy"></fph-input>
 						</div>
+						<div class="col">
+							<div class="cal" ng-click="ctrl.showDatePicker=true">
+								<ng-include src="'images/calendar.svg'"></ng-include><br>
+								<span>select</span>
+							</div>
+						</div>
+						<div class="datepicker-holder" ng-show="ctrl.showDatePicker">
+							<div 
+							date-picker="details.date"
+							max-view="date"
+							min-view="date"
+							auto-close="true"
+							date-change="changeDate"></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -30,7 +44,51 @@
 					<fph-input type="text" placeholder="Terminal" model="details.terminal"></fph-input>
 				</div>
 				<div class="col">
-					<fph-input type="text" placeholder="Time" model="details.time"></fph-input>
+					<div class="time-picker" ng-class="{'on':timePickerOn}" ng-click="timePickerOn=true">
+						<div class="ph">Time</div>
+						<div ng-show="timePickerOn">
+							<div class="selector">
+								{{details.timeH}} h
+								<select ng-model="details.timeH">
+									<option value="01">01</option>
+									<option value="02">02</option>
+									<option value="03">03</option>
+									<option value="04">04</option>
+									<option value="05">05</option>
+									<option value="06">06</option>
+									<option value="07">07</option>
+									<option value="08">08</option>
+									<option value="09">09</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+								</select>
+							</div>
+							<i>:</i>
+							<div class="selector">
+								{{details.timeM}} m
+								<select ng-model="details.timeM">
+									<option value="00">00</option>
+									<option value="05">05</option>
+									<option value="10">10</option>
+									<option value="15">15</option>
+									<option value="20">20</option>
+									<option value="25">25</option>
+									<option value="30">30</option>
+									<option value="35">35</option>
+									<option value="40">40</option>
+									<option value="45">45</option>
+									<option value="50">50</option>
+									<option value="55">55</option>
+								</select>
+							</div>
+							<div class="ampm">
+								<div ng-click="details.timeT='AM'" ng-class="{'current':details.timeT=='AM'}">AM</div>
+								<div ng-click="details.timeT='PM'" ng-class="{'current':details.timeT=='PM'}">PM</div>
+							</div>
+						</div>
+					</div>
+					<!-- <fph-input type="text" placeholder="Time" model="details.time"></fph-input> -->
 				</div>
 			</div>
 

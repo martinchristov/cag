@@ -439,7 +439,7 @@
 				template:[
 				'<div class="passanger-dropdown">',
 					'<div ng-click="showDropdown=true">',
-						'<span ng-hide="selected">add passanger {{index}} info</span>',
+						'<span ng-hide="selected"><span ng-if="index>1">add passanger {{index}} info</span><span ng-if="index==1">add lead passanger</span></span>',
 						'<span ng-show="selected">{{selected.name}}</span>',
 						'<ng-include src="\'images/pointer.svg\'"></ng-include>',
 					'</div>',
@@ -541,9 +541,9 @@
 			var params = {
 				InterfaceKey:'D6B441402AD64E2906'
 			}
-			$soap.post(url,'Airport_Select_ALL',params).then(function(d){
-				console.log(d);
-			});
+			// $soap.post(url,'Airport_Select_ALL',params).then(function(d){
+			// 	console.log(d);
+			// });
 		})
 		.directive('backTop',function(UISvc, $timeout){
 			return {
