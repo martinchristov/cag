@@ -20,6 +20,14 @@
 
 		</div>
 
+		<div class="promo-code" ng-hide="promoCodeApplied">
+			<div class="add" ng-hide="expandPromoCode" ng-click="expandPromoCode=true">+ add promo code</div>
+			<form ng-show="expandPromoCode">
+				<input type="text" placeholder="enter promo code" ng-model="promoCode">
+				<input type="submit" value="apply" ng-disabled="!promoCode" ng-click="promoCodeApplied=true">
+			</form>
+		</div>
+
 		<input type="submit" value="next" ng-click="nextServices()">
 	</div>
 </div>

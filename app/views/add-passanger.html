@@ -38,7 +38,17 @@
 
 		<fph-input type="text" placeholder="email" model="passanger.email"></fph-input>
 
-		<textarea placeholder="notes / requests"></textarea>
+		<fph-input type="text" placeholder="PNR (if availabe)" model="passanger.pnr"></fph-input>
+
+		<fph-input type="text" placeholder="notes / requests" model="passanger.notes"></fph-input>
+
+		<div class="wheelchair" ng-click="passanger.needsWheelchair=!passanger.needsWheelchair">
+			<div class="box" ng-class="{'checked':passanger.needsWheelchair}"></div>
+			<ng-include src="'images/wheelchair.svg'"></ng-include>
+			Needs wheelchair
+		</div>
+
+		<!-- <textarea placeholder="notes / requests"></textarea> -->
 
 		<input type="submit" value="save" go-back>
 
