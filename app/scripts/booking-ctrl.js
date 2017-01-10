@@ -171,7 +171,19 @@
 			$scope.paymentComplete = function(){
 				$scope.paymentDone = true;
 				$scope.$broadcast('expandProgressHeader');
-			}
+			};
+
+			self.notificationEmails = [
+				'hannahmorby@netflix.com'
+			];
+			self.addEmail = function(){
+				self.notificationEmails.push(self.newEmail);
+				self.newEmail='';
+				self.showAddEmail=false;
+			};
+			self.delEmail = function(index){
+				self.notificationEmails.splice(index,1);
+			};
 
 		});
 })();

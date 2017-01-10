@@ -37,9 +37,20 @@
 	<div class="payment-done-holder payment-holder" ng-show="paymentDone">
 		<ng-include src="'images/circle-v.svg'"></ng-include>
 		<div class="thankyou">
-			Thank you. We'll email all the details to<br>
-			<i>hannahmorby@netflix.com</i> <a>change</a> <br>
-			48h before the flight.
+			Thank you. We'll email all the details<br>48h before the flight to:<br>
+			<div ng-repeat="email in ctrl.notificationEmails">
+				<div class="email-item">
+					<i>{{email}}</i>
+					<div class="del" ng-if="$index>0" ng-click="ctrl.delEmail($index)">
+						<ng-include src="'images/x.svg'"></ng-include>
+					</div>
+				</div>
+			</div>
+			<a ng-click="ctrl.showAddEmail=true" ng-hide="ctrl.showAddEmail">add another e-mail</a>
+			<form ng-show="ctrl.showAddEmail" ng-submit="ctrl.addEmail()">
+				<input type="text" ng-model="ctrl.newEmail">
+				<input type="submit" value="Add">
+			</form>
 		</div>
 
 		<div class="btn highlight">my bookings</div>

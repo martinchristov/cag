@@ -103,7 +103,14 @@
 						<li>Vip meet <div class="price">£160</div></li>
 						<li>Baggage Porter <div class="price">£45</div></li>
 					</ul>
-					<a>+ apply promo code</a>
+					<form ng-show="showPromoCode">
+						<input type="text" placeholder="enter promo code" ng-model="promoCode">
+						<input type="submit" value="apply" ng-disabled="!promoCode" ng-click="promoCodeApplied=true;showPromoCode=false">
+					</form>
+					<div class="promo-applied" ng-show="promoCodeApplied">
+						promo code discount <b>-20%</b>
+					</div>
+					<a ng-click="showPromoCode=true" ng-hide="showPromoCode||promoCodeApplied">+ apply promo code</a>
 					<div class="total">total <div class="price">£320</div></div>
 				</div>
 			</div>
