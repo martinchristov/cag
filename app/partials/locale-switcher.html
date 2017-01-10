@@ -1,0 +1,30 @@
+<div id="locale-switcher" ng-class="{'opened':opened}">
+	<div class="main-container">
+		<div class="holder">
+			<div class="cap" ng-click="opened=true" ng-hide="opened">currency &amp; languages</div>
+			<div class="contents" ng-show="opened">
+				<div class="x" ng-click="opened=false">
+					<ng-include src="'images/x.svg'"></ng-include>
+				</div>
+				<div class="dropdn cur">
+					{{currency}}
+					<ng-include src="'images/pointer.svg'"></ng-include>
+					<select ng-model="currency">
+						<option value="EUR">EUR</option>
+						<option value="USD">USD</option>
+						<option value="JPY">JPY</option>
+						<option value="RUB">RUB</option>
+						<option value="IRR">IRR</option>
+					</select>
+				</div>
+				<div class="dropdn lng">
+					{{langDict[language]}}
+					<ng-include src="'images/pointer.svg'"></ng-include>
+					<select ng-model="language">
+						<option value="{{lang.value}}" ng-repeat="lang in languages">{{lang.name}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
