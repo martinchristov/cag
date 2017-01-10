@@ -1021,8 +1021,31 @@
 					line-height: 42px;
 					cursor: pointer;
 					transition: all .2s ease-out;
+					position: relative;
+					.edit{
+						position: absolute;
+						right: 10px;
+						top: 0;
+						color: #fff;
+						font-size: 15px;
+						font-style: italic;
+						opacity: 0;
+						transition: all .2s ease-out;
+						svg{
+							position: absolute;
+							right: 0;
+							top: 0;
+							transform:scale(1) translateX(-27px) translateY(7px);
+							path{
+								fill:#fff;
+							}
+						}
+					}
 					&:hover{
 						background: #1f6668;
+						.edit{
+							opacity: 1;
+						}
 					}
 				}
 			}

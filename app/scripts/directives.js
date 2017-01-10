@@ -446,7 +446,12 @@
 					'<div class="dropdown" ng-show="showDropdown">',
 						'<ul>',
 							'<li ng-click="add()">+ new passanger</li>',
-							'<li ng-click="select(contact)" ng-repeat="contact in existing">{{contact.name}}</li>',
+							'<li ng-repeat="contact in existing">',
+							'<div ng-click="select(contact)">',
+							'{{contact.name}}',
+							'</div>',
+							'<div class="edit" ui-sref=".edit({id:contact.id})"><ng-include src="\'images/edit.svg\'"></ng-include>edit</div>',
+							'</li>',
 						'</ul>',
 					'</div>',
 				'</div>'

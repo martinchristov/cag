@@ -27,6 +27,10 @@
 					url:'/add',
 					templateUrl: 'views/add-passanger.html'
 				})
+				.state('booking.passangers.edit',{
+					url:'/edit/:id',
+					templateUrl: 'views/add-passanger.html'
+				})
 				.state('booking.services',{
 					url:'/services',
 					templateUrl: 'views/booking-services.html'
