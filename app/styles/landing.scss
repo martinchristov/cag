@@ -1824,6 +1824,7 @@
 				}
 			}
 		}
+
 		.row{
 			display: flex;
 			.col{
@@ -2084,6 +2085,157 @@
 		}
 	}
 
+	.advertising-overlay{
+		position: fixed;
+		width: 100%;
+		
+		z-index: 10;
+		top: 0;
+		overflow-y: scroll;
+		height: 100%;
+		.closer{
+			position: absolute;
+			z-index: 1;
+			width: 100%;height: 100%;
+		}
+		.topad{
+			width: 100%;
+		}
+		.holder{
+			background:#fff;
+			color: #000;
+			box-shadow: 0 3px 4px rgba(0,0,0,0.4);
+		}
+		h3{
+			font-size: 30px;
+			font-weight: 500;
+			margin-bottom: 40px;
+			text-transform: uppercase;
+			margin-top: -20px;
+		}
+		.contents{
+			padding: 66px;
+			font-size: 15px;
+			font-weight: 500;
+		}
+		.main-container{
+			position: relative;
+			z-index: 11;
+		}
+		.intouch{
+			margin-top: 50px;
+			color: $primary;
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 22px;
+			a{
+				color: $primary;
+			}
+		}
+		.x{
+			position: absolute;
+			right: 30px;top: 90px;
+			cursor: pointer;
+			svg{
+				transform:scale(1.2);
+				path{
+					fill:#fff;
+				}
+			}
+		}
+		&.ng-hide-remove{
+			transition: all .27s ease-out;
+			transform:translateY(-100px);
+			opacity: 0;
+		}
+		&.ng-hide-remove-active{
+			opacity: 1;
+			transform:translateY(0);
+		}
+		&.ng-hide-add{
+			transform:translateY(0);
+			opacity: 1;
+			transition: all .2s ease-out;
+		}
+		&.ng-hide-add-active{
+			transform:translateY(-100px);
+			opacity: 0;
+			
+		}
+	}
+
+
+	.terms-overlay{
+		position: fixed;
+		width: 100%;
+		
+		z-index: 10;
+		top: 0;
+		overflow-y: scroll;
+		height: 100%;
+		.closer{
+			position: absolute;
+			z-index: 1;
+			width: 100%;height: 100%;
+		}
+		.holder{
+			background:$primary;
+			color: #fff;
+			padding: 20px 40px;
+			margin: 0 30px;
+			box-shadow: 0 3px 4px rgba(0,0,0,0.4);
+		}
+		h2{
+			font-size: 40px;
+			font-weight: 500;
+			margin-top: 75px;
+			margin-bottom: 10px;
+		}
+		h4{
+			font-size: 20px;
+			font-weight: 500;
+			// max-width: 430px;
+			margin: 0 auto;
+			color: #fff;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+		.main-container{
+			position: relative;
+			z-index: 11;
+		}
+		.x{
+			position: absolute;
+			right: 70px;top: 110px;
+			cursor: pointer;
+			svg{
+				transform:scale(1.2);
+				path{
+					fill:#fff;
+				}
+			}
+		}
+		&.ng-hide-remove{
+			transition: all .27s ease-out;
+			transform:translateY(-100px);
+			opacity: 0;
+		}
+		&.ng-hide-remove-active{
+			opacity: 1;
+			transform:translateY(0);
+		}
+		&.ng-hide-add{
+			transform:translateY(0);
+			opacity: 1;
+			transition: all .2s ease-out;
+		}
+		&.ng-hide-add-active{
+			transform:translateY(-100px);
+			opacity: 0;
+			
+		}
+	}
+
 	#about{
 		box-shadow: 0 -5px 24px rgba(0,0,0,0.2);
 		height: 830px;
@@ -2119,10 +2271,20 @@
 				font-weight: 500;
 				margin-bottom: 10px;
 			}
+			.new{
+				margin-right: 30px;
+				// margin-top: 30px;
+				img{
+					height: 80px;
+				}
+			}
 			.mastercard{
-				margin-left: 35px;
+				// margin-left: 30px;
 				display: inline-block;
-				transform:translateY(13px);
+				img{
+					height: 80px;
+				}
+				transform:translateY(0px);
 			}
 		}
 		@media screen and (max-width: 767px){

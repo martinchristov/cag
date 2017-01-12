@@ -84,7 +84,13 @@
 					<div class="tab-label" ng-show="ctrl.currentTab=='vip meet'">vip meet</div>
 					<div class="tab-label smaller" ng-show="ctrl.currentTab=='by invitation'">by invitation</div>
 					<div class="tab-label smaller" ng-show="ctrl.currentTab=='on demand'">on demand</div>
-					<div class="book-now" ng-click="login()">book now</div>
+					<div class="book-now" 
+						ng-click="login()" 
+						ng-show="ctrl.currentTab=='vip meet' || ctrl.currentTab=='on demand'"
+					>book now</div>
+					<a class="book-now link" ng-show="ctrl.currentTab=='by invitation'" href="#support">
+						enquire now
+					</a>
 				</div>
 			</div>
 			
@@ -340,15 +346,75 @@
 				<p>From the airplane doors to the executive chauffier, our network covers over 460 airports, 365 days of the year, to make sure you reach to your next destination effortlessly &amp; seamlessly.</p>
 
 				<b>our partners</b>
-				<a href="http://goo" class="united">
+				<a target="_blank" href="http://united.com" class="united">
 					<img src="images/united.jpg" alt="">
 				</a>
-				<a href="http://goo" class="mastercard">
-					<img src="images/mastercard.jpg" alt="">
+				<div class="clearfix" style="height:20px"></div>
+				<a class="new" target="_blank" href="http://globalblue.com">
+					<img src="images/globalblue.png" alt="">
+				</a>
+				<a class="new" target="_blank" href="http://concur.com">
+					<img src="images/concur.png" alt="">
+				</a>
+				<a target="_blank" href="http://mastercard.com" class="mastercard">
+					<img src="images/mastercard.png" alt="">
 				</a>
 			</div>
 		</div>
 		
+	</div>
+
+
+	<div class="advertising-overlay" ng-show="showAdvertising">
+		<div class="closer" ng-click="showAdvertising=false"></div>
+		<div class="main-container">
+			<div class="x" ng-click="showAdvertising=false">
+				<ng-include src="'images/x.svg'"></ng-include>
+			</div>
+			<div class="holder">
+				<img class="topad" src="images/offer.jpg" alt="">
+				<div class="contents">
+					<h3>There is no better way to reach the top 1% travelers</h3>
+					<p>
+						Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, bibendum eu pulvinar vel, sodales vitae dui. Pellentesque sed sapien lorem, at lacinia urna. In hac habitasse platea dictumst. Vivamus vel justo in leo laoreet ullamcorper non vitae lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ullamcorper rutrum. 
+		Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, bibendum eu pulvinar vel, sodales vitae dui. Pellentesque sed sapien lorem, at lacinia urna. In hac habitasse platea dictumst. Vivamus vel justo in leo laoreet ullamcorper non vitae lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ullamcorper rutrum. 
+					</p>
+
+					<div class="intouch">
+						Be in touch at:<br>
+						<a href="mailto:partners@globalairportconcierge.com">partners@globalairportconcierge.com</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="terms-overlay" ng-show="showTerms">
+		<div class="closer" ng-click="showTerms=false"></div>
+		<div class="main-container">
+			<div class="x" ng-click="showTerms=false">
+				<ng-include src="'images/x.svg'"></ng-include>
+			</div>
+			<div class="holder">
+				<h2>Terms &amp; Conditions</h2>
+				<ng-include src="'partials/terms.html'"></ng-include>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="terms-overlay" ng-show="showPrivacy">
+		<div class="closer" ng-click="showPrivacy=false"></div>
+		<div class="main-container">
+			<div class="x" ng-click="showPrivacy=false">
+				<ng-include src="'images/x.svg'"></ng-include>
+			</div>
+			<div class="holder">
+				<h2>Privacy Policy</h2>
+				<ng-include src="'partials/privacy.html'"></ng-include>
+			</div>
+		</div>
 	</div>
 
 	<footer>
@@ -365,9 +431,9 @@
 					<small>go to top</small>
 				</div>
 				<div class="links">
-					<a href="">advertising</a>
-					<a href="">terms &amp; conditions</a>
-					<a href="">privacy policy</a>
+					<a ng-click="showAdvertising=true">advertising</a>
+					<a ng-click="showTerms=true">terms &amp; conditions</a>
+					<a ng-click="showPrivacy=true">privacy policy</a>
 				</div>
 			</div>
 

@@ -362,25 +362,25 @@
 
 					UISvc.scroll(function(top){
 						if(!scrolled){
-							if(top>cover.height()-20){
+							if(top>cover.height()/2-140){
 								scrolled=true;
 								el.addClass('scrolled');
 							}
 						}
 						else {
-							if(top<cover.height()){
+							if(top<cover.height()/2-140){
 								scrolled=false;
 								el.removeClass('scrolled');
 							}
 						}
 					});
 
-					el.find('a.link').each(function(){
+					$('a.link').each(function(){
 						$(this).click(function(e){
 							e.preventDefault();
 							$.scrollTo($($(this).attr('href')),500);
 						})
-					})
+					});
 				}
 			}
 		});
