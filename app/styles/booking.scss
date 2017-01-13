@@ -1030,6 +1030,49 @@
 			margin-top: 30px;
 			margin-bottom: 70px;
 		}
+		.passenger-item-holder{
+			position: relative;
+			.passenger-dropdown{
+				margin-right: 100px;
+			}
+			.class-dropdown{
+				width: 90px;
+				position: absolute;
+				right: 0;top: 0;
+				border:1px solid #666565;
+				box-sizing:border-box;
+				height: 45px;
+				text-transform: uppercase;
+				font-style: italic;
+				color: #6e6d6d;
+				line-height: 45px;
+				text-align: left;
+				padding-left: 7px;
+				svg{
+					position: absolute;
+					right: 10px;
+					top: 20px;
+					transform: scale(1.6);
+					path{
+						fill:$primary;
+					}
+				}
+				small{
+					// text-transform: none;
+					font-size: 10px;
+					color: $primary;
+					display: inline-block;
+					transform: translateY(-2px);
+				}
+				select{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;left: 0;
+					opacity: 0;
+				}
+			}
+		}
 		.passenger-dropdown{
 			height: 45px;
 			border:1px solid #666565;
@@ -1065,44 +1108,44 @@
 				color: #fff;
 				z-index: 11;
 				
-				li{
-					font-weight: 300;
+				.item-holder{
 					&:first-of-type{
+						.item{
 						font-style: normal;
 						border-bottom: 1px solid white;
 						height: 70px;
 						line-height: 70px;
 						font-size: 20px;
 						text-transform: uppercase;
+
+						}
 					}
+					font-weight: 300;
 					text-transform: none;
-					line-height: 42px;
-					cursor: pointer;
-					transition: all .2s ease-out;
 					position: relative;
+					.item{
+						line-height: 42px;
+						cursor: pointer;
+						transition: all .2s ease-out;
+						&:hover{
+							background: #1f6668;
+							.edit{
+								opacity: 1;
+							}
+						}
+					}
 					.edit{
 						position: absolute;
 						right: 10px;
 						top: 0;
 						color: #fff;
-						font-size: 15px;
+						font-size: 10px;
 						font-style: italic;
-						opacity: 0;
+						// opacity: 0;
 						transition: all .2s ease-out;
-						svg{
-							position: absolute;
-							right: 0;
-							top: 0;
-							transform:scale(1) translateX(-27px) translateY(7px);
-							path{
-								fill:#fff;
-							}
-						}
-					}
-					&:hover{
-						background: #1f6668;
-						.edit{
-							opacity: 1;
+						text-transform: uppercase;
+						&:hover{
+							text-decoration: underline;
 						}
 					}
 				}

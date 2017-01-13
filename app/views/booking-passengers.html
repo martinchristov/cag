@@ -6,7 +6,19 @@
 		<counter model="ctrl.passengerSlots" event="changeSlots"></counter>
 		
 		<div class="passenger-holder">
-			<passenger-dropdown index="{{$index+1}}" ng-repeat="pass in passengers track by $index"></passenger-dropdown>
+			<div class="passenger-item-holder" ng-repeat="passenger in passengers track by $index">
+				<passenger-dropdown index="{{$index+1}}"></passenger-dropdown>
+				<div class="class-dropdown">
+					<span ng-hide="passenger.class">class</span>
+					<small ng-show="passenger.class">{{passenger.class}}</small>
+					<ng-include src="'images/pointer.svg'"></ng-include>
+					<select ng-model="passenger.class">
+						<option value="Economy">Economy</option>
+						<option value="business">business</option>
+						<option value="first class">first class</option>
+					</select>
+				</div>
+			</div>
 		</div>
 
 		<input type="submit" value="select services" ui-sref="booking.services">
