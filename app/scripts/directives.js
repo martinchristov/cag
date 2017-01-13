@@ -331,9 +331,11 @@
 			var params = {
 				InterfaceKey:'D6B441402AD64E2906'
 			}
-			// $soap.post(url,'Airport_Select_ALL',params).then(function(d){
-			// 	console.log(d);
-			// });
+			console.log('requesting');
+			$soap.post(url,'Airport_Select_ALL',params).then(function(d){
+				console.log('should be done');
+				console.log(d);
+			});
 		})
 		.directive('backTop',function(UISvc, $timeout){
 			return {

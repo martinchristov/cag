@@ -42,7 +42,6 @@
 
 				$scope.$watch('type',function(val,oval){
 					if(!privateChange){
-						console.log(val,oval,'asdas');
 						$scope.switch($scope.type);
 					}
 					else {
@@ -52,7 +51,7 @@
 
 				$timeout(function(){
 					$scope.switch($scope.types[0]);
-				});
+				},100);
 			}
 		}
 	});
