@@ -5,9 +5,14 @@
 		<form>
 			<type-selector type="details.type" types="['departure','arrival','connect']"></type-selector>
 			
-			<fph-input type="text" placeholder="Airport" model="details.airport"></fph-input>
-			<fph-input type="text" placeholder="Destination" model="details.destination" ng-if="details.type=='connect'"></fph-input>
+			<div class="airport-holder">
+				<fph-input type="text" placeholder="Airport" model="details.airport"></fph-input>
+				<fph-input type="text" placeholder="PNR" model="details.PNR"></fph-input>
+ 			</div>
+
 			<div class="clearfix"></div>
+
+			<h4>- Arriving flight -</h4>
 			<div class="row">
 				<div class="col">
 					<fph-input type="text" placeholder="Flight number" model="details.flightCode"></fph-input>
@@ -90,6 +95,94 @@
 						</div>
 					</div>
 					<!-- <fph-input type="text" placeholder="Time" model="details.time"></fph-input> -->
+				</div>
+			</div>
+
+			<div ng-if="details.type=='connect'">
+				<h4>- Connecting flight -</h4>
+				<div class="row">
+					<div class="col">
+						<fph-input type="text" placeholder="Flight number" model="flight2details.flightCode"></fph-input>
+					</div>
+					<div class="col">
+						<div class="row">
+							<div class="col">
+								<fph-input type="text" placeholder="DD" model="flight2details.dd"></fph-input>
+							</div>
+							<div class="col">
+								<fph-input type="text" placeholder="MM" model="flight2details.mm"></fph-input>
+							</div>
+							<div class="col">
+								<fph-input type="text" placeholder="YY" model="flight2details.yy"></fph-input>
+							</div>
+							<div class="col">
+								<div class="cal" ng-click="ctrl.showDatePicker=true">
+									<ng-include src="'images/calendar.svg'"></ng-include><br>
+									<span>select</span>
+								</div>
+							</div>
+							<div class="datepicker-holder" ng-show="ctrl.showDatePicker">
+								<div 
+								date-picker="flight2details.date"
+								max-view="date"
+								min-view="date"
+								auto-close="true"
+								date-change="changeDate"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<fph-input type="text" placeholder="Terminal" model="flight2details.terminal"></fph-input>
+					</div>
+					<div class="col">
+						<div class="time-picker" ng-class="{'on':timePickerOn}" ng-click="timePickerOn=true">
+							<div class="ph">Time</div>
+							<div ng-show="timePickerOn">
+								<div class="selector">
+									{{flight2details.timeH}} h
+									<select ng-model="flight2details.timeH">
+										<option value="01">01</option>
+										<option value="02">02</option>
+										<option value="03">03</option>
+										<option value="04">04</option>
+										<option value="05">05</option>
+										<option value="06">06</option>
+										<option value="07">07</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+									</select>
+								</div>
+								<i>:</i>
+								<div class="selector">
+									{{flight2details.timeM}} m
+									<select ng-model="flight2details.timeM">
+										<option value="00">00</option>
+										<option value="05">05</option>
+										<option value="10">10</option>
+										<option value="15">15</option>
+										<option value="20">20</option>
+										<option value="25">25</option>
+										<option value="30">30</option>
+										<option value="35">35</option>
+										<option value="40">40</option>
+										<option value="45">45</option>
+										<option value="50">50</option>
+										<option value="55">55</option>
+									</select>
+								</div>
+								<div class="ampm">
+									<div ng-click="flight2details.timeT='AM'" ng-class="{'current':flight2details.timeT=='AM'}">AM</div>
+									<div ng-click="flight2details.timeT='PM'" ng-class="{'current':flight2details.timeT=='PM'}">PM</div>
+								</div>
+							</div>
+						</div>
+						<!-- <fph-input type="text" placeholder="Time" model="details.time"></fph-input> -->
+					</div>
 				</div>
 			</div>
 
