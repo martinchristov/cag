@@ -1,8 +1,11 @@
 <div id="landing">
 	<div id="bar" bar>
 		<div class="main-container">
-			<div class="gac">
+			<!-- <div class="gac">
 				<ng-include src="'images/gac.svg'"></ng-include>
+			</div> -->
+			<div class="logo">
+				<img src="images/united.png" />
 			</div>
 			<div class="menu">
 				<ul>
@@ -74,7 +77,7 @@
 					<div class="content" ng-show="ctrl.currentTab==service.title" ng-repeat="service in services">
 						<h2>{{service.title}}</h2>
 						<div class="img">
-							<ng-include src="getImage(service.image)"></ng-include>
+							<img src="images/slide1.jpg">
 						</div>
 						<div class="text" ng-bind-html="service.content"></div>
 					</div>
@@ -348,22 +351,20 @@
 			<h1>- ABOUT -</h1>
 			<h3>the most advanced airport<br>concierge service in the world</h3>
 			<div class="content">
-				<p>From the airplane doors to the executive chauffier, our network covers over 460 airports, 365 days of the year, to make sure you reach to your next destination effortlessly &amp; seamlessly.</p>
+				<p>
+					Our goal is to eliminate any complications from your <br>
+travel journey and make your time at the airport as <br>
+seamless as possible – saving your time and energy. <br>
+United Signature Service, currently available <br>
+at Chicago O’Hare, New York/Newark, San <br>
+Francisco, Houston and Los Angeles, <br>
+provides a wide range of luxury concierge<br>
+services that can help reduce <br>
+the stress and hassle <br>
+of air travel. 
 
-				<b>our partners</b>
-				<a target="_blank" href="http://united.com" class="united">
-					<img src="images/united.jpg" alt="">
-				</a>
-				<div class="clearfix" style="height:20px"></div>
-				<a class="new" target="_blank" href="http://globalblue.com">
-					<img src="images/globalblue.png" alt="">
-				</a>
-				<a class="new" target="_blank" href="http://concur.com">
-					<img src="images/concur.png" alt="">
-				</a>
-				<a target="_blank" href="http://mastercard.com" class="mastercard">
-					<img src="images/mastercard.png" alt="">
-				</a>
+
+				</p>
 			</div>
 		</div>
 		
