@@ -60,13 +60,17 @@
 					url:'/add',
 					templateUrl: 'views/add-passenger.html'
 				})
-				.state('my.invoices',{
-					url:'/invoices',
-					templateUrl: 'views/my-invoices.html'
+				.state('my.receipts',{
+					url:'/receipts',
+					templateUrl: 'views/my-receipts.html'
 				})
 				.state('my.profile',{
 					url:'/profile',
 					templateUrl: 'views/my-profile.html'
+				})
+				.state('my.support',{
+					url:'/support',
+					templateUrl: 'views/my-support.html'
 				})
 				/*
 				/booking/detials

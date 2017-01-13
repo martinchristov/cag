@@ -15,9 +15,9 @@
 			<ul>
 				<li ui-sref="my.bookings">bookings</li>
 				<li ui-sref="my.passengers">passengers</li>
-				<li ui-sref="my.invoices">invoices</li>
+				<li ui-sref="my.receipts">receipts</li>
 				<li ui-sref="my.profile">profile</li>
-				<li>support</li>
+				<li ui-sref="my.support">support</li>
 				<li><small>log-out</small></li>
 			</ul>
 		</div>
@@ -33,8 +33,9 @@
 		<div class="inner-container">
 			<div class="tab" ui-sref="my.bookings" ng-class="{'current':currentState.name=='my.bookings'}">bookings</div>
 			<div class="tab" ui-sref="my.passengers" ng-class="{'current':currentState.name=='my.passengers'}">passengers</div>
-			<div class="tab" ui-sref="my.invoices" ng-class="{'current':currentState.name=='my.invoices'}">invoices</div>
+			<div class="tab" ui-sref="my.receipts" ng-class="{'current':currentState.name=='my.receipts'}">receipts</div>
 			<div class="tab" ui-sref="my.profile" ng-class="{'current':currentState.name=='my.profile'}">profile</div>
+			<div class="tab" ui-sref="my.support" ng-class="{'current':currentState.name=='my.support'}">support</div>
 		</div>
 		<div class="mobile-dropdown">
 			{{currentState.name.substr(3)}}
@@ -42,8 +43,9 @@
 			<select ng-model="currentState.name" ng-change="changeMobileTab()">
 				<option value="my.bookings">bookings</option>
 				<option value="my.passengers">passengers</option>
-				<option value="my.invoices">invoices</option>
+				<option value="my.receipts">receipts</option>
 				<option value="my.profile">profile</option>
+				<option value="my.support">support</option>
 			</select>
 		</div>
 	</div>

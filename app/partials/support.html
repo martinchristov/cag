@@ -1,0 +1,60 @@
+<div class="col call-us">
+				<h5>click to call us toll free</h5>
+
+				<ul>
+					<li><a href="">UK<i>+44 8000 124 007</i></a></li>
+					<li><a href="">USA<i>+1 866 662 4952</i></a></li>
+					<li><a href="">Australia<i>+61 280 155 663</i></a></li>
+					<li><a href="">Hong Kong<i>+85 258 082 967</i></a></li>
+					<li><a href="">Malaysia<i>+60 018 008 140 66</i></a></li>
+					<li><a href="">Singapore<i>+65 800 120 4846</i></a></li>
+					<li><a href="">Bahrain<i>+97 316 198 764</i></a></li>
+				</ul>
+
+				<a class="faq" ng-click="showFaqOverlay=true">
+					- FAQ -
+				</a>
+			</div>
+			<div class="col contact-us">
+				<h5>tell us what you need &amp;<br>we will get back to you asap</h5>
+				<div class="thankyou" ng-show="sent">
+					<div>
+						thank you! we will get back to you asap
+					</div>
+				</div>
+				<form ng-submit="sent=true" ng-hide="sent">
+					<div class="row">
+						<div class="col">
+							<fph-input type="text" placeholder="Name" model="contact.name"></fph-input>
+						</div>
+						<div class="col">
+							<dropdown 
+								placeholder="enquiry type"
+								display="title"
+								key="title"
+								model="contact.type"
+								options="[{title:'something 1'},{title:'another thing'}]"
+							></dropdown>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<fph-input type="text" placeholder="Email" model="contact.email"></fph-input>
+						</div>
+						<div class="col">
+							<fph-input type="text" placeholder="Subject" model="contact.subject"></fph-input>
+						</div>
+					</div>
+					<textarea placeholder="Your message"></textarea>
+					<input type="submit" value=SEND>
+				</form>
+				<div class="also">
+					<h5>- you can also email us on -</h5>
+					<span>service enquiries:</span> <a href="mailto:enquiries@globalairportconscierge.com">enquiries@globalairportconscierge.com</a><br>
+					<span>sales enquiries:</span> <a href="mailto:sales@globalairportconscierge.com">sales@globalairportconscierge.com</a><br>
+					<span>to become a partner:</span> <a href="mailto:partners@globalairportconscierge.com">partners@globalairportconscierge.com</a>
+				</div>
+				<a class="faq" ng-click="showFaqOverlay=true">
+					- FAQ -
+				</a>
+			</div>
