@@ -682,6 +682,16 @@
 						top: 43px;
 						cursor: pointer;
 					}
+					.field{
+						margin-left: 20px;
+						small{
+							margin: 0;
+							display: inline-block;
+							font-size: 18px;
+							font-weight: 300;
+							color: #b9b9b9;
+						}
+					}
 					svg{
 						transform: scale(2) translateY(-1px) translateX(4px);
 						path{
