@@ -1075,12 +1075,12 @@
 				width: 90px;
 				position: absolute;
 				right: 0;top: 0;
-				border:1px solid #666565;
+				border:1px solid $darker;
 				box-sizing:border-box;
 				height: 45px;
 				text-transform: uppercase;
 				font-style: italic;
-				color: #6e6d6d;
+				color: $darker;
 				line-height: 45px;
 				text-align: left;
 				padding-left: 7px;
@@ -1096,7 +1096,7 @@
 				small{
 					// text-transform: none;
 					font-size: 10px;
-					color: $primary;
+					color: $darker;
 					display: inline-block;
 					transform: translateY(-2px);
 				}
@@ -1132,8 +1132,8 @@
 			cursor: pointer;
 			box-sizing:border-box;
 			&:hover{
-				color: $lighter;
-				border-color:$lighter;
+				color: $darker;
+				border-color:$darker;
 			}
 			
 			.dropdown{
@@ -1165,7 +1165,7 @@
 						cursor: pointer;
 						transition: all .2s ease-out;
 						&:hover{
-							background: #1f6668;
+							background: $darker;
 							.edit{
 								opacity: 1;
 							}
@@ -1250,8 +1250,8 @@
 				}
 			}
 			.title-selector{
-				border:1px solid #afafaf;
-				color: #afafaf;
+				border:1px solid $darker;
+				color: #e8e9e9;
 				width: 100%;
 				height: 46px;
 				margin-bottom: 30px;
@@ -1272,6 +1272,9 @@
 					position: absolute;
 					width: 100%;
 					transition: all .3s ease-out;
+				}
+				.content{
+					color: $darker;
 				}
 				&.focused{
 					.ph{

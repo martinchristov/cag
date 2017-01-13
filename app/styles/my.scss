@@ -510,7 +510,7 @@
 				}
 
 				.expanded-row{
-					color: $primary;
+					color: $darker;
 					padding-left: 50px;
 					padding-top: 60px;
 					padding-bottom: 15px;
@@ -614,6 +614,21 @@
 					border-color:$primary;
 					color: $darker;
 				}
+			}
+		}
+		.btn.download{
+			float: right;
+			height: 40px;
+			background:$primary;
+			color: #fff;
+			line-height: 40px;
+			padding: 0 20px;
+			text-transform: uppercase;
+			font-size: 14px;
+			transition: all .2s ease-out;
+			cursor: pointer;
+			&:hover{
+				background:$darker;
 			}
 		}
 	}
