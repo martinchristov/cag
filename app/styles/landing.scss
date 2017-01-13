@@ -6,8 +6,8 @@
 		top: 0;
 		width: 100%;
 		height: 80px;
-		background:transparent;
-		border-bottom:2px solid white;
+		background:rgba(26, 96, 169, 0.72);
+		// border-bottom:2px solid white;
 		transition: all .3s ease-out;
 		.gac{
 			float: left;
@@ -27,7 +27,10 @@
 		}
 		.logo{
 			float: left;
-			margin-top: 10px;
+			margin-top: 5px;
+			svg{
+				width: 175px;
+			}
 		}
 		.menu{
 			float: right;
@@ -46,14 +49,14 @@
 				}
 			}
 			a{
-				color: $primary;
+				color: #fff;
 				text-decoration: none;
 				text-transform: uppercase;
 				font-size: 13px;
-				font-weight: 500;
+				font-weight: 600;
 				transition: all .3s ease-out;
 				&:hover{
-					color: $primary;
+					// color: $primary;
 				}
 			}
 			.lang-holder{
@@ -64,10 +67,10 @@
 				margin-left: 10px;
 				.lang{
 					// float: left;
-					color: $primary;
+					color: #fff;
 					text-transform: uppercase;
 					font-size: 13px;
-					font-weight: 500;
+					font-weight: 600;
 					// border: 1px solid $darker;
 					// height: 24px;
 					line-height: 24px;
@@ -81,16 +84,16 @@
 						margin-left: 1px;
 						margin-right: 1px;
 						path{
-							fill:$primary;
+							fill:#fff;
 						}
 					}
 					&:hover {
-						color: $primary;
+						// color: $primary;
 					}
 				}
 				.lang-dropdown{
 					position: absolute;
-					top: 82px;
+					top: 80px;
 					left: 0;
 					overflow: hidden;
 					height: 0;
@@ -102,7 +105,7 @@
 						color: #fff;
 						font-size: 11px;
 						text-transform: uppercase;
-						font-weight: 500;
+						font-weight: 600;
 						transform: translateY(-200px);
 						transition: all .4s ease-out;
 					}
@@ -117,7 +120,7 @@
 				}
 				&.dropped{
 					.lang{
-						color: $primary;
+						// color: $primary;
 					}
 					.lang-dropdown{
 						height: auto;
@@ -157,7 +160,7 @@
 			a{
 				color: #fff;
 				text-transform: uppercase;
-				font-weight: 500;
+				font-weight: 600;
 				font-size: 13px;
 				line-height: 24px;
 				display: block;
@@ -176,6 +179,13 @@
 				svg{
 					path{
 						fill:#000;
+					}
+				}
+			}
+			.logo{
+				svg{
+					path,polygon{
+						fill:$primary;
 					}
 				}
 			}
@@ -198,6 +208,11 @@
 				}
 				.lang{
 					color: #000;
+					svg{
+						path{
+							fill:$primary;
+						}
+					}
 				}
 			}
 			.mobile-menu{
@@ -287,7 +302,7 @@
 			height: 34px;
 			line-height: 36px;
 			font-size: 15px;
-			font-weight: 500;
+			font-weight: 600;
 			text-transform: uppercase;
 			text-decoration: none;
 			color: #000;
@@ -308,16 +323,16 @@
 			position: relative;
 			z-index: 3;
 			h1{
-				font-size: 40px;
-				line-height: 45px;
-				font-weight: 300;
+				font-size: 25px;
+				line-height: 30px;
+				font-weight: 600;
 				text-transform: uppercase;
 			}
 			p{
 				margin-top: 7px;
 				line-height: 23px;
 				font-size: 20px;
-				font-weight: 500;
+				font-weight: 400;
 			}
 		}
 		.book-now{
@@ -332,7 +347,7 @@
 			padding-left: 35px;
 			text-transform: uppercase;
 			font-size: 20px;
-			font-weight: 500;
+			font-weight: 600;
 			cursor: pointer;
 			svg{
 				margin-left: 10px;
@@ -495,7 +510,7 @@
 		}
 		h1{
 			font-size: 40px;
-			font-weight: 300;
+			font-weight: 400;
 		}
 		p{
 			font-size: 20px;
@@ -506,6 +521,16 @@
 			width:240px;
 			margin-left: auto;
 			margin-right: auto;
+			position: relative;
+			.agent-login{
+				position: absolute;
+				bottom: -40px;
+				width: 100%;
+				text-align: center;
+				text-transform: capitalize;
+				text-decoration: underline;
+				font-size: 14px;
+			}
 			input:not([type=checkbox]){
 				border: 1px solid #fff;
 				background:transparent;
@@ -515,7 +540,7 @@
 				text-align: center;
 				color: #fff;
 				outline:none;
-				font-family: museosans;
+				font-family: 'Open Sans';
 				font-size: 16px;
 				// transition: all .24s ease-out;
 				// &:focus{
@@ -527,21 +552,21 @@
 				}
 				&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 				  text-align: center;
-				  font-family: museosans;
+				  font-family: 'Open Sans';
 				  font-style: italic;
 				  font-size: 15px;
 				  color: #5db9e5;
 				}
 				&::-moz-placeholder { /* Firefox 19+ */
 				  text-align: center;
-				  font-family: museosans;
+				  font-family: 'Open Sans';
 				  font-style: italic;
 				  font-size: 15px;
 				  color: #5db9e5;
 				}
 				&:-ms-input-placeholder { /* IE 10+ */
 				  text-align: center;
-				  font-family: museosans;
+				  font-family: 'Open Sans';
 				  font-style: italic;
 				  font-size: 15px;
 				  color: #5db9e5;
@@ -550,7 +575,7 @@
 			.forgot{
 				font-size: 12px;
 				color: #5db9e5;
-				font-weight: 300;
+				font-weight: 400;
 				text-decoration: none;
 				float: right;
 				font-style: italic;
@@ -575,7 +600,7 @@
 					padding-left: 22px;
 					color: #5db9e6;
 					font-style: italic;
-					font-weight: 300;
+					font-weight: 400;
 					cursor: pointer;
 				}
 
@@ -613,8 +638,8 @@
 			input[type=submit]{
 				margin-top: 20px;
 				font-size: 18px;
-				font-family: museosans;
-				font-weight: 300;
+				font-family: 'Open Sans';
+				font-weight: 400;
 				cursor: pointer;
 				transition: all .25s ease-out;
 				&:hover{
@@ -631,7 +656,7 @@
 				line-height: 44px;
 				text-transform: uppercase;
 				margin-top: 14px;
-				font-weight: 300;
+				font-weight: 400;
 				cursor: pointer;
 				transition: all .25s ease-out;
 				&:hover{
@@ -792,13 +817,13 @@
 		padding-top: 100px;
 		padding-bottom: 130px;
 		h1{
-			font-weight: 500;
+			font-weight: 600;
 			font-size: 40px;
 			text-transform: uppercase;
 		}
 		h3{
 			font-size: 20px;
-			font-weight: 500;line-height: 25px;
+			font-weight: 600;line-height: 25px;
 			text-transform: uppercase;
 			margin-top: 10px;
 			margin-bottom: 100px;
@@ -814,7 +839,7 @@
 				line-height: 110px;
 				text-transform: uppercase;
 				font-size: 20px;
-				font-weight: 300;
+				font-weight: 400;
 				// transition: all .25s ease-out;
 				margin-bottom: 9px;
 				cursor: pointer;
@@ -873,7 +898,7 @@
 				text-align: left;
 				flex:1;
 				font-size: 20px;
-				font-weight: 500;
+				font-weight: 600;
 				padding-right: 400px;
 			}
 			@media screen and (max-width: $tablet){
@@ -890,7 +915,7 @@
 					text-transform: uppercase;
 					margin-bottom: 30px;
 					margin-top: -10px;
-					font-weight: 500;
+					font-weight: 600;
 				}
 				.content{
 					display: block;
@@ -909,12 +934,12 @@
 		}
 		.book-now{
 			float: right;
-			background:#fff;
+			background:$secondary;
 			width: 370px;height: 80px;
 			color: #000;
 			line-height: 80px;
 			text-transform: uppercase;
-			font-weight: 500;
+			font-weight: 600;
 			font-size: 20px;
 			box-shadow: 2px 6px 8px rgba(0,0,0,0.3);
 			cursor: pointer;
@@ -1019,7 +1044,7 @@
 				margin-top: 5px;
 				color: #206f72;
 				font-size: 12px;
-				font-weight: 500;
+				font-weight: 600;
 				line-height: 12px;
 				display: inline-block;
 			}
@@ -1056,13 +1081,13 @@
 
 			h1{
 				font-size: 30px;
-				font-weight: 500;
+				font-weight: 600;
 				text-transform: uppercase;
 				margin-bottom: 20px;
 			}
 			p{
 				font-size: 15px;
-				font-weight: 300;
+				font-weight: 400;
 				line-height: 20px;
 				margin-bottom: 45px;
 			}
@@ -1097,7 +1122,7 @@
 				padding-bottom: 8px;
 				height: 20px;
 				.type{
-					font-weight: 500;
+					font-weight: 600;
 					color: #a5a5a5;
 					margin: auto;
 					display: inline-block;
@@ -1130,20 +1155,20 @@
 					height: 50px;
 					line-height: 50px;
 					font-size: 18px;
-					font-weight: 300;
-					font-family: museosans;
+					font-weight: 400;
+					font-family: 'Open Sans';
 					color: $primary;
 					width: 40px;
 					box-sizing:border-box;
 					text-align: center;
-					font-weight: 500;
+					font-weight: 600;
 					outline:none;
 					// 9e9f9e
 					&::-webkit-input-placeholder {
 						color: #9e9e9e;
 						text-align: center;
 						font-style: italic;
-						font-weight: 300;
+						font-weight: 400;
 					}
 					&::-moz-placeholder{
 
@@ -1182,7 +1207,7 @@
 						small{
 							font-size: 9px;
 							text-transform: uppercase;
-							font-weight: 500;
+							font-weight: 600;
 							color: $primary;
 							line-height: 9px;
 							display: inline-block;
@@ -1208,7 +1233,7 @@
 					margin-top: 20px;
 					.input{
 						font-size: 18px;
-						font-weight: 500;
+						font-weight: 600;
 					}
 				}
 				.dropdown.passengers{
@@ -1225,7 +1250,7 @@
 						overflow: hidden;
 						.cap{
 							color: #9e9f9e;
-							font-weight: 500;
+							font-weight: 600;
 							font-size: 12px;
 							text-transform: uppercase;
 							margin-top: 15px;
@@ -1254,7 +1279,7 @@
 								text-align: left;
 								top: 4px;
 								.num{
-									font-weight: 300;
+									font-weight: 400;
 									font-size: 30px;
 									color: $primary;
 									float: left;
@@ -1263,12 +1288,12 @@
 								b{
 									color: #3e3e3e;
 									font-size: 12px;
-									font-weight: 500;
+									font-weight: 600;
 									display: inline-block;
 								}
 								small{
 									color: #9e9f9e;
-									font-weight: 500;
+									font-weight: 600;
 									font-size: 10px;
 									display: inline-block;
 									transform:translateY(-5px);
@@ -1279,7 +1304,7 @@
 							width: 182px;
 							background:$primary;
 							color: #fff;
-							font-weight: 500;
+							font-weight: 600;
 							height: 40px;
 							margin: 15px auto 0;
 							text-transform: uppercase;
@@ -1343,7 +1368,7 @@
 						}
 						.cap{
 							color: #9e9f9e;
-							font-weight: 500;
+							font-weight: 600;
 							font-size: 12px;
 							text-transform: uppercase;
 							margin-top: 15px;
@@ -1372,7 +1397,7 @@
 								text-align: left;
 								top: 4px;
 								.num{
-									font-weight: 300;
+									font-weight: 400;
 									font-size: 30px;
 									color: $primary;
 									float: left;
@@ -1388,7 +1413,7 @@
 								b{
 									color: #3e3e3e;
 									font-size: 12px;
-									font-weight: 500;
+									font-weight: 600;
 									display: inline-block;
 									max-width: 85px;
 									margin-top: 2px;
@@ -1396,7 +1421,7 @@
 								small{
 									color: $primary;
 									font-size: 10px;
-									font-weight: 500;
+									font-weight: 600;
 									text-transform: uppercase;
 									display: block;
 									margin-top: 3px;
@@ -1406,7 +1431,7 @@
 						}
 						.svc-container{
 							.read-more{
-								font-size: 12px;font-weight: 500;color: #000;
+								font-size: 12px;font-weight: 600;color: #000;
 								width: 250px;
 								text-align: left;
 								margin: 0 auto;
@@ -1444,7 +1469,7 @@
 							width: 182px;
 							background:$primary;
 							color: #fff;
-							font-weight: 500;
+							font-weight: 600;
 							height: 40px;
 							margin: 25px auto 0;
 							text-transform: uppercase;
@@ -1510,7 +1535,7 @@
 
 				input[type=submit]{
 					width: 100%;height: 52px;
-					font-weight: 500;
+					font-weight: 600;
 					color: #fff;
 					border:none;
 					text-transform: uppercase;
@@ -1584,7 +1609,7 @@
 						width: 70px;
 
 						span{
-							font-weight: 500;
+							font-weight: 600;
 							font-size: 10px;
 							text-decoration: underline;
 							color: #9d9d9d;
@@ -1616,7 +1641,7 @@
 					color: $primary;
 					border:2px solid $primary;
 					text-transform: uppercase;
-					font-size: 15px;font-weight: 500;
+					font-size: 15px;font-weight: 600;
 					line-height: 40px;
 					float: left;
 					position: absolute;
@@ -1717,7 +1742,7 @@
 		background:#fff;
 		h1{
 			color: $primary;
-			font-weight: 500;
+			font-weight: 600;
 			text-transform: uppercase;
 			font-size: 40px;
 		}
@@ -1725,14 +1750,14 @@
 			color: $primary;
 			text-transform: uppercase;
 			font-size: 20px;
-			font-weight: 500;
+			font-weight: 600;
 			line-height: 22px;
 			margin-top: 5px;
 			margin-bottom: 30px;
 		}
 		p{
 			font-size: 20px;
-			font-weight: 300;
+			font-weight: 400;
 			// padding: 0 100px;
 			max-width:800px;
 			margin: 0 auto;
@@ -1756,13 +1781,13 @@
 			z-index: 10;
 			h2{
 				font-size: 40px;
-				font-weight: 500;
+				font-weight: 600;
 				margin-top: 25px;
 				margin-bottom: 10px;
 			}
 			h4{
 				font-size: 20px;
-				font-weight: 500;
+				font-weight: 600;
 				max-width: 430px;
 				margin: 0 auto;
 				color: #fff;
@@ -1842,7 +1867,7 @@
 				h5{
 					color: $primary;
 					text-transform: uppercase;
-					font-weight: 500;
+					font-weight: 600;
 					font-size: 18px;
 					line-height: 22px;
 					margin-bottom: 50px;
@@ -1883,7 +1908,7 @@
 					text-decoration: none;
 					color: $primary;
 					font-size: 18px;
-					font-weight: 500;
+					font-weight: 600;
 					i{
 						float: right;
 					}
@@ -1902,7 +1927,7 @@
 				color: #fff;
 				display: block;
 				line-height: 150px;
-				font-weight: 300;
+				font-weight: 400;
 				cursor: pointer;
 				font-size: 40px;
 				@media screen and (max-width: $tablet){
@@ -1947,25 +1972,25 @@
 				background:transparent;
 				text-align: center;
 				font-size: 16px;
-				font-family: museosans;
+				font-family: 'Open Sans';
 				color: $primary;
-				font-weight: 500;
+				font-weight: 600;
 				outline: none;
 				&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 					font-style: italic;
-					font-weight: 300;
+					font-weight: 400;
 					font-size: 15px;
 					color: #a9a9a9;
 				}
 				&::-moz-placeholder { /* Firefox 19+ */
 					font-style: italic;
-					font-weight: 300;
+					font-weight: 400;
 					font-size: 15px;
 					color: #a9a9a9;
 				}
 				&:-ms-input-placeholder { /* IE 10+ */
 					font-style: italic;
-					font-weight: 300;
+					font-weight: 400;
 					font-size: 15px;
 					color: #a9a9a9;
 				}
@@ -1977,7 +2002,7 @@
 			[type=submit]{
 				width: 240px;
 				margin: 0 auto;
-				font-weight: 500;
+				font-weight: 600;
 				font-size: 20px;
 				height: 50px;
 				line-height: 46px;
@@ -2000,14 +2025,14 @@
 				line-height: 20px;
 				span{
 					color: $primary;
-					font-weight: 500;
+					font-weight: 600;
 					font-size: 15px;
 				}
 				a{
 					color: #777777;
 					font-size: 15px;
 					transition: all .24s ease-out;
-					font-weight: 500;
+					font-weight: 600;
 					text-decoration: none;
 					&:hover{
 						color: $darker;
@@ -2045,7 +2070,7 @@
 			a{
 				color: $primary;
 				text-transform: uppercase;
-				font-weight: 500;
+				font-weight: 600;
 				text-decoration: none;
 				line-height: 20px;
 			}
@@ -2096,7 +2121,7 @@
 					color: #fff;
 					display: block;
 					line-height: 150px;
-					font-weight: 300;
+					font-weight: 400;
 					cursor: pointer;
 					font-size: 40px;
 				}
@@ -2133,7 +2158,7 @@
 		}
 		h3{
 			font-size: 30px;
-			font-weight: 500;
+			font-weight: 600;
 			margin-bottom: 40px;
 			text-transform: uppercase;
 			margin-top: -20px;
@@ -2141,7 +2166,7 @@
 		.contents{
 			padding: 66px;
 			font-size: 15px;
-			font-weight: 500;
+			font-weight: 600;
 		}
 		.main-container{
 			position: relative;
@@ -2150,7 +2175,7 @@
 		.intouch{
 			margin-top: 50px;
 			color: $primary;
-			font-weight: 500;
+			font-weight: 600;
 			font-size: 20px;
 			line-height: 22px;
 			a{
@@ -2212,13 +2237,13 @@
 		}
 		h2{
 			font-size: 40px;
-			font-weight: 500;
+			font-weight: 600;
 			margin-top: 75px;
 			margin-bottom: 10px;
 		}
 		h4{
 			font-size: 20px;
-			font-weight: 500;
+			font-weight: 600;
 			// max-width: 430px;
 			margin: 0 auto;
 			color: #fff;
@@ -2269,7 +2294,7 @@
 		// background-size: cover;
 		h1{
 			font-size: 40px;
-			font-weight: 500;
+			font-weight: 600;
 			color: #000;
 			padding-top: 62px;
 		}
@@ -2277,7 +2302,7 @@
 			font-size: 20px;
 			color: #000;
 			text-transform: uppercase;
-			font-weight: 500;
+			font-weight: 600;
 			line-height: 24px;
 			margin-top: 10px;
 			margin-bottom: 100px;
@@ -2285,7 +2310,7 @@
 		.content{
 			width: 500px;
 			text-align: left;
-			font-weight: 300;
+			font-weight: 400;
 			color: #000;
 			font-size: 20px;
 			line-height: 25px;
@@ -2293,7 +2318,7 @@
 				text-transform: uppercase;
 				margin-top: 110px;
 				display: block;
-				font-weight: 500;
+				font-weight: 600;
 				margin-bottom: 10px;
 			}
 			.new{
@@ -2368,10 +2393,10 @@
 			float: left;
 		}
 		.copy{
-			background:#000;
+			background:$secondary;
 			height: 60px;
 			line-height: 60px;
-			color: #777777;
+			color: #000;
 			.main-container{
 				padding: 0;
 			}
@@ -2421,7 +2446,7 @@
 				small{
 					text-transform: uppercase;
 					font-size: 12px;
-					font-weight: 500;
+					font-weight: 600;
 					display: inline-block;
 				}
 				&.ng-hide-remove{
@@ -2450,7 +2475,7 @@
 				width: 100%;
 				text-transform: uppercase;
 				font-size: 13px;
-				font-weight: 500;
+				font-weight: 600;
 				display: flex;
 				justify-content: space-between;
 				top:150px;

@@ -236,7 +236,7 @@
 					text-align: center;
 					line-height: 78px;
 					text-transform: uppercase;
-					color: $primary;
+					color: $darker;
 					font-size: 15px;
 					cursor: pointer;
 				}
@@ -247,7 +247,7 @@
 					position: relative;
 					.section{
 						&:first-of-type{
-							color: $primary;
+							color: $darker;
 							font-weight: 500;
 						}
 					}
@@ -263,7 +263,7 @@
 					input{
 						background:transparent;
 						border:none;
-						color: $primary;
+						color: $darker;
 						font-size: 20px;
 						padding: 0;
 					}
@@ -279,7 +279,7 @@
 							border:none;
 							width: 500px;
 							padding: 0;
-							color: $primary;
+							color: $darker;
 							font-size: 15px;
 							font-style: italic;
 						}
@@ -301,7 +301,7 @@
 	}
 
 	.my-invoices{
-		color: $primary;
+		color: $darker;
 		ul{
 			border: 1px solid $primary;
 			margin-top: 20px;
@@ -365,7 +365,7 @@
 			border:1px solid $primary;
 			line-height: 46px;
 			height: 46px;
-			color: $primary;
+			color: $darker;
 			text-align: center;
 			font-size: 16px;
 			
@@ -374,9 +374,9 @@
 			color: #e8e9e9;
 		}
 		input[type=submit]{
-			background:$primary;
+			background:$secondary;
 			border:none;
-			color: #fff;
+			color: #000;
 			font-weight: 500;
 			text-transform: uppercase;
 			font-size: 20px;
@@ -458,7 +458,7 @@
 						display: inline-block;
 					}
 					float: left;
-					color: $primary;
+					color: $darker;
 					font-weight: 100;
 					font-size: 30px;
 					text-transform: uppercase;
@@ -476,14 +476,14 @@
 					margin-left: -2px;
 					transform: scale(0.8) translateY(4px);
 					path{
-						fill:$primary;
+						fill:$darker;
 					}
 				}
 				.status{
 					width: 180px;
 					border-left:1px solid $primary;
 					box-sizing:border-box;
-					color: $primary;
+					color: $darker;
 					font-size: 12px;
 					text-align: center;
 					font-weight: 500;
@@ -492,6 +492,9 @@
 					flex-direction: column;
 					justify-content:center;
 					position: relative;
+					.field{
+						margin-left: 40px;
+					}
 					.expander{
 						position: absolute;
 						right: 30px;
@@ -598,7 +601,7 @@
 				li{
 					border-color:$primary;
 					.field{
-						color: $primary;
+						color: $darker;
 					}
 				}
 				li .expanded-row .status{
@@ -609,7 +612,7 @@
 				}
 				.status{
 					border-color:$primary;
-					color: $primary;
+					color: $darker;
 				}
 			}
 		}

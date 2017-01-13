@@ -33,7 +33,7 @@
 		.rightside {
 			float: right;
 			font-size: 12px;
-			font-weight: 500;
+			font-weight: 600;
 			cursor: pointer;
 			// margin-top: 10px;
 			svg{
@@ -54,7 +54,7 @@
 				color: #fff;
 				text-transform: uppercase;
 				font-size: 15px;
-				font-weight: 500;
+				font-weight: 600;
 				line-height: 30px;
 				text-align: right;
 				padding-top: 15px;
@@ -105,7 +105,7 @@
 		.section{
 			.collapsed{
 				font-size: 35px;
-				font-weight: 100;
+				font-weight: 400;
 				text-transform: uppercase;
 				line-height: 70px;
 				height: 70px;
@@ -286,7 +286,7 @@
 				position: absolute;
 				top: 8px;
 				right: 7px;
-				font-weight: 700;
+				font-weight: 600;
 				font-size: 10px;
 				color: #2e2e2e;
 				text-transform: uppercase;
@@ -295,7 +295,7 @@
 			.field{
 				small{
 					font-size: 10px;
-					font-weight: 700;
+					font-weight: 600;
 					color: #656565;
 					text-transform: uppercase;
 				}
@@ -336,7 +336,7 @@
 						li{
 							span{
 								font-size: 12px;
-								font-weight: 500;
+								font-weight: 600;
 								text-transform: uppercase;
 								color: #656565;
 								display: inline-block;
@@ -362,7 +362,7 @@
 						a{
 							color: $primary;
 							font-size: 12px;
-							font-weight: 500;
+							font-weight: 600;
 							text-transform: uppercase;
 						}
 						.total{
@@ -370,7 +370,7 @@
 							bottom: 20px;
 							width: 100%;
 							text-transform: uppercase;
-							font-weight: 500;
+							font-weight: 600;
 						}
 						form{
 							//promo code
@@ -425,7 +425,7 @@
 							font-style: italic;
 							color: $primary;
 							b{
-								font-weight: bold;
+								font-weight: 600;
 								float: right;
 							}
 						}
@@ -565,7 +565,7 @@
 							margin-top: 5px;
 							margin-bottom: 15px;
 							font-size: 16px;
-							font-weight: 500;
+							font-weight: 600;
 							small{
 						
 							}
@@ -593,7 +593,7 @@
 					ul{
 						color: #656565;
 						font-size: 16px;
-						font-weight: 300;
+						font-weight: 400;
 						line-height: 20px;
 						margin-top: 5px;
 						.price{
@@ -605,7 +605,7 @@
 					}
 					.total{
 						margin-top: 18px;
-						font-weight: 300;
+						font-weight: 400;
 						color: #656565;
 						font-size: 24px;
 						text-transform: uppercase;
@@ -711,7 +711,7 @@
 		color: #0b2240;
 		text-transform: uppercase;
 		font-size: 12px;
-		font-weight: 500;
+		font-weight: 600;
 		line-height: 30px;
 
 		@media only screen and (max-width: 459px){
@@ -788,7 +788,7 @@
 			padding-bottom: 8px;
 			height: 20px;
 			.type{
-				font-weight: 500;
+				font-weight: 600;
 				color: #e8e9e9;
 				margin: auto;
 				display: inline-block;
@@ -883,7 +883,7 @@
 		height: 66px;
 		line-height: 66px;
 		font-size: 20px;
-		font-weight: 300;
+		font-weight: 400;
 		border:none;
 		background:$secondary;
 		color: $primary;
@@ -912,7 +912,7 @@
 		.cal{
 			font-size: 9px;
 			text-transform: uppercase;
-			font-weight: 500;
+			font-weight: 600;
 			color: $darker;
 			cursor: pointer;
 			span{
@@ -1023,7 +1023,7 @@
 				position: absolute;
 				top: 15px;
 				font-size: 40px;
-				font-weight: 300;
+				font-weight: 400;
 				color: #fff;
 				user-select: none;
 		        -moz-user-select: none;
@@ -1079,7 +1079,7 @@
 				z-index: 11;
 				
 				li{
-					font-weight: 300;
+					font-weight: 400;
 					&:first-of-type{
 						font-style: normal;
 						border-bottom: 1px solid white;
@@ -1136,7 +1136,7 @@
 				}
 				text-transform: uppercase;
 				color: $primary;
-				font-weight: 500;
+				font-weight: 600;
 				font-size: 20px;
 				margin-left: -15px;
 				margin-bottom: 25px;
@@ -1305,7 +1305,7 @@
 					display: inline-block;
 					text-align: center;
 					line-height: 20px;
-					font-weight: 500;
+					font-weight: 600;
 					font-size: 16px;
 					transition: all .2s ease-out;
 					cursor: pointer;
@@ -1326,7 +1326,7 @@
 				right: 27px;
 				font-size: 20px;
 				color: $darker;
-				font-weight: 300;
+				font-weight: 400;
 			}
 			&.ng-enter{
 				transition: all .35s ease-out;
@@ -1354,7 +1354,7 @@
 				text-align: left;
 				color: $primary;
 				text-transform: uppercase;
-				font-weight: 300;
+				font-weight: 400;
 				cursor: pointer;
 			}
 			form{
@@ -1453,7 +1453,7 @@
 				color: $darker;
 			}
 			a{
-				font-size: 12px;font-weight: 500;
+				font-size: 12px;font-weight: 600;
 				text-decoration: underline;text-transform: uppercase;
 			}
 			.email-item{
@@ -1489,7 +1489,7 @@
 					height: 30px;
 					line-height: 30px;
 					font-size: 14px;
-					font-weight: 500;
+					font-weight: 600;
 				}
 			}
 		}
@@ -1537,7 +1537,7 @@
 		.cap{
 			padding: 15px;
 			font-size: 12px;
-			font-weight: 500;
+			font-weight: 600;
 			text-transform: uppercase;
 			color: #000;
 			cursor: pointer;
@@ -1563,7 +1563,7 @@
 				margin-top: 8px;
 				position: relative;
 				font-size: 12px;
-				font-weight: 500;
+				font-weight: 600;
 				text-align: left;
 				color: #343434;
 				padding-left: 7px;
