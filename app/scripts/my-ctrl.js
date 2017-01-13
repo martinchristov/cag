@@ -14,7 +14,7 @@
 						from:'LHR',
 						to:'LAX',
 						date:'',
-						passangers:[],
+						passengers:[],
 						services:[],
 						total:412
 					},
@@ -22,7 +22,7 @@
 						from:'LAX',
 						to:'LHR',
 						date:'',
-						passangers:[],
+						passengers:[],
 						services:[],
 						total:217
 					}
@@ -32,14 +32,14 @@
 						from:'LAX',
 						to:'LHR',
 						date:'',
-						passangers:[],
+						passengers:[],
 						services:[],
 						total:325
 					}
 				]
 			};
 			$scope.abc='abcdefghijklmnopqrstuvwxyz'.split('');
-			$scope.passangers = [
+			$scope.passengers = [
 				{
 					name:'man solo',
 					birthdd:'12',
@@ -184,7 +184,10 @@
 					notes:'something here'
 				}
 			];
-
+			$scope.$watch('currentState.name',function(){
+				console.log($scope.currentState.name);
+				$state.go($scope.currentState.name);
+			});
 			$scope.filterBy = '';
 			$scope.filterLtr = function(ltr){
 				if($scope.filterBy==ltr){

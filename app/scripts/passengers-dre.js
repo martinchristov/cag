@@ -1,8 +1,8 @@
 (function(){
 	'use strict';
-	angular.module('cag').directive('passangers',function($timeout){
+	angular.module('cag').directive('passengers',function($timeout){
 		return {
-			templateUrl:'partials/passangers.html',
+			templateUrl:'partials/passengers.html',
 			
 			replace:true,
 			scope:{

@@ -6,6 +6,7 @@
 			<type-selector type="details.type" types="['departure','arrival','connect']"></type-selector>
 			
 			<fph-input type="text" placeholder="Airport" model="details.airport"></fph-input>
+			<fph-input type="text" placeholder="Destination" model="details.destination" ng-if="details.type=='connect'"></fph-input>
 			<div class="clearfix"></div>
 			<div class="row">
 				<div class="col">
@@ -92,7 +93,7 @@
 				</div>
 			</div>
 
-			<input type="submit" value="add passangers" ng-disabled="!enableDetailsSubmit" ui-sref="booking.passangers">
+			<input type="submit" value="add passengers" ng-disabled="!enableDetailsSubmit" ui-sref="booking.passengers">
 		</form>
 	</div>
 </div>

@@ -1201,7 +1201,7 @@
 						font-weight: 500;
 					}
 				}
-				.dropdown.passangers{
+				.dropdown.passengers{
 					position: relative;
 					.overlay{
 						position: absolute;
@@ -2005,6 +2005,20 @@
 			}
 			.faq{
 				display: none;
+			}
+			.thankyou{
+				height: 476px;
+				text-align: center;
+				// flex-direction: columns;
+				display: flex;
+				justify-content: center;
+				align-items:center;
+				font-size: 20px;
+				color: $primary;
+				text-transform: uppercase;
+				&>div{
+					max-width: 250px;
+				}
 			}
 			
 		}

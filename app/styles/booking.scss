@@ -993,7 +993,7 @@
 			}
 		}
 	}
-	.booking-passangers{
+	.booking-passengers{
 		.counter{
 			.num{
 				font-size: 80px;
@@ -1030,7 +1030,7 @@
 			margin-top: 30px;
 			margin-bottom: 70px;
 		}
-		.passanger-dropdown{
+		.passenger-dropdown{
 			height: 45px;
 			border:1px solid #666565;
 			box-sizing:border-box;
@@ -1108,7 +1108,7 @@
 				}
 			}
 		}
-		.add-passanger{
+		.add-passenger{
 			position: absolute;
 			z-index: 20;
 			background:#2e2e2e;
@@ -1168,8 +1168,48 @@
 					}
 				}
 			}
+			.title-selector{
+				border:1px solid #afafaf;
+				color: #afafaf;
+				width: 100%;
+				height: 46px;
+				margin-bottom: 30px;
+				position: relative;
+				select{
+					position: absolute;
+					top: 0;left: 0;
+					width: 100%;height: 100%;
+					opacity: 0;
+				}
+				.ph,.content{
+					font-size: 15px;
+					text-transform: uppercase;
+					font-style: italic;
+					line-height: 46px;
+				}
+				.ph{
+					position: absolute;
+					width: 100%;
+					transition: all .3s ease-out;
+				}
+				&.focused{
+					.ph{
+						transform:translateY(-35px) scale(0.8);
+					}
+				}
+				input{
+					border:none;
+				}
+			}
+			.bday-cap{
+				position: absolute;
+				top: 50px;
+				font-size: 10px;
+				text-transform: uppercase;
+				font-style: italic;
+			}
 		}
-		.passanger-holder{
+		.passenger-holder{
 			min-height:80px;
 		}
 		[type=submit]{

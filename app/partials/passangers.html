@@ -1,9 +1,9 @@
-<div class="dropdown passangers">
-	<div class="input" ng-click="showPassangers=true">
+<div class="dropdown passengers">
+	<div class="input" ng-click="showpassengers=true">
 		<span ng-show="total">{{total}} </span>passengers
 		<ng-include src="'images/pointer.svg'"></ng-include>
 	</div>
-	<div class="overlay" ng-show="showPassangers">
+	<div class="overlay" ng-show="showpassengers">
 		<div class="cap"><span ng-show="total">{{total}} </span>passengers</div>
 		<div class="num-input">
 			<div class="plus" ng-click="adults(1)">+</div>
@@ -33,6 +33,6 @@
 			</div>
 		</div>
 
-		<div class="ok" ng-click="calcTotal();showPassangers=false">ok</div>
+		<div class="ok" ng-click="calcTotal();showpassengers=false">ok</div>
 	</div>
 </div>

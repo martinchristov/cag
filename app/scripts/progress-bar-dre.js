@@ -12,7 +12,7 @@
 				$scope.$on('$stateChangeSuccess',function(){
 					$scope.state = $state.current;
 				});
-				var states = ['details','passangers','services','payment'];
+				var states = ['details','passengers','services','payment'];
 				$scope.back = function(){
 					var state = $state.current.name.substr(8);
 					for(var i=0;i<states.length;i++){

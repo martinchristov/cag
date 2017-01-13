@@ -1,9 +1,9 @@
 (function(){
 	'use strict';
-	angular.module('cag').directive('passangerDropdown',function($state){
+	angular.module('cag').directive('passengerDropdown',function($state){
 			return {
 				template:[
-				'<div class="passanger-dropdown">',
+				'<div class="passenger-dropdown">',
 					'<div ng-click="showDropdown=true">',
 						'<span ng-hide="selected"><span ng-if="index>1">add passenger {{index}} info</span><span ng-if="index==1">add lead passenger</span></span>',
 						'<span ng-show="selected">{{selected.name}}</span>',
@@ -49,7 +49,7 @@
 					$scope.select = function(contact){
 						$scope.showDropdown=false;
 						$scope.selected=contact;
-						$scope.$emit('selectedPassanger');
+						$scope.$emit('selectedpassenger');
 					};
 				}
 			}

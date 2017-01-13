@@ -1,0 +1,71 @@
+<div class="add-passenger">
+	<div class="inner-container">
+		<div class="back-btn" go-back>
+			<ng-include src="'images/arrow.svg'"></ng-include>
+			back
+		</div>
+	</div>
+	<h2>- Add new passenger details -</h2>
+	<div class="inner-container">
+		<!-- <type-selector type="quote.type" types="['Mr','Miss','Mrs']"></type-selector> -->
+		<div class="title-selector" ng-class="{'focused':passenger.title}">
+			
+			<div class="ph">title</div>
+			<div ng-hide="passenger.title=='other'">
+				<div class="content" ng-show="passenger.title">{{passenger.title}}</div>
+				<select ng-model="passenger.title">
+					<option value="mr">mr</option>
+					<option value="mrs">mrs</option>
+					<option value="ms">ms</option>
+					<option value="other">other</option>
+				</select>
+			</div>
+			<input type="text" class="passenger-other" ng-show="passenger.title=='other'">
+		</div>
+		<fph-input type="text" placeholder="Full name" model="passenger.name"></fph-input>
+		<fph-input type="text" placeholder="Nationality" model="passenger.nationality"></fph-input>
+		
+		<div class="clearfix"></div>
+		<div class="row">
+			<div class="col">
+				<fph-input type="text" placeholder="PASSPORT No." model="passenger.passport"></fph-input>
+			</div>
+			<div class="col" style="position:relative">
+				<div class="row">
+					<div class="col">
+						<fph-input type="text" placeholder="DD" model="passenger.dd"></fph-input>
+					</div>
+					<div class="col">
+						<fph-input type="text" placeholder="MM" model="passenger.mm"></fph-input>
+					</div>
+					<div class="col">
+						<fph-input type="text" placeholder="YY" model="passenger.yy"></fph-input>
+					</div>
+				</div>
+				<div class="bday-cap">date of birth</div>
+			</div>
+		</div>
+
+
+		<fph-input type="text" placeholder="mobile" model="passenger.mobile"></fph-input>
+
+
+		<fph-input type="text" placeholder="email" model="passenger.email"></fph-input>
+
+		<fph-input type="text" placeholder="PNR (if availabe)" model="passenger.pnr"></fph-input>
+
+		<fph-input type="text" placeholder="notes / requests" model="passenger.notes"></fph-input>
+
+		<div class="wheelchair" ng-click="passenger.needsWheelchair=!passenger.needsWheelchair">
+			<div class="box" ng-class="{'checked':passenger.needsWheelchair}"></div>
+			<ng-include src="'images/wheelchair.svg'"></ng-include>
+			Did you reserve a wheelchair?
+		</div>
+
+		<!-- <textarea placeholder="notes / requests"></textarea> -->
+
+		<input type="submit" value="save" go-back>
+
+		<div class="clearfix"></div>
+	</div>
+</div>

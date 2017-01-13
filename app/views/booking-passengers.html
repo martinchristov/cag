@@ -1,0 +1,16 @@
+<div class="booking-passengers inner-view" win-height-minus="160" mob="84">
+	<div class="inner-container">
+		<div class="clearfix"></div>
+		<h2>- Add passengers -</h2>
+		
+		<counter model="ctrl.passengerSlots" event="changeSlots"></counter>
+		
+		<div class="passenger-holder">
+			<passenger-dropdown index="{{$index+1}}" ng-repeat="pass in passengers track by $index"></passenger-dropdown>
+		</div>
+
+		<input type="submit" value="select services" ui-sref="booking.services">
+	</div>
+
+	<div class="sub-view" ui-view></div>
+</div>

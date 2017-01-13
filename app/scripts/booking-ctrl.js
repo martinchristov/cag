@@ -48,24 +48,24 @@
 				}
 			},true);
 
-			//passangers
-			$scope.passangers = [null];
-			self.passangerSlots = 1;
-			// $scope.passangerEmptySlots = [];
-			$scope.$watch('ctrl.passangerSlots',function(val,valu){
-				if($scope.passangers.length<self.passangerSlots){
-					for(var i=$scope.passangers.length;i<self.passangerSlots;i++){
-						$scope.passangers.push(null);
+			//passengers
+			$scope.passengers = [null];
+			self.passengerSlots = 1;
+			// $scope.passengerEmptySlots = [];
+			$scope.$watch('ctrl.passengerSlots',function(val,valu){
+				if($scope.passengers.length<self.passengerSlots){
+					for(var i=$scope.passengers.length;i<self.passengerSlots;i++){
+						$scope.passengers.push(null);
 					}
 				}
-				else if($scope.passangers.length>self.passangerSlots){
-					for(var i=$scope.passangers.length;i>self.passangerSlots;i--){
-						$scope.passangers.pop();
+				else if($scope.passengers.length>self.passengerSlots){
+					for(var i=$scope.passengers.length;i>self.passengerSlots;i--){
+						$scope.passengers.pop();
 					}
 				}
 			});
 
-			$scope.$on('selectedPassanger',function(){
+			$scope.$on('selectedpassenger',function(){
 				ProgressBar.set(1/3);
 			});
 

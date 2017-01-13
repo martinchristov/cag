@@ -1,4 +1,4 @@
-<div class="my-passangers inner-view">
+<div class="my-passengers inner-view">
 	<div class="scrollview" win-height-minus="166">
 	
 		<div class="inner-container">
@@ -14,7 +14,7 @@
 			<div class="clearfix"></div>
 			
 			<ul>
-				<li ng-repeat="row in passangers | firstLetterFilter:filterBy  track by $index">
+				<li ng-repeat="row in passengers | firstLetterFilter:filterBy  track by $index">
 					<div class="collapsed-row" ng-hide="row.expanded">
 						<div class="section">
 							{{row.name}}

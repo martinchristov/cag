@@ -50,7 +50,7 @@
 			$scope.quote = {
 				type:'arrival',
 				date: null,
-				passangers:{
+				passengers:{
 					adults: 1,
 					children: 0,
 					infants: 0

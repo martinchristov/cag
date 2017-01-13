@@ -14,7 +14,7 @@
 		<div class="menu" menu-padding ng-show="showMenuDropdown">
 			<ul>
 				<li ui-sref="my.bookings">bookings</li>
-				<li ui-sref="my.passangers">passangers</li>
+				<li ui-sref="my.passengers">passengers</li>
 				<li ui-sref="my.invoices">invoices</li>
 				<li ui-sref="my.profile">profile</li>
 				<li>support</li>
@@ -32,9 +32,19 @@
 	<div class="tabs">
 		<div class="inner-container">
 			<div class="tab" ui-sref="my.bookings" ng-class="{'current':currentState.name=='my.bookings'}">bookings</div>
-			<div class="tab" ui-sref="my.passangers" ng-class="{'current':currentState.name=='my.passangers'}">passangers</div>
+			<div class="tab" ui-sref="my.passengers" ng-class="{'current':currentState.name=='my.passengers'}">passengers</div>
 			<div class="tab" ui-sref="my.invoices" ng-class="{'current':currentState.name=='my.invoices'}">invoices</div>
 			<div class="tab" ui-sref="my.profile" ng-class="{'current':currentState.name=='my.profile'}">profile</div>
+		</div>
+		<div class="mobile-dropdown">
+			{{currentState.name.substr(3)}}
+			<ng-include src="'images/pointer.svg'"></ng-include>
+			<select ng-model="currentState.name" ng-change="changeMobileTab()">
+				<option value="my.bookings">bookings</option>
+				<option value="my.passengers">passengers</option>
+				<option value="my.invoices">invoices</option>
+				<option value="my.profile">profile</option>
+			</select>
 		</div>
 	</div>
 	

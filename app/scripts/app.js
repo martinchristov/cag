@@ -19,17 +19,18 @@
 					url:'/details',
 					templateUrl: 'views/booking-details.html'
 				})
-				.state('booking.passangers',{
-					url:'/passangers',
-					templateUrl: 'views/booking-passangers.html'
+				.state('booking.passengers',{
+					url:'/passengers',
+					templateUrl: 'views/booking-passengers.html'
 				})
-				.state('booking.passangers.add',{
+				.state('booking.passengers.add',{
 					url:'/add',
-					templateUrl: 'views/add-passanger.html'
+					controller:'AddPassengerCtrl',
+					templateUrl: 'views/add-passenger.html'
 				})
-				.state('booking.passangers.edit',{
+				.state('booking.passengers.edit',{
 					url:'/edit/:id',
-					templateUrl: 'views/add-passanger.html'
+					templateUrl: 'views/add-passenger.html'
 				})
 				.state('booking.services',{
 					url:'/services',
@@ -51,13 +52,13 @@
 					url:'/bookings',
 					templateUrl: 'views/my-bookings.html'
 				})
-				.state('my.passangers',{
-					url:'/passangers',
-					templateUrl: 'views/my-passangers.html'
+				.state('my.passengers',{
+					url:'/passengers',
+					templateUrl: 'views/my-passengers.html'
 				})
-				.state('my.passangers.add',{
+				.state('my.passengers.add',{
 					url:'/add',
-					templateUrl: 'views/add-passanger.html'
+					templateUrl: 'views/add-passenger.html'
 				})
 				.state('my.invoices',{
 					url:'/invoices',
@@ -73,7 +74,7 @@
 				/booking/payment
 
 				/my/bookings
-				/my/passangers
+				/my/passengers
 				/my/invoices
 				/my/profile
 				*/
