@@ -10,7 +10,8 @@
     "angular-datepicker": "^2.0.3",
     "angular-sanitize": "^1.6.0",
     "swiper": "^3.4.1",
-    "angular-soap": "^2.1.2"
+    "angular-soap": "^2.1.2",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "chai": "^3.5.0",

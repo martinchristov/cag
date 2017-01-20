@@ -335,14 +335,29 @@
 				self.fill = val;
 			}
 		})
-		.service('API',function($soap){
+		.service('API',function($soap,$q){
 			var url = 'http://dev-system.globalairportconcierge.com:8990/GlobalAirportConcierge.svc';
-			var params = {
-				InterfaceKey:'D6B441402AD64E2906'
+			var defaultParams = {
+				sInterfaceKey:'D6B441402AD64E2906'
 			}
-			// $soap.post(url,'Airport_Select_ALL',params).then(function(d){
-			// 	console.log(d);
-			// });
+			this.post = function(method,params){
+				var deferred = $q.defer();
+
+				$soap.post(url,method,_.extend(params,defaultParams)).then(function(d){
+					var x = xml2json(jQuery.parseXML(d));
+					var json = JSON.parse(x.replace('undefined',''));
+					if(json.hasOwnProperty('NewDataSet')){
+						json = json.NewDataSet;
+					}
+					if(json.hasOwnProperty('XML')){
+						json = json.XML;
+					}
+					deferred.resolve(json);
+				});
+
+				return deferred.promise;
+			};
+			
 		})
 		.directive('backTop',function(UISvc, $timeout){
 			return {
@@ -393,4 +408,9 @@
 				}
 			}
 		});
+
+	
 })();
+
+
+

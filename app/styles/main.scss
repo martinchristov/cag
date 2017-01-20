@@ -107,6 +107,40 @@ a{
 	}
 }
 
+.airport-input{
+	// position: relative;
+	input{
+		text-align: left;
+	}
+	.dropdown{
+		position: absolute;
+		transform: translateY(29px);
+		background:#fff;
+		border:1px solid $primary;
+		padding: 6px 0;
+
+		.item{
+			height: 52px;
+			padding-left: 30px;
+			padding-top: 8px;
+			box-sizing:border-box;
+			min-width: 216px;
+			text-align: left;
+			font-size: 18px;
+			color: #666666;
+			cursor: pointer;
+			small{
+				font-size: 15px;
+			}
+			&:hover,&.highlight{
+				background:$primary;
+				color: #fff;
+			}
+		}
+		// top: 50px;
+	}					
+}
+
 .scrollview{
 	overflow-y: scroll;
 }

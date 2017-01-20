@@ -2,6 +2,8 @@
 	'use strict';
 	angular.module('cag',['ui.router','ngAnimate','datePicker','ngSanitize','angularSoap'])
 		.config(function($stateProvider,$urlRouterProvider){
+			///Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222  --disable-web-security --user-data-dir
+			//D6B441402AD64E2906
 			$stateProvider
 				.state('landing',{
 					url:'/landing',

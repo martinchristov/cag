@@ -141,7 +141,8 @@
 					></dropdown>
 				</div>
 				<div class="dest-input">
-					<fph-input type="text" placeholder="Airport" model="quote.airport"></fph-input>
+					<!-- <fph-input type="text" placeholder="Airport" model="quote.airport"></fph-input> -->
+					<airport-input model="quote.airport" placeholder="Airport"></airport-input>
 				</div>
 				<div class="date">
 					<fph-input type="text" placeholder="DD" model="quote.dateD"></fph-input>
@@ -175,6 +176,8 @@
 
 				<input type="submit" value="get quote" ng-disabled="!allowQuoteRequest" ng-click="showResult=true">
 
+			</form>
+			
 				<div class="result" ng-show="showResult">
 					<div class="inner">
 						<div class="field">
@@ -217,7 +220,6 @@
 						<div class="btn book" ng-click="showResult=false;login();">book now</div>
 					</div>
 				</div>
-			</form>
 		</div>
 	</div>
 
