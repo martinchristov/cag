@@ -460,6 +460,7 @@
 		}
 		.close{
 			position: absolute;
+			z-index: 10;
 			top: 20px;
 			left: 30px;
 			width: 40px;height: 40px;
@@ -476,6 +477,7 @@
 			top: 20px;
 			left: 30px;
 			width: 40px;height: 40px;
+			z-index: 10;
 			cursor: pointer;
 			svg{
 				transform:scale(1);
@@ -495,6 +497,10 @@
 		p{
 			font-size: 20px;
 			margin-top: 12px;
+
+		}
+		.contents>p, .signup>p{
+			padding: 0 70px;
 		}
 		form{
 			margin-top: 90px;
@@ -705,6 +711,11 @@
 						}
 					}
 				}
+			}
+		}
+		.pass-recovery{
+			.contents{
+				height: 350px;
 			}
 		}
 		.content-holder{
@@ -2366,6 +2377,7 @@
 			font-weight: 100;
 			line-height: 46px;
 			float: left;
+			max-width: 320px;
 		}
 		.copy{
 			background:#000;
@@ -2454,6 +2466,7 @@
 				display: flex;
 				justify-content: space-between;
 				top:150px;
+				// text-transform: lowercase;
 				a{
 					display: inline-block;
 					color: #fff;

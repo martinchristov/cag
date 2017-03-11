@@ -25,13 +25,13 @@ gulp.task('styles', () => {
 });
 
 gulp.task('scripts', () => {
-  return gulp.src('app/scripts/**/*.js')
+  var stream = gulp.src('app/scripts/**/*.js')
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.babel())
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(reload({stream: true}));
+    .pipe(gulp.dest('.tmp/scripts'));
+  stream.on('end',browserSync.reload);
 });
 
 function lint(files, options) {
@@ -104,6 +104,7 @@ gulp.task('serve', () => {
     browserSync({
       notify: false,
       port: 9000,
+      open: false,
       server: {
         baseDir: ['.tmp', 'app'],
         routes: {

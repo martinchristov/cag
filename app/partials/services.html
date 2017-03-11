@@ -5,20 +5,20 @@
 	</div>
 	<div class="overlay" ng-show="showServices" ng-class="{'expanded':expanded}">
 		<div class="cap"><span ng-show="total">{{total}} </span>services</div>
-		<div class="svc-container" ng-repeat="item in items">
+		<div class="svc-container" ng-repeat="item in items | limitTo:4">
 			<div class="num-input">
 				<div class="plus" ng-click="plus($index,1)">+</div>
 				<div class="minus" ng-click="plus($index,-1)">-</div>
 				<div class="content">
 					<div class="num">{{item.count}}</div>
 					<div class="box-holder">
-						<b>{{item.title}}</b>
+						<b>{{item.Description | limitTo:23}}</b>
 						<small ng-click="readMore(item)" ng-hide="item.readMore">read more</small>
 					</div>
 				</div>
 			</div>
 			<div class="read-more" ng-show="item.readMore">
-				{{item.desc}}
+				Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.
 				<div class="read-less" ng-click="readLess(item)">read less</div>
 			</div>
 		</div>

@@ -7,18 +7,18 @@
 		<div class="back" ng-click="showSignup=false" ng-show="showSignup">
 			<ng-include src="'images/x.svg'"></ng-include>
 		</div>
-		<div class="content-holder" ng-hide="showSignup">
+		<div class="content-holder" ng-hide="showSignup||showPassRecovery">
 			<div class="contents">
 				<h1>- WELCOME -</h1>
 				<p>
-					To book your airport consierge,<br>
+					To book your airport consierge,
 					Log-in or create a new account
 				</p>
 
 				<form>
-					<input type="email" placeholder="E-mail">
-					<input type="password" placeholder="Password">
-					<a href="" class="forgot">Forgot?</a>
+					<input type="email" ng-model="user.User" placeholder="E-mail">
+					<input type="password" ng-model="user.Password" placeholder="Password">
+					<a ng-click="showPassRecovery=true" class="forgot">Forgot?</a>
 					
 					<p>
 						<input type="checkbox" id="keep-login">
@@ -33,16 +33,15 @@
 		<div class="content-holder signup" ng-show="showSignup">
 			<h1>- NEW ACCOUNT -</h1>
 			<p>
-				Fill the information below &amp;<br>
-				you are good to go!
+				Fill the information below &amp; you are good to go!
 			</p>
 			<div class="contents">
 
-				<form>
-					<input type="text" placeholder="Full Name">
-					<input type="email" placeholder="E-mail" class="invalid">
+				<form ng-submit="loginCtrl.signup()">
+					<input type="text" ng-model="user.Name" placeholder="Full Name">
+					<input type="email" ng-model="user.User_Name" placeholder="E-mail" class="invalid">
 					<div class="password-holder">
-						<input type="password" placeholder="Password">
+						<input type="password" placeholder="Password" ng-model="user.Password">
 						<div class="guide">
 							<div class="cap">password guide</div>
 							<ul>
@@ -52,16 +51,32 @@
 							</ul>
 						</div>
 					</div>
-					<input type="password" placeholder="Repeat Password">
-					<input type="text" name="phone" placeholder="Phone Number">
+					<input type="password" placeholder="Repeat Password" ng-model="repeatPassword">
+					<input type="text" name="phone" placeholder="Phone Number" ng-model="user.Phone_Number">
 					
 					<p>
 						<input type="checkbox" id="keep-login2">
 						<label for="keep-login2">Keep me logged-in</label>
 					</p>
-
+					<div class="link" ng-click="send()">submit</div>
 					<input type="submit" value="CREATE ACCOUNT" disabled="!allowSubmit()">
 				</form>
+			</div>
+		</div>
+		<div class="content-holder pass-recovery" ng-show="showPassRecovery">
+			
+			<div class="contents">
+				<h1>- RECOVERY -</h1>
+				<p ng-hide="recoverySent">
+					We'll send you an email with password recovery instructions.
+				</p>
+				<form ng-hide="recoverySent">
+					<input type="email" placeholder="E-mail">
+					<input type="submit" value="Send Email" ng-click="recoverySent=true">
+				</form>
+				<p ng-show="recoverySent">
+					Please check your email
+				</p>
 			</div>
 		</div>
 	</div>

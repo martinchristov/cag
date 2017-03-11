@@ -193,18 +193,6 @@
 				}
 			}
 		})
-		
-		.directive('login',function(){
-			return {
-				templateUrl:'partials/login.html',
-				replace:true,
-				link: function($scope,el){
-					$scope.close = function(){
-						$scope.$emit('hideLogin');
-					}
-				}
-			}
-		})
 
 		.directive('lang',function(){
 			return {
@@ -337,15 +325,25 @@
 		})
 		.service('API',function($soap,$q){
 			var url = 'http://dev-system.globalairportconcierge.com:8990/GlobalAirportConcierge.svc';
+			// url
 			var defaultParams = {
-				sInterfaceKey:'D6B441402AD64E2906'
+				sInterfaceKey:'D6B441402AD64E2906',
+				InterfaceKey:'D6B441402AD64E2906'
 			}
 			this.post = function(method,params){
 				var deferred = $q.defer();
-
+				// console.log(method,params);
 				$soap.post(url,method,_.extend(params,defaultParams)).then(function(d){
-					var x = xml2json(jQuery.parseXML(d));
-					var json = JSON.parse(x.replace('undefined',''));
+					// console.log('received');
+					// console.log(d);
+					var j = jQuery.parseXML(d);
+					// console.log('parse 1');
+					// console.log(j);
+					var x = xml2json(j);
+					x = x.replace('undefined','');
+					// console.log('resolved',x);
+					var json = JSON.parse(x);
+					// console.log(json);
 					if(json.hasOwnProperty('NewDataSet')){
 						json = json.NewDataSet;
 					}

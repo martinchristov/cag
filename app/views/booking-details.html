@@ -6,7 +6,8 @@
 			<type-selector type="details.type" types="['departure','arrival','connect']"></type-selector>
 			
 			<div class="airport-holder">
-				<fph-input type="text" placeholder="Airport" model="details.airport"></fph-input>
+				<!-- <fph-input type="text" placeholder="Airport" model="details.airport"></fph-input> -->
+				<airport-input model="details.airport" placeholder="Airport"></airport-input>
 				<fph-input type="text" placeholder="PNR" model="details.PNR"></fph-input>
  			</div>
 
@@ -137,9 +138,9 @@
 						<fph-input type="text" placeholder="Terminal" model="flight2details.terminal"></fph-input>
 					</div>
 					<div class="col">
-						<div class="time-picker" ng-class="{'on':timePickerOn}" ng-click="timePickerOn=true">
+						<div class="time-picker" ng-class="{'on':timePickerOn2}" ng-click="timePickerOn2=true">
 							<div class="ph">Time</div>
-							<div ng-show="timePickerOn">
+							<div ng-show="timePickerOn2">
 								<div class="selector">
 									{{flight2details.timeH}} h
 									<select ng-model="flight2details.timeH">

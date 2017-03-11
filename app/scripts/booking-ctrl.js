@@ -17,6 +17,18 @@
 				timeH:'00',
 				timeM:'00',
 				timeT:'AM',
+				PNR:'',
+				date: new Date()
+			};
+			$scope.flight2details = {
+				flightCode:'',
+				dd:'',
+				mm:'',
+				yy:'',
+				terminal:'',
+				timeH:'00',
+				timeM:'00',
+				timeT:'AM',
 				date: new Date()
 			};
 

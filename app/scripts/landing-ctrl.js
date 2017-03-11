@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 	angular.module('cag')
-		.controller('LandingCtrl',function($scope,$timeout,$sce){
+		.controller('LandingCtrl',function($scope,$timeout,$sce, API){
 			$scope.showSideStuff = false;
 			$scope.showLogin=false;
 			$scope.init=false;
@@ -9,8 +9,14 @@
 
 			$timeout(function(){
 				//remove
-				// $(document).scrollTo(0);
+				$(document).scrollTo(0);
 			},300);
+
+			//load initial WSDL
+			API.post('IAirport/Airport_Select_Like_Description',{
+				sDescription: 'lon'
+			}).then(function(d){
+			});
 
 
 			//show side stuff & init sidebar after cover image has loaded
@@ -50,34 +56,29 @@
 			$scope.quote = {
 				type:'arrival',
 				date: null,
+				airport:null,
 				passengers:{
 					adults: 1,
 					children: 0,
 					infants: 0
 				},
 				services:[
-					{
-						title:'VIP meet',
-						count:0,
-						desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
-					},
-					{
-						title:'Baggage porter',
-						count:0,
-						desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
-					},
-					{
-						title:'Executive transfer',
-						count:0,
-						desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
-					},
-					{
-						title:'United package',
-						count:0,
-						desc:'Your Arrival experience will include: Being met at the  aircraft gate. and expedited through immigration.'
-					}
+					
 				]
 			};
+			$scope.$watch('quote.airport',function(){
+				//Airport_Code
+				if($scope.quote.airport){
+					API.post('IService/Service_Select_by_Airport_ID',{
+						iAirport_ID:$scope.quote.airport.ID
+					}).then(function(d){
+						for(var i=0;i<d.length;i++){
+							d[i].count = 0;
+						}
+						$scope.quote.services = d;
+					});
+				}
+			});
 
 			$scope.allowQuoteRequest = false;
 
@@ -93,6 +94,37 @@
 					}
 				}
 			},true);
+
+			$scope.getQuote = function(){
+				$scope.loadingQuote=true;
+				var r = {
+					InterfaceKey:'D6B441402AD64E2906',
+					Type:$scope.quote.type,
+					Airport_Code: $scope.quote.airport.Airport_Code,
+					Service_Date: $scope.quote.date.get()._d.toISOString(),
+					Passengers: $scope.quote.passengers.adults,
+					Children: $scope.quote.passengers.children,
+					Infants: $scope.quote.passengers.infants,
+					Promo_Code: $scope.quote.promo,
+					Services: ''
+				};
+				//2017-01-26T22:00:00.000Z
+				//2016-07-24T15:48:10.607+00:00
+				//Conversion failed when converting from a character string to uniqueidentifier.
+
+				var svc = [];
+				for(var i=0;i<$scope.quote.services.length;i++){
+					if($scope.quote.services[i].count>0){
+						svc.push($scope.quote.services[i].ID);
+					}
+				}
+				r.Services = svc.join(',');
+				// console.log(r);
+				API.post('ICompositeInterface/GetQuote',r).then(function(d){
+					console.log(d);
+				});
+				$scope.showResult=true;
+			};
 
 
 			$scope.$on('hidePicker',function(){

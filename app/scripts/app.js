@@ -1,12 +1,13 @@
 (function(){
 	'use strict';
-	angular.module('cag',['ui.router','ngAnimate','datePicker','ngSanitize','angularSoap'])
-		.config(function($stateProvider,$urlRouterProvider){
+	angular.module('cag',['ui.router','ngAnimate','datePicker','ngSanitize','angularSoap','pascalprecht.translate'])
+		.config(function($stateProvider,$urlRouterProvider,$translateProvider){
 			///Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222  --disable-web-security --user-data-dir
 			//D6B441402AD64E2906
+			$translateProvider.useSanitizeValueStrategy('escapeParameters');
 			$stateProvider
 				.state('landing',{
-					url:'/landing',
+					url:'/',
 					templateUrl:'views/landing.html',
 					controller: 'LandingCtrl',
 					controllerAs: 'ctrl'
@@ -86,6 +87,6 @@
 				*/
 
 
-			$urlRouterProvider.otherwise('/landing');
+			$urlRouterProvider.otherwise('/');
 		});
 })();

@@ -35,16 +35,23 @@
 						$scope.airports = [];
 					}
 					$scope.keyup = function(e){
+						var stackLength = $scope.airports.length;
+						if(stackLength>10){
+							stackLength=10;
+						}
 						if(e.keyCode == 40){
 							e.preventDefault();
 							//down
 							$scope.highlight++;
+							if($scope.highlight>stackLength-1){
+								$scope.highlight = 0;
+							}
 						}
 						else if(e.keyCode == 38){
 							e.preventDefault();
 							$scope.highlight--;
 							if($scope.highlight<0){
-								$scope.highlight = $scope.airports.length-1;
+								$scope.highlight = stackLength-1;
 							}
 						}
 						else if(e.keyCode == 13){

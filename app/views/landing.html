@@ -6,10 +6,10 @@
 			</div>
 			<div class="menu">
 				<ul>
-					<li><a class="link" href="#services">services</a></li>
-					<li><a class="link" href="#support">support</a></li>
-					<li><a class="link" href="#about">about</a></li>
-					<li><a>log-in</a></li>
+					<li><a class="link" href="#services">{{'services'| translate}}</a></li>
+					<li><a class="link" href="#support">{{'support'|translate}}</a></li>
+					<li><a class="link" href="#about">{{'about'|translate}}</a></li>
+					<li><a ng-click="login()">{{'log-in'|translate}}</a></li>
 				</ul>
 				<lang></lang>
 			</div>
@@ -22,9 +22,9 @@
 		</div>
 
 		<div class="mobile-menu-drop" ng-show="showMobileDrop" ng-click="showMobileDrop=false">
-			<a class="link" href="#services">services</a>
-			<a class="link" href="#support">support</a>
-			<a class="link" href="#about">about</a>
+			<a class="link" href="#services">{{'services'|translate}}</a>
+			<a class="link" href="#support">{{'support'|translate}}</a>
+			<a class="link" href="#about">{{'about'|translate}}</a>
 		</div>
 	</div>
 
@@ -32,12 +32,12 @@
 		<div class="gradient"></div>
 		<div class="sidestuff" ng-show="showSideStuff">
 			<div class="animation-container">
-				<a href="#quote" class="quote scrollto">quick quote</a>
+				<a href="#quote" class="quote scrollto">{{'quick quote'|translate}}</a>
 				<div class="journey">
-					<h1>Your journey,<br>460 airports easier!</h1>
-					<p>Superb airport concierge services for<br>a seamless travel, end-to-end.</p>
+					<h1>{{'Your journey,'|translate}}<br>{{'460 airports easier!'|translate}}</h1>
+					<p>{{'Superb airport concierge services for'|translate}}<br>{{'a seamless travel, end-to-end.'|translate}}</p>
 				</div>
-				<div class="book-now" ng-click="login()">book now <ng-include src="'images/arrow.svg'"></ng-include></div>
+				<div class="book-now" ng-click="login()">{{'book now'|translate}} <ng-include src="'images/arrow.svg'"></ng-include></div>
 			</div>
 		</div>
 		
@@ -56,8 +56,8 @@
 	<div id="services">
 
 		<div class="main-container">
-			<h1>- Services -</h1>
-			<h3>discover seamless travel,<br>end-to-end</h3>
+			<h1>- {{'Services'|translate}} -</h1>
+			<h3>{{'discover seamless travel,'||translate}}<br>{{'end-to-end'|translate}}</h3>
 			
 			<div class="services-desktop">
 				<div class="tabs">
@@ -81,15 +81,15 @@
 					
 				</div>
 				<div class="vertial-scroll-bind" scroll-bind>
-					<div class="tab-label" ng-show="ctrl.currentTab=='vip meet'">vip meet</div>
-					<div class="tab-label smaller" ng-show="ctrl.currentTab=='by invitation'">by invitation</div>
-					<div class="tab-label smaller" ng-show="ctrl.currentTab=='on demand'">on demand</div>
+					<div class="tab-label" ng-show="ctrl.currentTab=='vip meet'">{{'vip meet'|translate}}</div>
+					<div class="tab-label smaller" ng-show="ctrl.currentTab=='by invitation'">{{'by invitation'|translate}}</div>
+					<div class="tab-label smaller" ng-show="ctrl.currentTab=='on demand'">{{'on demand'|translate}}</div>
 					<div class="book-now" 
 						ng-click="login()" 
 						ng-show="ctrl.currentTab=='vip meet' || ctrl.currentTab=='on demand'"
-					>book now</div>
+					>{{'book now'|translate}}</div>
 					<a class="book-now link" ng-show="ctrl.currentTab=='by invitation'" href="#support">
-						enquire now
+						{{'enquire now'|translate}}
 					</a>
 				</div>
 			</div>
@@ -99,7 +99,7 @@
 		<div class="swiping-hand">
 			<ng-include src="'images/swiping-hand.svg'"></ng-include>
 			<br>
-			<small>swipe to explore<br>services</small>
+			<small>{{'swipe to explore'|translate}}<br>{{'services'|translate}}</small>
 		</div>
 		<div class="services-mobile swiper-container">
 
@@ -126,8 +126,8 @@
 
 	<div id="quote">
 		<div class="quote-box">
-			<h1>- Quick Quote -</h1>
-			<p>Explore the services &amp; locations we cover around the world</p>
+			<h1>- {{'Quick Quote'|translate}} -</h1>
+			<p>{{'Explore the services & locations we cover around the world' | translate}}</p>
 
 			<form>
 				<type-selector type="quote.type" types="['ARRIVAL','DEPARTURE','CONNECT']"></type-selector>
@@ -142,7 +142,7 @@
 				</div>
 				<div class="dest-input">
 					<!-- <fph-input type="text" placeholder="Airport" model="quote.airport"></fph-input> -->
-					<airport-input model="quote.airport" placeholder="Airport"></airport-input>
+					<airport-input model="quote.airport" placeholder="{{'Airport'|translate}}"></airport-input>
 				</div>
 				<div class="date">
 					<fph-input type="text" placeholder="DD" model="quote.dateD"></fph-input>
@@ -150,7 +150,7 @@
 					<fph-input type="text" placeholder="YY" model="quote.dateY"></fph-input>
 					<div class="btn" ng-click="showQuoteDatePicker=true">
 						<ng-include src="'images/calendar.svg'"></ng-include>
-						<small>select<br>a date</small>
+						<small>{{'select'|translate}}<br>{{'a date'|translate}}</small>
 					</div>
 					<div class="datepicker-holder" ng-show="showQuoteDatePicker">
 						<div 
@@ -169,67 +169,66 @@
 				<services items="quote.services"></services>
 
 				<div class="promo" ng-click="addPromo=true" ng-hide="addPromo">
-					+ Add a promo code
+					{{'+ Add a promo code'|translate}}
 				</div>
 
-				<input type="text" class="promo-input" placeholder="Promo code" ng-show="addPromo">
+				<input type="text" class="promo-input" ng-model="quote.promo" placeholder="Promo code" ng-show="addPromo">
 
-				<input type="submit" value="get quote" ng-disabled="!allowQuoteRequest" ng-click="showResult=true">
+				<input type="submit" value="get quote" ng-disabled="!allowQuoteRequest" ng-click="getQuote()">
 
 			</form>
 			
-				<div class="result" ng-show="showResult">
-					<div class="inner">
-						<div class="field">
-							<div class="cap">arrival</div>
-							Los Angelis LAX
-						</div>
-						<div class="field">
-							<div class="cap">date</div>
-							23 feb 2017
-						</div>
-						<div class="field">
-							<div class="cap">passengers</div>
-							1 adult<br>
-							2 children
-						</div>
-						<div class="field">
-							<div class="cap">service</div>
-							VIP meet<br>
-							Baggage porter<br>
-							Transfer
-						</div>
-						<div class="clearfix"></div>
-						<div class="total">
-							<b>total</b>
-							<div class="price">£325</div>
-							<div class="select-currency">
-								<span>
-									change<br>
-									currency
-								</span>
-								<select name="currency" ng-class="{'hidden':hideSelector}" ng-click="hideSelector=!hideSelector">
-									<option value="GBP">GBP</option>
-									<option value="USD">USD</option>
-									<option value="TRL">TRL</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="btn" ng-click="showResult=false;">new quote</div>
-						<div class="btn book" ng-click="showResult=false;login();">book now</div>
+			<div class="result" ng-show="showResult">
+				<div class="inner">
+					<div class="field">
+						<div class="cap">{{'arrival'|translate}}</div>
+						Los Angelis LAX
 					</div>
+					<div class="field">
+						<div class="cap">{{'date'|translate}}</div>
+						23 feb 2017
+					</div>
+					<div class="field">
+						<div class="cap">{{'passengers'|translate}}</div>
+						1 adult<br>
+						2 children
+					</div>
+					<div class="field">
+						<div class="cap">{{'service'|translate}}</div>
+						VIP meet<br>
+						Baggage porter<br>
+						Transfer
+					</div>
+					<div class="clearfix"></div>
+					<div class="total">
+						<b>{{'total'|translate}}</b>
+						<div class="price">£325</div>
+						<div class="select-currency">
+							<span>
+								{{'change currency'|translate}}
+							</span>
+							<select name="currency" ng-class="{'hidden':hideSelector}" ng-click="hideSelector=!hideSelector">
+								<option value="GBP">GBP</option>
+								<option value="USD">USD</option>
+								<option value="TRL">TRL</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="btn" ng-click="showResult=false;">{{'new quote'|translate}}</div>
+					<div class="btn book" ng-click="showResult=false;login();">{{'book now'|translate}}</div>
 				</div>
+			</div>
 		</div>
 	</div>
 
 	<div id="support">
 		
 		<div class="main-container">
-		<h1>- support -</h1>
-		<h4>you can count on us 24/7<br>anytime, anywhere</h4>
+		<h1>- {{'support'|translate}} -</h1>
+		<h4>{{'you can count on us 24/7'|translate}}<br>{{'anytime, anywhere'|translate}}</h4>
 		<p>
-			Whether you have a last minute change of plans or you simply need more information, just email us or dial the nearest regional centre.
+			{{'Whether you have a last minute change of plans or you simply need more information, just email us or dial the nearest regional centre.'|translate}}
 		</p>
 
 		<div class="clearfix"></div>
@@ -239,8 +238,8 @@
 		</div>
 
 		<div class="faq-overlay" ng-show="showFaqOverlay">
-			<h2>- FAQ -</h2>
-			<h4>if you don’t find the answers of your questions, please be in touch</h4>
+			<h2>- {{'FAQ'|translate}} -</h2>
+			<h4>{{'if you don’t find the answers of your questions, please be in touch'|translate}}</h4>
 			<div class="x" ng-click="showFaqOverlay=false">
 				<ng-include src="'images/x.svg'"></ng-include>
 			</div>
@@ -278,7 +277,7 @@
 		<div class="follow-us">
 			<a href="">
 				<ng-include src="'images/tw.svg'"></ng-include><br>
-				follow us on<br>twitter
+				{{'follow us on'||translate}}<br>twitter
 			</a>
 		</div>
 
@@ -288,12 +287,12 @@
 
 	<div id="about" scroll-background-x>
 		<div class="main-container">
-			<h1>- ABOUT -</h1>
-			<h3>the most advanced airport<br>concierge service in the world</h3>
+			<h1>- {{'ABOUT'||translate}} -</h1>
+			<h3>{{'the most advanced airport'|translate}}<br>{{'concierge service in the world'|translate}}</h3>
 			<div class="content">
-				<p>From the airplane doors to the executive chauffier, our network covers over 460 airports, 365 days of the year, to make sure you reach to your next destination effortlessly &amp; seamlessly.</p>
+				<p>{{'From the airplane doors to the executive chauffier, our network covers over 460 airports, 365 days of the year, to make sure you reach to your next destination effortlessly &amp; seamlessly.'|translate}}</p>
 
-				<b>our partners</b>
+				<b>{{'our partners'|translate}}</b>
 				<a target="_blank" href="http://united.com" class="united">
 					<img src="images/united.jpg" alt="">
 				</a>
@@ -322,14 +321,14 @@
 			<div class="holder">
 				<img class="topad" src="images/offer.jpg" alt="">
 				<div class="contents">
-					<h3>There is no better way to reach the top 1% travelers</h3>
+					<h3>{{'There is no better way to reach the top 1% travelers'|translate}}</h3>
 					<p>
 						Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, bibendum eu pulvinar vel, sodales vitae dui. Pellentesque sed sapien lorem, at lacinia urna. In hac habitasse platea dictumst. Vivamus vel justo in leo laoreet ullamcorper non vitae lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ullamcorper rutrum. 
 		Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus eget adipiscing. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, bibendum eu pulvinar vel, sodales vitae dui. Pellentesque sed sapien lorem, at lacinia urna. In hac habitasse platea dictumst. Vivamus vel justo in leo laoreet ullamcorper non vitae lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ullamcorper rutrum. 
 					</p>
 
 					<div class="intouch">
-						Be in touch at:<br>
+						{{'Be in touch at:'|translate}}<br>
 						<a href="mailto:partners@globalairportconcierge.com">partners@globalairportconcierge.com</a>
 					</div>
 
@@ -345,7 +344,7 @@
 				<ng-include src="'images/x.svg'"></ng-include>
 			</div>
 			<div class="holder">
-				<h2>Terms &amp; Conditions</h2>
+				<h2>{{'Terms & Conditions'|translate}}</h2>
 				<ng-include src="'partials/terms.html'"></ng-include>
 			</div>
 		</div>
@@ -359,7 +358,7 @@
 				<ng-include src="'images/x.svg'"></ng-include>
 			</div>
 			<div class="holder">
-				<h2>Privacy Policy</h2>
+				<h2>{{'Privacy Policy'|translate}}</h2>
 				<ng-include src="'partials/privacy.html'"></ng-include>
 			</div>
 		</div>
@@ -367,21 +366,21 @@
 
 	<footer>
 		<div class="main-container">
-			<h3>Your journey,<br>Your way!</h3>
+			<h3>{{'Your journey, Your way!'|translate}}</h3>
 
 			<div class="tw">
 				<ng-include src="'images/tw.svg'"></ng-include>
 			</div>
 			<div class="rightside">
-				<div class="book-now" ng-click="login()">book now</div>
+				<div class="book-now" ng-click="login()">{{'book now'|translate}}</div>
 				<div class="back-top" ng-show="scrolled" back-top>
 					<ng-include src="'images/backtotop.svg'"></ng-include><br>
-					<small>go to top</small>
+					<small>{{'go to top'|translate}}</small>
 				</div>
 				<div class="links">
-					<a ng-click="showAdvertising=true">advertising</a>
-					<a ng-click="showTerms=true">terms &amp; conditions</a>
-					<a ng-click="showPrivacy=true">privacy policy</a>
+					<a ng-click="showAdvertising=true">{{'advertising'|translate}}</a>
+					<a ng-click="showTerms=true">{{'Terms & Conditions'|translate}}</a>
+					<a ng-click="showPrivacy=true">{{'Privacy Policy'|translate}}</a>
 				</div>
 			</div>
 

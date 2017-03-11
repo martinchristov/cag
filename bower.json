@@ -11,7 +11,8 @@
     "angular-sanitize": "^1.6.0",
     "swiper": "^3.4.1",
     "angular-soap": "^2.1.2",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "angular-translate": "^2.13.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
